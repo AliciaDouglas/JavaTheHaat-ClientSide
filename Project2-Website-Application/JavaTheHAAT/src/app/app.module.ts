@@ -11,6 +11,9 @@ import { ProfileComponent } from './profile/profile.component';
 import { AppRoutingModule } from './/app-routing.module';
 import {FormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { HomeScreenComponent } from './home-screen/home-screen.component';
+import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+import { CreatePostComponent } from './create-post/create-post.component';
 
 @NgModule({
   declarations: [
@@ -22,12 +25,16 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     PostSummaryComponent,
     AdminComponent,
     ProfileComponent,
+    HomeScreenComponent,
+    CreatePostComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]
