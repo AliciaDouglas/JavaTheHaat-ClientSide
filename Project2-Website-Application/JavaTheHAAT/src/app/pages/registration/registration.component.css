@@ -1,8 +1,17 @@
-
-
 #regF{
     z-index: 1;
     position: fixed;
     margin-top: 10%;
-    margin-left: 10%;
+    margin-left: -20%;
+    color: white;
+    font-weight: bold;
+} 
+
+
+h1{
+    position: fixed;
+    color: white;
+    font-weight: bolder;
+    font-size: 120px;
+    margin-left: -20%;
 }

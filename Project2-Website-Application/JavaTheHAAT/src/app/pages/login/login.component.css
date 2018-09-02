@@ -1,0 +1,20 @@
+#log{
+    position: fixed;
+    margin-top: 10%;
+    margin-left: -18%;
+    width: 20%;
+    color: aliceblue;
+    font-weight: bold;
+}
+
+h1{
+    position: fixed;
+    color: white;
+    font-weight: bolder;
+    font-size: 120px;
+    margin-left: -18%;
+}
+
+
+
+
