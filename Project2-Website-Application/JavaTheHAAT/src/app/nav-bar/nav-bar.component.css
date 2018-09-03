@@ -1,1 +1,108 @@
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+#naviBar{
+    color: white;
+}
+#navbarDropdownMenuLink{
+    color: white;
+}
+#craft{
+    color: black;
+    font-weight: bold;
+
+}
+
+#craft:hover{
+    color: white;
+    z-index: -1;
+    background-image: url('https://www.wallpaperup.com/uploads/wallpapers/2014/09/05/436402/6453bc345c8c2250220b82cea627a1e8-700.jpg');
+    background-repeat: no-repeat;
+    background-size: 200px;
+    opacity: .7;
+    background-position-y: -65px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+
+#hI{
+    color: black;
+    font-weight: bold;
+}
+
+#hI:hover{
+    color: white;
+    z-index: -1;
+    background-image: url('https://i.pinimg.com/originals/0e/2a/5b/0e2a5bb0c4a42c874384fcec0b74be9c.jpg');
+    background-repeat: no-repeat;
+    background-size: 200px;
+    opacity: .7;
+    background-position-y: -65px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+
+#food{
+    color: black;
+    font-weight: bold;
+}
+
+#food:hover{
+    color: white;
+    z-index: -1;
+    background-image: url('https://food-images.files.bbci.co.uk/food/recipes/mediterranean_puff_50963_16x9.jpg');
+    background-repeat: no-repeat;
+    background-size: 200px;
+    opacity: .7;
+    background-position-y: -65px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+
+#art{
+    color: black;
+    font-weight: bold;
+}
+
+#art:hover{
+    color: white;
+    z-index: -1;
+    background-image: url('https://i.pinimg.com/originals/19/a1/b2/19a1b216f31a5d18a054aef242ccacab.jpg');
+    background-repeat: no-repeat;
+    background-size: 200px;
+    opacity: .7;
+    background-position-y: -65px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+
+#oG{
+    color: black;
+    font-weight: bold;
+}
+
+#oG:hover{
+    color: white;
+    z-index: -1;
+    background-image: url('http://getwallpapers.com/wallpaper/full/5/5/3/1077071-large-japanese-garden-wallpapers-2048x1280-windows.jpg');
+    background-repeat: no-repeat;
+    background-size: 200px;
+    opacity: .7;
+    background-position-y: -65px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+
+#elec{
+    color: black;
+    font-weight: bold; 
+}
+
+#elec:hover{
+    color: white;
+    z-index: -1;
+    background-image: url('http://www.ultrahdfreewallpapers.com/uploads/large/3d-and-abstract/3d-hd-wallpaper-0288.jpg');
+    background-repeat: no-repeat;
+    background-size: 200px;
+    opacity: .7;
+    background-position-y: -65px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
