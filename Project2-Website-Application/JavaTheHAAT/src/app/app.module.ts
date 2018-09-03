@@ -9,10 +9,10 @@ import { PostSummaryComponent } from './pages/post-template/post-summary/post-su
 import { AdminComponent } from './admin/admin.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { AppRoutingModule } from './/app-routing.module';
-import {FormsModule} from '@angular/forms';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { FormsModule} from '@angular/forms';
+import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { HomeScreenComponent } from './pages/home-screen/home-screen.component';
-import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+import { MatButtonModule, MatCheckboxModule} from '@angular/material';
 import { CreatePostComponent } from './pages/create-post/create-post.component';
 import { CraftPageComponent } from './pages/Categories/craft-page/craft-page.component';
 import { HomeImprovementComponent } from './pages/Categories/home-improvement/home-improvement.component';
@@ -20,6 +20,7 @@ import { ArtPageComponent } from './pages/Categories/art-page/art-page.component
 import { FoodPageComponent } from './pages/Categories/food-page/food-page.component';
 import { OutdoorsPageComponent } from './pages/Categories/outdoors-page/outdoors-page.component';
 import { ElectronicsComponent } from './pages/Categories/electronics/electronics.component';
+import { Material } from '../app/material';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,7 @@ import { ElectronicsComponent } from './pages/Categories/electronics/electronics
     ArtPageComponent,
     FoodPageComponent,
     OutdoorsPageComponent,
-    ElectronicsComponent,
+    ElectronicsComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +47,8 @@ import { ElectronicsComponent } from './pages/Categories/electronics/electronics
     FormsModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    Material
   ],
   providers: [],
   bootstrap: [AppComponent]

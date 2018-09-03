@@ -5,7 +5,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegistrationComponent } from './pages/registration/registration.component';
 import { HomeScreenComponent } from './pages/home-screen/home-screen.component';
 import { CreatePostComponent } from './pages/create-post/create-post.component';
-import {HomeImprovementComponent} from './pages/Categories/home-improvement/home-improvement.component';
+import { HomeImprovementComponent} from './pages/Categories/home-improvement/home-improvement.component';
 import { FoodPageComponent } from 'src/app/pages/Categories/food-page/food-page.component';
 import { OutdoorsPageComponent } from 'src/app/pages/Categories/outdoors-page/outdoors-page.component';
 import { ElectronicsComponent } from 'src/app/pages/Categories/electronics/electronics.component';
