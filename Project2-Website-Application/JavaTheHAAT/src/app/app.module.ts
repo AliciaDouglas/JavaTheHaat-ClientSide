@@ -21,6 +21,7 @@ import { FoodPageComponent } from './pages/Categories/food-page/food-page.compon
 import { OutdoorsPageComponent } from './pages/Categories/outdoors-page/outdoors-page.component';
 import { ElectronicsComponent } from './pages/Categories/electronics/electronics.component';
 import { Material } from '../app/material';
+import { AdminNavBarComponent } from './admin-nav-bar/admin-nav-bar.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { Material } from '../app/material';
     ArtPageComponent,
     FoodPageComponent,
     OutdoorsPageComponent,
-    ElectronicsComponent
+    ElectronicsComponent,
+    AdminNavBarComponent
   ],
   imports: [
     BrowserModule,

@@ -9,12 +9,13 @@ h1{
     position: fixed;
     color: white;
     font-weight: bolder;
-    font-size: 150px;
-    margin-left: 9%;
-    margin-top: 5%;
+    font-size: 100px;
+    margin-left: -20%;
+    margin-top: 0%;
     z-index: 1;
-    text-shadow: 2px 2px black;
+    text-shadow: 4px 4px 1px rgba(187, 30, 2, 0.664);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    opacity: .7;
 }
 
 #icons{
