@@ -1,0 +1,11 @@
+#prof{
+    z-index: 1;
+    position: fixed;
+    width: 28%;
+    margin-left: -18%;
+    margin-top: 2%;
+}
+
+img{
+    width: 100%;
+}
