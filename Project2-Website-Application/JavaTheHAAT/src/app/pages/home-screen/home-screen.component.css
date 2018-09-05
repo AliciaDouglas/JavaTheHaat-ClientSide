@@ -23,8 +23,8 @@ h3{
     z-index: 3;
     font-size: 400%;
     color: white;
-    margin-top: -60%;
-    margin-left: 5%;
+    margin-top: -62%;
+    margin-left: 3%;
     opacity: .8;
     font-weight: bold;
 }
@@ -39,7 +39,7 @@ h3{
 }
 
 #indicators{
-    margin-bottom: 15%;
+    margin-bottom: 60%;
 }
 
 #carouselExampleIndicators{
