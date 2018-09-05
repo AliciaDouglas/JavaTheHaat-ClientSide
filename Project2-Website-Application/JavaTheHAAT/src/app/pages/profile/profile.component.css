@@ -4,8 +4,24 @@
     width: 28%;
     margin-left: -18%;
     margin-top: 2%;
+    background-color: rgba(37, 28, 90, 0.548);
+    color: white;
+    font-weight: bold;
+    font-size: 120%;
+    border-radius: 20px 20px;
 }
 
-img{
+#fontt{
+    font-size:100%;
+    color: white;
+}
+
+#pic{
     width: 100%;
+    margin-left: 0%;
+    border-radius: 10% 10%;
+}
+
+textarea{
+    border-radius: 20px 20px;
 }

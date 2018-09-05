@@ -9,14 +9,26 @@ h1{
     position: fixed;
     color: white;
     font-weight: bolder;
-    font-size: 100px;
-    margin-left: -20%;
-    margin-top: 0%;
+    font-size: 700%;
+    margin-left: 10%;
+    margin-top: 15%;
     z-index: 1;
     text-shadow: 4px 4px 1px rgba(187, 30, 2, 0.664);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     opacity: .7;
 }
+
+h3{
+    position: fixed;
+    z-index: 3;
+    font-size: 400%;
+    color: white;
+    margin-top: -60%;
+    margin-left: 5%;
+    opacity: .8;
+    font-weight: bold;
+}
+
 
 #icons{
     position: fixed;
@@ -25,3 +37,24 @@ h1{
     z-index: -1.5;
     opacity: .6;
 }
+
+#indicators{
+    margin-bottom: 15%;
+}
+
+#carouselExampleIndicators{
+    position: fixed;
+    width: 100%;
+    margin-left: -21%;
+}
+
+#slider{
+    width: 50%;
+    height: 50%;
+    
+}
+
+#item{
+    height: 20%;
+}
+
