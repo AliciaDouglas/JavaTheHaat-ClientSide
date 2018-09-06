@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatStepperModule} from '@angular/material/stepper';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatCardModule} from '@angular/material/card';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
               FormsModule,
               ReactiveFormsModule,
               MatFormFieldModule,
-              MatInputModule
+              MatInputModule,
+              MatCardModule
             ],
     exports: [MatButtonModule,
               MatCheckboxModule,
@@ -22,7 +24,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
               FormsModule,
               ReactiveFormsModule,
               MatFormFieldModule,
-              MatInputModule
+              MatInputModule,
+              MatCardModule
             ],
 })
 export class Material { }
