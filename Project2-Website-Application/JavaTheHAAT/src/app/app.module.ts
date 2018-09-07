@@ -4,8 +4,6 @@ import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegistrationComponent } from './pages/registration/registration.component';
-import { PostTemplateComponent } from './pages/post-template/post-template.component';
-import { PostSummaryComponent } from './pages/post-template/post-summary/post-summary.component';
 import { AdminComponent } from './admin/admin.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { AppRoutingModule } from './/app-routing.module';
@@ -22,6 +20,7 @@ import { OutdoorsPageComponent } from './pages/Categories/outdoors-page/outdoors
 import { ElectronicsComponent } from './pages/Categories/electronics/electronics.component';
 import { Material } from '../app/material';
 import { AdminNavBarComponent } from './admin-nav-bar/admin-nav-bar.component';
+import { UserNavBarComponent } from './user-nav-bar/user-nav-bar.component';
 
 @NgModule({
   declarations: [
@@ -29,8 +28,6 @@ import { AdminNavBarComponent } from './admin-nav-bar/admin-nav-bar.component';
     NavBarComponent,
     LoginComponent,
     RegistrationComponent,
-    PostTemplateComponent,
-    PostSummaryComponent,
     AdminComponent,
     ProfileComponent,
     HomeScreenComponent,
@@ -41,7 +38,8 @@ import { AdminNavBarComponent } from './admin-nav-bar/admin-nav-bar.component';
     FoodPageComponent,
     OutdoorsPageComponent,
     ElectronicsComponent,
-    AdminNavBarComponent
+    AdminNavBarComponent,
+    UserNavBarComponent
   ],
   imports: [
     BrowserModule,
