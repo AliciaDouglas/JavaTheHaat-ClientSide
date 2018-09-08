@@ -1,0 +1,37 @@
+{
+    "steps": [
+        {
+            "sId":1,
+            "pId":1,
+            "stepNum":1,
+            "stepName":"Sheets",
+            "stepText":"Get your sheets",
+            "pic":"url..."
+        },
+        {
+            "sId":2,
+            "pId":1,
+            "stepNum":2,
+            "stepName":"Spread",
+            "stepText":"Place the sheets over the mattress",
+            "pic":"url..."
+        },
+        {
+            "sId":3,
+            "pId":1,
+            "stepNum":3,
+            "stepName":"Wrinkles",
+            "stepText":"Get the wrinkles out",
+            "pic":"url..."
+        },
+        {
+            "sId":4,
+            "pId":1,
+            "stepNum":4,
+            "stepName":"Fluff",
+            "stepText":"Fluff the pillows",
+            "pic":"url..."
+        }
+
+    ]
+}

@@ -4,3 +4,13 @@
     width: 100%;
     margin-left: -405px;
 }
+
+h1{
+    z-index: 3;
+    position: fixed;
+    color: white;
+    font-weight: bolder;
+    font-size: 120px;
+    margin-left: -18%;
+    margin-top: 3%;
+}

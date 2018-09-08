@@ -1,7 +1,7 @@
 #regF{
-    z-index: 1;
+    z-index: 3;
     position: fixed;
-    margin-top: 10%;
+    margin-top: 12%;
     margin-left: -18%;
     color: white;
     font-weight: bold;
@@ -9,9 +9,51 @@
 }
 
 h1{
+    z-index: 3;
     position: fixed;
     color: white;
     font-weight: bolder;
     font-size: 120px;
     margin-left: -15.5%;
+    margin-top: 5%;
+}
+
+h3{
+    position: fixed;
+    z-index: 3;
+    font-size: 400%;
+    color: white;
+    margin-top: -62%;
+    margin-left: 3%;
+    opacity: .8;
+    font-weight: bold;
+}
+
+
+#icons{
+    position: fixed;
+    margin-top: 10%;
+    margin-left: 11%;
+    z-index: -1.5;
+    opacity: .6;
+}
+
+#indicators{
+    margin-bottom: 60%;
+}
+
+#carouselExampleIndicators{
+    position: fixed;
+    width: 100%;
+    margin-left: -21%;
+}
+
+#slider{
+    width: 50%;
+    height: 50%;
+    
+}
+
+#item{
+    height: 20%;
 }

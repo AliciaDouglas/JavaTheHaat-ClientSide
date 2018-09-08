@@ -10,6 +10,8 @@ import { FoodPageComponent } from 'src/app/pages/Categories/food-page/food-page.
 import { OutdoorsPageComponent } from 'src/app/pages/Categories/outdoors-page/outdoors-page.component';
 import { ElectronicsComponent } from 'src/app/pages/Categories/electronics/electronics.component';
 import { ArtPageComponent } from 'src/app/pages/Categories/art-page/art-page.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+
 
 
 export const routes: Routes = [
@@ -22,7 +24,8 @@ export const routes: Routes = [
   {path: 'food-page', component: FoodPageComponent},
   {path: 'outdoors-page', component: OutdoorsPageComponent},
   {path: 'electronics', component: ElectronicsComponent},
-  {path: 'art-page', component: ArtPageComponent}
+  {path: 'art-page', component: ArtPageComponent},
+  {path: 'profile', component: ProfileComponent}
 ];
 
 
