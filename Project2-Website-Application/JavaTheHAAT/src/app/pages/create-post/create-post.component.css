@@ -1,6 +1,6 @@
 #regF{
     z-index: 3;
-    position: fixed;
+    position: absolute;
     margin-top: 12%;
     margin-left: -18%;
     color: white;
@@ -8,9 +8,28 @@
     width: 20%;
 }
 
+#pImg{
+    width: 100%;
+}
+
+#submit{
+    float: right;
+}
+
+#add{
+    background-color: rgb(6, 47, 66);
+    font-weight: bold;
+    border-radius: 5% 5%;
+}
+#minus{
+    background-color: rgb(131, 12, 4);
+    font-weight: bold;
+    border-radius: 5% 5%;
+}
+
 h1{
     z-index: 3;
-    position: fixed;
+    position: absolute;
     color: white;
     font-weight: bolder;
     font-size: 120px;

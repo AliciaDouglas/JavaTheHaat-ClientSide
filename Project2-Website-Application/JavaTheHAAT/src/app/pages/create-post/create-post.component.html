@@ -78,13 +78,14 @@
   </div>
 
   <div class="form-group" *ngFor="let step of steps">
-    <label for="exampleFormControlSelect2">Step:</label>
+    <label for="exampleFormControlSelect2">Step:</label> <br>
+    <img id="pImg" src="https://cdn.dribbble.com/users/791870/screenshots/2192118/cape_animation.gif"> <br><br>
     <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="step 1">
   </div>
 
-  <button mat-raised-button color="primary">Submit</button>
-  <button mat-raised-button color="primary" (click)="addStep()">Add a step</button>
-  <button mat-raised-button color="primary" (click)="removeStep()">Remove a step</button>
+  <button id="add" mat-mini-fab="warn" (click)="addStep()">+</button>
+  <button id="minus" mat-mini-fab="warn" (click)="removeStep()">-</button>
+  <button id="submit" mat-raised-button color="primary">Submit</button>
 </form>
 
 <img src="https://pbs.twimg.com/media/DMDIKcyWsAEsKDj.jpg:large" id="reg">
