@@ -1,3 +1,6 @@
+import { AccountStatus } from './accountStatus';
+import { AccountType } from './accountType';
+
 export class Users {
     uId?: number;
     fname?: string;
@@ -6,6 +9,8 @@ export class Users {
     username?: string;
     password?: string;
     profilePic?: string;
-    accType?: string;
-    accStatus?: string;
+    accTypeId?: number;
+    accType?: AccountType;
+    accStatusId?: number;
+    AccountStatus?: AccountStatus;
 }
