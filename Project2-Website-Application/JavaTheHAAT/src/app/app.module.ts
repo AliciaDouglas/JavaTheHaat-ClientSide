@@ -22,6 +22,7 @@ import { OutdoorsPageComponent } from './pages/Categories/outdoors-page/outdoors
 import { ElectronicsComponent } from './pages/Categories/electronics/electronics.component';
 import { Material } from '../app/material';
 import { AdminNavBarComponent } from './admin-nav-bar/admin-nav-bar.component';
+import { AuthorizationService } from "./service/authorization.service";
 
 @NgModule({
   declarations: [
@@ -52,7 +53,7 @@ import { AdminNavBarComponent } from './admin-nav-bar/admin-nav-bar.component';
     MatCheckboxModule,
     Material
   ],
-  providers: [],
+  providers: [AuthorizationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
