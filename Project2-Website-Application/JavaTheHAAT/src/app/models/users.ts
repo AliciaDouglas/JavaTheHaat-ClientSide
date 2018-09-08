@@ -3,7 +3,7 @@ import { AccountType } from './accountType';
 
 export class Users {
     uId?: number;
-    fname?: string;
+    fname: string;
     lname?: string;
     email?: string;
     username?: string;

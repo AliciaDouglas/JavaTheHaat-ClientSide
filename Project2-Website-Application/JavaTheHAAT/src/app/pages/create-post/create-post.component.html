@@ -77,22 +77,14 @@
     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
   </div>
 
-  <div class="form-group">
-    <label for="exampleFormControlSelect2">Step 1</label>
+  <div class="form-group" *ngFor="let step of steps">
+    <label for="exampleFormControlSelect2">Step:</label>
     <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="step 1">
   </div>
 
-
-  <div class="form-group">
-    <label for="exampleFormControlSelect2">Step 2</label>
-    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="step 2">
-  </div>
-
-  <div class="form-group">
-    <label for="exampleFormControlSelect2">Step 3</label>
-    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="step 3">
-  </div>
   <button mat-raised-button color="primary">Submit</button>
+  <button mat-raised-button color="primary" (click)="addStep()">Add a step</button>
+  <button mat-raised-button color="primary" (click)="removeStep()">Remove a step</button>
 </form>
 
 <img src="https://pbs.twimg.com/media/DMDIKcyWsAEsKDj.jpg:large" id="reg">

@@ -24,6 +24,11 @@ registerUser(user: Users): Observable<Users> {
   return this.http.post<Users>('http://localhost:3000/users', user, HTTP_OPTIONS);
 }
 
+// This method will get a specific user by Id
+getUserById(uId: number): Observable<Users> {
+  return this.http.get<Users>('http://localhost:3000/users?uId=' + uId, HTTP_OPTIONS);
+}
+
 // This method will update a user's profile info
 updateUserInfo(user: Users): Observable<Users> {
   return this.http.put<Users>('http://localhost:3000/users', user, HTTP_OPTIONS);

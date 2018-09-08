@@ -1,3 +1,4 @@
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
@@ -48,7 +49,8 @@ import { UserNavBarComponent } from './user-nav-bar/user-nav-bar.component';
     BrowserAnimationsModule,
     MatButtonModule,
     MatCheckboxModule,
-    Material
+    Material,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

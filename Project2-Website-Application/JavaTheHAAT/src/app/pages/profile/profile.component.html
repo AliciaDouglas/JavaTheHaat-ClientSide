@@ -2,7 +2,7 @@
   <mat-card-header>
     <div mat-card-avatar class="example-header-image"></div>
     <mat-card-subtitle id="fontt">Username</mat-card-subtitle>
-    <mat-card-subtitle id="fontt">First Name</mat-card-subtitle>
+    <mat-card-subtitle id="fontt">First Name </mat-card-subtitle>
     <mat-card-subtitle id="fontt">Last Name</mat-card-subtitle>
     <mat-card-subtitle id="fontt">Email</mat-card-subtitle>
   </mat-card-header>
@@ -82,54 +82,14 @@
   </thead>
   <!-- Post information, ordered by above <thead> -->
   <tbody>
-    <tr>
-      <th>Soft Box Light</th>
-      <th>
-        A video explaining how to create a soft light. Enjoy!
-      </th>
-      <td>
-        <div class="embed-responsive embed-responsive-16by9">
-          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/4KBEb-_B45o" allowfullscreen></iframe>
-        </div>
-      </td>
-    </tr>
-    <tr>
-        <th>Craft</th>
-        <td>How to create a Farmhouse dining table, with custom styling</td>
-        <td>
-          <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/J9dXA33eWr0" allowfullscreen></iframe>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <th>Food</th>
-        <td>
-          Enjoy our collection of fun and easy food tutorials! With recipes ranging from healthy dinners, to sugary sweet delights,
-          there's a plethora of creative options to spice up your home cooking.</td>
-        <td>
-          <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/WpGfBf_bV5c" allowfullscreen></iframe>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <th>Outdoors/Garden</th>
-        <td>20 DIY projects that will help you greatly in the outdoors! Check out the actual video on my page to see the latest
-          on DIY projects.</td>
-        <td>
-          <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/mCBKshmaloI" allowfullscreen></iframe>
-          </div>
-        </td>
-      </tr>
-      <tr>
-          <th>Home Improvement</th>
-          <td>25 Home Improvement ideas that could help improve your home and many ways. Visit my actual YouTube page for mere information on the topic!
-            on DIY projects.</td>
+        <tr *ngFor="let postsAll of posts">
+          <th>{{postsAll.title}}</th>
+          <th>
+            {{postsAll.description}}
+          </th>
           <td>
             <div class="embed-responsive embed-responsive-16by9">
-              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/r7-slxD5q50" allowfullscreen></iframe>
+              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/4KBEb-_B45o" allowfullscreen></iframe>
             </div>
           </td>
         </tr>
