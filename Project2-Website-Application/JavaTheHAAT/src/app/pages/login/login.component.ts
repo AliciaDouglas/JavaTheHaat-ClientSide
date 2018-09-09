@@ -22,18 +22,4 @@ export class LoginComponent implements OnInit {
     this.ROUTE.navigate(['home-screen']);
   }
 
-  // loginUser(user: User){
-  //   this.loginService.validLoginUser(user).subscribe(
-  //     succ => {
-  //       this.dbUser = succ;
-  //       this.incorrect = false;
-  //       this.loginService.saveUser(succ);
-  //       this.ROUTE.navigate(['dashboard']);
-  //     }, err => {
-  //       console.log('login failed')
-  //       this.incorrect = true;
-  //     }
-  //     );
-  // }
-
 }

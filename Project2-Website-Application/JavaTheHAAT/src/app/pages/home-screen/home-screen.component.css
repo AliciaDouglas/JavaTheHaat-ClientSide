@@ -1,8 +1,7 @@
 #homeBackground {
-    position: absolute;
+    position: fixed;
     z-index: 1;
     width: 100%;
-    margin-left: -20.5%;
 }
 
 h1{
@@ -10,7 +9,7 @@ h1{
     color: white;
     font-weight: bolder;
     font-size: 700%;
-    margin-left: 10%;
+    margin-left: 32%;
     margin-top: 15%;
     z-index: 1;
     text-shadow: 4px 4px 1px rgba(187, 30, 2, 0.664);
@@ -25,7 +24,7 @@ h3{
     z-index: 3;
     font-size: 400%;
     color: white;
-    margin-top: -58%;
+    margin-top: -90%;
     margin-left: 3%;
     opacity: .8;
     font-weight: bold;
@@ -48,7 +47,6 @@ h3{
 #carouselExampleIndicators{
     position: fixed;
     width: 100%;
-    margin-left: -21%;
 }
 
 #slider{

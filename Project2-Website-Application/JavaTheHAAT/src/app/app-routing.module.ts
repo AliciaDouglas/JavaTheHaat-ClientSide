@@ -1,3 +1,6 @@
+import { ViewAllUsersComponent } from './adminPages/view-all-users/view-all-users.component';
+import { ViewAllPostsComponent } from './adminPages/view-all-posts/view-all-posts.component';
+import { AdminProfileComponent } from './adminPages/admin-profile/admin-profile.component';
 import { CraftPageComponent } from './pages/Categories/craft-page/craft-page.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes} from '@angular/router';
@@ -11,6 +14,8 @@ import { OutdoorsPageComponent } from 'src/app/pages/Categories/outdoors-page/ou
 import { ElectronicsComponent } from 'src/app/pages/Categories/electronics/electronics.component';
 import { ArtPageComponent } from 'src/app/pages/Categories/art-page/art-page.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { CreateNewCategoryComponent } from './adminPages/create-new-category/create-new-category.component';
+import { RegisterAdminComponent } from './adminPages/register-admin/register-admin.component';
 
 
 
@@ -25,7 +30,12 @@ export const routes: Routes = [
   {path: 'outdoors-page', component: OutdoorsPageComponent},
   {path: 'electronics', component: ElectronicsComponent},
   {path: 'art-page', component: ArtPageComponent},
-  {path: 'profile', component: ProfileComponent}
+  {path: 'profile', component: ProfileComponent},
+  {path: 'admin-profile', component: AdminProfileComponent},
+  {path: 'create-new-category', component: CreateNewCategoryComponent},
+  {path: 'register-admin', component: RegisterAdminComponent},
+  {path: 'view-all-posts', component: ViewAllPostsComponent},
+  {path: 'view-all-users', component: ViewAllUsersComponent}
 ];
 
 

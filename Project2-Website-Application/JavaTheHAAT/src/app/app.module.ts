@@ -22,6 +22,12 @@ import { ElectronicsComponent } from './pages/Categories/electronics/electronics
 import { Material } from '../app/material';
 import { AdminNavBarComponent } from './admin-nav-bar/admin-nav-bar.component';
 import { UserNavBarComponent } from './user-nav-bar/user-nav-bar.component';
+import { ViewAllPostsComponent } from 'src/app/adminPages/view-all-posts/view-all-posts.component';
+import { RegisterAdminComponent } from 'src/app/adminPages/register-admin/register-admin.component';
+import { CreateNewCategoryComponent } from 'src/app/adminPages/create-new-category/create-new-category.component';
+import { ViewAllUsersComponent } from 'src/app/adminPages/view-all-users/view-all-users.component';
+import { AdminProfileComponent } from 'src/app/adminPages/admin-profile/admin-profile.component';
+
 
 @NgModule({
   declarations: [
@@ -40,7 +46,12 @@ import { UserNavBarComponent } from './user-nav-bar/user-nav-bar.component';
     OutdoorsPageComponent,
     ElectronicsComponent,
     AdminNavBarComponent,
-    UserNavBarComponent
+    UserNavBarComponent,
+    ViewAllPostsComponent,
+    RegisterAdminComponent,
+    CreateNewCategoryComponent,
+    ViewAllUsersComponent,
+    AdminProfileComponent
   ],
   imports: [
     BrowserModule,
