@@ -77,7 +77,7 @@ export class AuthorizationService {
         onSuccess: function (result) {
 
           console.log(result);
-          observer.next(result);
+          observer.next(result.getIdToken);
           observer.complete();
         },
         onFailure: function(err) {

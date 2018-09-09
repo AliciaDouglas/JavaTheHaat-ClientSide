@@ -16,18 +16,21 @@ h1{
     text-shadow: 4px 4px 1px rgba(187, 30, 2, 0.664);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     opacity: .7;
+    text-align: center;
 }
+
 
 h3{
     position: fixed;
     z-index: 3;
     font-size: 400%;
     color: white;
-    margin-top: -60%;
-    margin-left: 5%;
+    margin-top: -58%;
+    margin-left: 3%;
     opacity: .8;
     font-weight: bold;
 }
+
 
 
 #icons{
@@ -39,7 +42,7 @@ h3{
 }
 
 #indicators{
-    margin-bottom: 15%;
+    margin-bottom: 60%;
 }
 
 #carouselExampleIndicators{

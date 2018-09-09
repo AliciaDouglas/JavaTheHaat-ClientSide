@@ -2,26 +2,91 @@
     z-index: 1;
     position: fixed;
     width: 28%;
-    margin-left: -18%;
-    margin-top: 2%;
-    background-color: rgba(37, 28, 90, 0.548);
+    margin-left: -20%;
+    margin-top: 5%;
+    background-color: rgba(53, 49, 49, 0.774);
     color: white;
     font-weight: bold;
     font-size: 120%;
-    border-radius: 20px 20px;
+    border-radius: 5% 5%;
+    box-shadow: 0px 0px 5px 5px;
+}
+
+#prof:hover{
+    background-color: rgba(53, 49, 49, 0.952); 
+}
+
+#rP{
+    box-shadow: 0px 0px 5px 5px;
+    border-radius: 10% 10%;
+    margin-left: 35%
 }
 
 #fontt{
     font-size:100%;
     color: white;
+    text-align: left;
 }
 
 #pic{
     width: 100%;
     margin-left: 0%;
     border-radius: 10% 10%;
+    
 }
 
 textarea{
-    border-radius: 20px 20px;
+    border-radius: 5% 5%;
+}
+
+#icons{
+    position: fixed;
+    margin-top: 10%;
+    margin-left: 11%;
+    z-index: -1.5;
+    opacity: .6;
+}
+
+#indicators{
+    margin-bottom: 60%;
+}
+
+#carouselExampleIndicators{
+    position: fixed;
+    width: 105%;
+    margin-left: -21%;
+}
+
+#slider{
+    width: 50%;
+    height: 50%;
+    
+}
+
+#item{
+    height: 20%;
+}
+
+#table{
+    position: absolute;
+    margin-left: 10%;
+    margin-top: 5%;
+    width: 68%;
+    border-style: solid;
+    border-width: 5px;
+    border-color: white;
+    opacity: .7;
+
+}
+
+#table:hover{
+    opacity: .9;
+}
+
+td{
+    width: 10%;
+}
+
+th{
+    width: 5%;
 }

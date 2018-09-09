@@ -12,12 +12,16 @@ export class RegistrationComponent implements OnInit {
     isLinear = false;
     formGroup1: FormGroup;
     formGroup2: FormGroup;
+    formGroup3: FormGroup;
+    formGroup4: FormGroup;
+    formGroup5: FormGroup;
     confirmCode = false;
     codeWasConfirmed = false;
     error = '';
 
     constructor(private _formBuilder: FormBuilder, private auth: AuthorizationService,
     private _router: Router) {}
+
 
     ngOnInit() {
       this.formGroup1 = this._formBuilder.group({
@@ -26,34 +30,43 @@ export class RegistrationComponent implements OnInit {
       this.formGroup2 = this._formBuilder.group({
         secondCtrl: ['', Validators.required]
       });
+      this.formGroup3 = this._formBuilder.group({
+        thirdCtrl: ['', Validators.required]
+      });
+      this.formGroup4 = this._formBuilder.group({
+        fourthCtrl: ['', Validators.required]
+      });
+      this.formGroup5 = this._formBuilder.group({
+        fifthCtrl: ['', Validators.required]
+      });
     }
 
-    register(form: NgForm) {
-      const email = form.value.email;
-      const password = form.value.password;
-      this.auth.register(email, password).subscribe(
-        (data) => {
-          this.confirmCode = true;
-        },
-        (err) => {
-          console.log(err);
-          this.error = 'Registration Error has occurred';
-        }
-      );
-    }
+    // register(form: NgForm) {
+    //   const email = form.value.email;
+    //   const password = form.value.password;
+    //   this.auth.register(email, password).subscribe(
+    //     (data) => {
+    //       this.confirmCode = true;
+    //     },
+    //     (err) => {
+    //       console.log(err);
+    //       this.error = 'Registration Error has occurred';
+    //     }
+    //   );
+    // }
 
-    validateAuthCode(form: NgForm) {
-      const code = form.value.code;
+    // validateAuthCode(form: NgForm) {
+    //   const code = form.value.code;
 
-      this.auth.confirmAuthCode(code).subscribe(
-        (data) => {
-          // this._router.navigateByUrl('/');
-          this.codeWasConfirmed = true;
-          this.confirmCode = false;
-        },
-        (err) => {
-          console.log(err);
-          this.error = 'Confirm Authorization Error has occurred';
-        });
-    }
+    //   this.auth.confirmAuthCode(code).subscribe(
+    //     (data) => {
+    //       // this._router.navigateByUrl('/');
+    //       this.codeWasConfirmed = true;
+    //       this.confirmCode = false;
+    //     },
+    //     (err) => {
+    //       console.log(err);
+    //       this.error = 'Confirm Authorization Error has occurred';
+    //     });
+    // }
   }
