@@ -1,6 +1,8 @@
-export class Posts {
+import { Posts } from './posts';
+
+export class Steps {
     sId?: number;
-    post?: Posts;
+    pId?: number;
     stepNum: number;
     stepName?: string;
     stepText?: string;
