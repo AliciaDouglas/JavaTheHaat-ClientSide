@@ -68,16 +68,13 @@ export class AuthorizationService {
       Pool : userPool
     };
     const cognitoUser = new CognitoUser(userData);
-
+    console.log(userData);
     return Observable.create(observer => {
-
-      console.log('returning cognito user');
 
       cognitoUser.authenticateUser(authenticationDetails, {
         onSuccess: function (result) {
-
           console.log(result);
-          observer.next(result.getIdToken);
+          observer.next(result);
           observer.complete();
         },
         onFailure: function(err) {
