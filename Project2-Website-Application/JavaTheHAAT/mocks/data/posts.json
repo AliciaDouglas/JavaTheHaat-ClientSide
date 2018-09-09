@@ -1,0 +1,227 @@
+{
+    "posts": [
+        {
+            "pId":1,
+            "user":{
+                "uId":1,
+            "fname":"Humphrey",
+            "lname":"Minott",
+            "email":"hminott@reva.com",
+            "username":"hminott",
+            "password":"123",
+            "profilePic":"string to pic",
+            "accTypeId":1,
+            "accType":{
+                "accTypeId": 1,
+                "accType":"User"
+            },
+            "accStatusId":1,
+            "accStatus":{
+                "accStatusId":1,
+                "accStatus":"active"
+            }
+        },
+            "title":"Make your bed",
+            "description":"This post is about how to make your bed",
+            "video":"url...",
+            "timeSubmission":"5:00pm",
+            "categoryId":"1",
+            "steps":[
+                {
+                    "sId":1,
+                    "stepNum":1,
+                    "stepName":"Sheets",
+                    "stepText":"Get your sheets",
+                    "pic":"url..."
+                },
+                {
+                    "sId":2,
+                    "stepNum":2,
+                    "stepName":"Spread",
+                    "stepText":"Place the sheets over the mattress",
+                    "pic":"url..."
+                },
+                {
+                    "sId":3,
+                    "stepNum":3,
+                    "stepName":"Wrinkles",
+                    "stepText":"Get the wrinkles out",
+                    "pic":"url..."
+                },
+                {
+                    "sId":4,
+                    "stepNum":4,
+                    "stepName":"Fluff",
+                    "stepText":"Fluff the pillows",
+                    "pic":"url..."
+                }
+            ],
+            "comments":[
+                {
+                    "cId":2,
+                    "pId":1,
+                    "commentText":"Very helpful :-)",
+                    "timeSubmission":"08:03:83:00",
+                    "user":{
+                        "uId":2,
+                    "fname":"Alex",
+                    "lname":"Hudson",
+                    "email":"alexH@reva.com",
+                    "username":"alexH",
+                    "password":"123",
+                    "profilePic":"string to pic",
+                    "accTypeId":1,
+                    "accType":{
+                        "accTypeId": 1,
+                        "accType":"User"
+                    },
+                    "accStatusId":1,
+                    "accStatus":{
+                        "accStatusId":1,
+                        "accStatus":"active"
+                    }
+                 }  
+                },
+                {
+                    "cId":3,
+                    "pId":1,
+                    "commentText":"Thank you for posting this. I now know",
+                    "timeSubmission":"08:03:83:00",
+                    "user":{
+                        "uId":3,
+                    "fname":"Alicia",
+                    "lname":"Douglas",
+                    "email":"AliciaDough@reva.com",
+                    "username":"adough",
+                    "password":"123",
+                    "profilePic":"string to pic",
+                    "accTypeId":1,
+                    "accType":{
+                        "accTypeId": 1,
+                        "accType":"User"
+                    },
+                    "accStatusId":1,
+                    "accStatus":{
+                        "accStatusId":1,
+                        "accStatus":"active"
+                    }
+                 }  
+                },
+                {
+                    "cId":4,
+                    "pId":1,
+                    "commentText":"I hate your post :(",
+                    "timeSubmission":"08:03:83:00",
+                    "user":{
+                        "fname":"Tyler",
+                    "lname":"Ak",
+                    "email":"Tyler@reva.com",
+                    "username":"Tyler",
+                    "password":"123",
+                    "profilePic":"string to pic",
+                    "accTypeId":1,
+                    "accType":{
+                        "accTypeId": 1,
+                        "accType":"User"
+                    },
+                    "accStatusId":1,
+                    "accStatus":{
+                        "accStatusId":1,
+                        "accStatus":"active"
+                    }
+                 }  
+                }
+            ]
+      
+        
+    },
+        {
+            "pId":2,
+            "user":{
+                "uId":4,
+                "fname":"Tyler",
+                "lname":"Ak",
+                "email":"Tyler@reva.com",
+                "username":"Tyler",
+                "password":"123",
+                "profilePic":"string to pic",
+                "accTypeId":1,
+                "accType":{
+                    "accTypeId": 1,
+                    "accType":"User"
+                },
+                "accStatusId":1,
+                "accStatus":{
+                    "accStatusId":1,
+                    "accStatus":"active"
+                }
+        }, 
+            "title":"How to make pizza",
+            "description":"This post is about how to make pizza",
+            "video":"url...",
+            "timeSubmission":"5:00pm",
+            "categoryId":"2",
+            "steps":[],
+            "comments":[]
+        },
+        {
+            "pId":3,
+            "user":{
+                "uId":3,
+                "fname":"Alicia",
+                "lname":"Douglas",
+                "email":"AliciaDough@reva.com",
+                "username":"adough",
+                "password":"123",
+                "profilePic":"string to pic",
+                "accTypeId":1,
+                "accType":{
+                    "accTypeId": 1,
+                    "accType":"User"
+                },
+                "accStatusId":1,
+                "accStatus":{
+                    "accStatusId":1,
+                    "accStatus":"active"
+                }
+        }, 
+            "title":"How to set a tent",
+            "description":"Learn how to set a tent",
+            "video":"url...",
+            "timeSubmission":"5:00pm",
+            "categoryId":"2",
+            "steps":[],
+            "comments":[]
+        },
+        {
+            "pId":4,
+            "user":{
+                "uId":2,
+                "fname":"Alex",
+                "lname":"Hudson",
+                "email":"alexH@reva.com",
+                "username":"alexH",
+                "password":"123",
+                "profilePic":"string to pic",
+                "accTypeId":1,
+                "accType":{
+                    "accTypeId": 1,
+                    "accType":"User"
+                },
+                "accStatusId":1,
+                "accStatus":{
+                    "accStatusId":1,
+                    "accStatus":"active"
+                }
+        }, 
+            "title":"How to draw",
+            "description":"This post is about how to draw",
+            "video":"url...",
+            "timeSubmission":"5:00pm",
+            "categoryId":"1",
+            "steps":[],
+            "comments":[]
+        }
+
+    ]
+}

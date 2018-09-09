@@ -1,9 +1,10 @@
-import { Posts } from "src/app/models/posts";
+import { Posts } from 'src/app/models/posts';
+import { Users } from './users';
 
 export class Comments {
     cId?: number;
-    post?: Posts;
-    uId?: number;
+    pId?: number;
+    user: Users;
     commentText?: string;
     timeSubmission?: string;
 }

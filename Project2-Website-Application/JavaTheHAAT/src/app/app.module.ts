@@ -1,11 +1,10 @@
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegistrationComponent } from './pages/registration/registration.component';
-import { PostTemplateComponent } from './pages/post-template/post-template.component';
-import { PostSummaryComponent } from './pages/post-template/post-summary/post-summary.component';
 import { AdminComponent } from './admin/admin.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { AppRoutingModule } from './/app-routing.module';
@@ -22,6 +21,13 @@ import { OutdoorsPageComponent } from './pages/Categories/outdoors-page/outdoors
 import { ElectronicsComponent } from './pages/Categories/electronics/electronics.component';
 import { Material } from '../app/material';
 import { AdminNavBarComponent } from './admin-nav-bar/admin-nav-bar.component';
+import { UserNavBarComponent } from './user-nav-bar/user-nav-bar.component';
+import { ViewAllPostsComponent } from 'src/app/adminPages/view-all-posts/view-all-posts.component';
+import { RegisterAdminComponent } from 'src/app/adminPages/register-admin/register-admin.component';
+import { CreateNewCategoryComponent } from 'src/app/adminPages/create-new-category/create-new-category.component';
+import { ViewAllUsersComponent } from 'src/app/adminPages/view-all-users/view-all-users.component';
+import { AdminProfileComponent } from 'src/app/adminPages/admin-profile/admin-profile.component';
+
 
 @NgModule({
   declarations: [
@@ -29,8 +35,6 @@ import { AdminNavBarComponent } from './admin-nav-bar/admin-nav-bar.component';
     NavBarComponent,
     LoginComponent,
     RegistrationComponent,
-    PostTemplateComponent,
-    PostSummaryComponent,
     AdminComponent,
     ProfileComponent,
     HomeScreenComponent,
@@ -41,7 +45,13 @@ import { AdminNavBarComponent } from './admin-nav-bar/admin-nav-bar.component';
     FoodPageComponent,
     OutdoorsPageComponent,
     ElectronicsComponent,
-    AdminNavBarComponent
+    AdminNavBarComponent,
+    UserNavBarComponent,
+    ViewAllPostsComponent,
+    RegisterAdminComponent,
+    CreateNewCategoryComponent,
+    ViewAllUsersComponent,
+    AdminProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +60,8 @@ import { AdminNavBarComponent } from './admin-nav-bar/admin-nav-bar.component';
     BrowserAnimationsModule,
     MatButtonModule,
     MatCheckboxModule,
-    Material
+    Material,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
