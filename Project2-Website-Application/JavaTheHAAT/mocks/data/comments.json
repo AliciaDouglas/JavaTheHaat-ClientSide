@@ -1,0 +1,104 @@
+{
+    "comments": [
+        {
+            "cId":1,
+            "pId":1,
+            "commentText":"I love your post!",
+            "timeSubmission":"08:03:83:00",
+            "user":{
+                "uId":1,
+            "fname":"Humphrey",
+            "lname":"Minott",
+            "email":"hminott@reva.com",
+            "username":"hminott",
+            "password":"123",
+            "profilePic":"string to pic",
+            "accTypeId":1,
+            "accType":{
+                "accTypeId": 1,
+                "accType":"User"
+            },
+            "accStatusId":1,
+            "accStatus":{
+                "accStatusId":1,
+                "accStatus":"active"
+            }
+         }  
+        },
+        {
+            "cId":2,
+            "pId":1,
+            "commentText":"Very helpful :-)",
+            "timeSubmission":"08:03:83:00",
+            "user":{
+                "uId":2,
+            "fname":"Alex",
+            "lname":"Hudson",
+            "email":"alexH@reva.com",
+            "username":"alexH",
+            "password":"123",
+            "profilePic":"string to pic",
+            "accTypeId":1,
+            "accType":{
+                "accTypeId": 1,
+                "accType":"User"
+            },
+            "accStatusId":1,
+            "accStatus":{
+                "accStatusId":1,
+                "accStatus":"active"
+            }
+         }  
+        },
+        {
+            "cId":3,
+            "pId":1,
+            "commentText":"Thank you for posting this. I now know",
+            "timeSubmission":"08:03:83:00",
+            "user":{
+                "uId":3,
+            "fname":"Alicia",
+            "lname":"Douglas",
+            "email":"AliciaDough@reva.com",
+            "username":"adough",
+            "password":"123",
+            "profilePic":"string to pic",
+            "accTypeId":1,
+            "accType":{
+                "accTypeId": 1,
+                "accType":"User"
+            },
+            "accStatusId":1,
+            "accStatus":{
+                "accStatusId":1,
+                "accStatus":"active"
+            }
+         }  
+        },
+        {
+            "cId":4,
+            "pId":1,
+            "commentText":"I hate your post :(",
+            "timeSubmission":"08:03:83:00",
+            "user":{
+                "fname":"Tyler",
+            "lname":"Ak",
+            "email":"Tyler@reva.com",
+            "username":"Tyler",
+            "password":"123",
+            "profilePic":"string to pic",
+            "accTypeId":1,
+            "accType":{
+                "accTypeId": 1,
+                "accType":"User"
+            },
+            "accStatusId":1,
+            "accStatus":{
+                "accStatusId":1,
+                "accStatus":"active"
+            }
+         }  
+        }
+
+    ]
+}

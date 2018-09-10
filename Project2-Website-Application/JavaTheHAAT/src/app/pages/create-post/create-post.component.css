@@ -1,17 +1,56 @@
 #regF{
-    z-index: 1;
-    position: fixed;
-    margin-top: 10%;
-    margin-left: -18%;
+    z-index: 3;
+    position: absolute;
+    margin-top: 12%;
+    margin-left: 3%;
     color: white;
     font-weight: bold;
     width: 20%;
 }
 
+#pImg{
+    width: 100%;
+}
+
+#submit{
+    float: right;
+}
+
+#add{
+    background-color: rgb(6, 47, 66);
+    font-weight: bold;
+    border-radius: 5% 5%;
+}
+#minus{
+    background-color: rgb(131, 12, 4);
+    font-weight: bold;
+    border-radius: 5% 5%;
+}
+
 h1{
-    position: fixed;
+    z-index: 3;
+    position: absolute;
     color: white;
     font-weight: bolder;
-    font-size: 120px;
-    margin-left: -15.5%;
+    font-size: 800%;
+    margin-top: 5%;
+    margin-left: 6%;
+}
+
+#icons{
+    position: fixed;
+    margin-top: 10%;
+    margin-left: 11%;
+    z-index: -1.5;
+    opacity: .6;
+}
+
+#slider{
+    width: 50%;
+    height: 50%;
+    
+}
+
+#item{
+    height: 20%;
 }

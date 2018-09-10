@@ -1,0 +1,81 @@
+{
+    "users": [
+        {
+            "uId":1,
+            "fname":"Humphrey",
+            "lname":"Minott",
+            "email":"hminott@reva.com",
+            "username":"hminott",
+            "password":"123",
+            "profilePic":"string to pic",
+            "accTypeId":1,
+            "accType":{
+                "accTypeId": 1,
+                "accType":"User"
+            },
+            "accStatusId":1,
+            "accStatus":{
+                "accStatusId":1,
+                "accStatus":"active"
+            }
+        },
+        {
+            "uId":2,
+            "fname":"Alex",
+            "lname":"Hudson",
+            "email":"alexH@reva.com",
+            "username":"alexH",
+            "password":"123",
+            "profilePic":"string to pic",
+            "accTypeId":1,
+            "accType":{
+                "accTypeId": 1,
+                "accType":"User"
+            },
+            "accStatusId":1,
+            "accStatus":{
+                "accStatusId":1,
+                "accStatus":"active"
+            }
+        },
+        {
+            "uId":3,
+            "fname":"Alicia",
+            "lname":"Douglas",
+            "email":"AliciaDough@reva.com",
+            "username":"adough",
+            "password":"123",
+            "profilePic":"string to pic",
+            "accTypeId":1,
+            "accType":{
+                "accTypeId": 1,
+                "accType":"User"
+            },
+            "accStatusId":1,
+            "accStatus":{
+                "accStatusId":1,
+                "accStatus":"active"
+            }
+        },
+        {
+            "uId":4,
+            "fname":"Tyler",
+            "lname":"Ak",
+            "email":"Tyler@reva.com",
+            "username":"Tyler",
+            "password":"123",
+            "profilePic":"string to pic",
+            "accTypeId":1,
+            "accType":{
+                "accTypeId": 1,
+                "accType":"User"
+            },
+            "accStatusId":1,
+            "accStatus":{
+                "accStatusId":1,
+                "accStatus":"active"
+            }
+        }
+
+    ]
+}

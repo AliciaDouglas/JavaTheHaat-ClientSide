@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Users } from '../../models/users';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -8,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  user: Users;
+
+  constructor(private ROUTE: Router) { }
 
   ngOnInit() {
+  }
+
+  login() {
+    console.log('login function invoked');
+    this.ROUTE.navigate(['home-screen']);
   }
 
 }
