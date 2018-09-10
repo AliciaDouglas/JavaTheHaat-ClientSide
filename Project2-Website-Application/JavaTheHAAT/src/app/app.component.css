@@ -1,6 +1,5 @@
 #navigate{
     position: fixed;
-    z-index: 2;
     width: 100%;
     z-index: 4;
 }

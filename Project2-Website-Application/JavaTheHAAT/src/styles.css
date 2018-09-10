@@ -1,6 +1,5 @@
 
 /* You can add global styles to this file, and also import other style files */
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 
 #reg{
@@ -14,7 +13,12 @@
     position: fixed;
     z-index: 2;
     opacity: .7;
-    margin-left: -95%;
+    margin-left: -75%;
     margin-top: 2.8%;
+    width: 100%;
 }
 
+#carouselExampleIndicators{
+    position: fixed;
+    width: 105%;
+}
