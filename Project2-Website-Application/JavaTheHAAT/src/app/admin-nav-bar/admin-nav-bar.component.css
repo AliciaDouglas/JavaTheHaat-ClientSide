@@ -1,0 +1,30 @@
+#naviBar{
+    color: white;
+}
+
+.btn{
+    background-color: green;
+    color: limegreen;
+}
+
+.navbar{
+    background-image: url('https://yt3.ggpht.com/a-/AN66SAwQlZAow0EBMi2-tFht-HvmozkqAXlkejVc4A=s900-mo-c-c0xffffffff-rj-k-no');
+    background-size: 500px;
+    opacity: .4;
+    background-position-y: -200px;
+    border-style: solid;
+    border-color: white;
+    border-width: 5px;
+}
+
+.navbar:hover{
+    color: white;
+    z-index: -1;
+    background-image: url('https://media.giphy.com/media/vBjLa5DQwwxbi/giphy.gif');
+    background-size: 500px;
+    opacity: .8;
+    background-position-y: -65px;
+    border-style: solid;
+    border-color: white;
+    border-width: 5px;
+}

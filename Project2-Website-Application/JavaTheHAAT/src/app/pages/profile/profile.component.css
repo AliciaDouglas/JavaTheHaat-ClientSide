@@ -13,6 +13,15 @@
     width: 25%;
 }
 
+#hero{
+    margin-left: 18%;
+    margin-top: 4%;
+    position: fixed;
+    height: auto;
+    width: auto;
+    opacity: .8;
+}
+
 #prof:hover{
     background-color: rgba(53, 49, 49, 0.952); 
 }
@@ -70,6 +79,7 @@ textarea{
 }
 
 #table{
+    z-index: 1;
     position: absolute;
     margin-left: 30%;
     margin-top: 5%;

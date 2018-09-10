@@ -1,11 +1,20 @@
 #log{
     z-index: 3;
     position: fixed;
-    margin-top: 10%;
-    margin-left: -18%;
+    margin-top: 14%;
+    margin-left: 2.5%;
     width: 20%;
     color: aliceblue;
     font-weight: bold;
+}
+
+#hero{
+    margin-left: 18%;
+    margin-top: 4%;
+    position: fixed;
+    height: auto;
+    width: auto;
+    opacity: .8;
 }
 
 h1{
@@ -14,7 +23,8 @@ h1{
     color: white;
     font-weight: bolder;
     font-size: 800%;
-    margin-left: -18%;
+    margin-top: 5%;
+    margin-left: 3.5%;
 }
 
 #icons{
@@ -23,16 +33,6 @@ h1{
     margin-left: 11%;
     z-index: -1.5;
     opacity: .6;
-}
-
-#indicators{
-    margin-bottom: 60%;
-}
-
-#carouselExampleIndicators{
-    position: fixed;
-    width: 100%;
-    margin-left: -21%;
 }
 
 #slider{
