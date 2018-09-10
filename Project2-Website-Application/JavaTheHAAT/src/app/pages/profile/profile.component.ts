@@ -1,3 +1,4 @@
+import { SafePipe } from './../../pipes/safe.pipe';
 import { UsersService } from './../../services/users.service';
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -14,12 +15,15 @@ export class ProfileComponent implements OnInit {
   posts: Posts[];
   user: Users;
 
-  constructor(private http: HttpClient, private userService: UsersService) { }
+  constructor(private http: HttpClient, private userService: UsersService, private safePipe: SafePipe) { }
 
   ngOnInit() {
     this.getAllPosts();
     this.user = null;
     this.getUser(2);
+    for (let i = 0; i < this.posts.length; i++) {
+      this.posts[i].video = this.safePipe.transform(this.posts[i].video);
+    }
   }
 
   getAllPosts() {

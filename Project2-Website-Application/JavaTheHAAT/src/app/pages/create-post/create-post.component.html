@@ -51,7 +51,7 @@
 <form id="regF">
   <div class="form-group">
     <label for="exampleFormControlInput1">Title</label>
-    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Title">
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Title" name= "title" [(ngModel)]="post.title">
   </div>
 
   <div class="form-group">
@@ -68,24 +68,24 @@
     </div>
 
   <div class="form-group ">
-    <label for="exampleFormControlFile1">Upload Video/Image</label>
-    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+    <label for="exampleFormControlFile1">Upload Video</label>
+    <input type="file" accept="video/mp4" class="form-control-file" id="exampleFormControlFile1" name="testPic" (change)="selectFile($event)">
   </div>
 
   <div class="form-group">
     <label for="exampleFormControlTextarea1">Description</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name ="description" [(ngModel)]="post.description"></textarea>
   </div>
 
-  <div class="form-group" *ngFor="let step of steps">
-    <label for="exampleFormControlSelect2">Step:</label> <br>
+  <div class="form-group" *ngFor="let step of post.steps">
+    <label for="exampleFormControlSelect2">Step {{step.stepNum}}: </label> <br>
     <img id="pImg" src="https://cdn.dribbble.com/users/791870/screenshots/2192118/cape_animation.gif"> <br><br>
-    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="step 1">
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="step {{step.stepNum}} text here..." name ="stepText"[(ngModel)]="step.stepText" > 
   </div>
 
   <button id="add" mat-mini-fab="warn" (click)="addStep()">+</button>
-  <button id="minus" mat-mini-fab="warn" (click)="removeStep()">-</button>
-  <button id="submit" mat-raised-button color="primary">Submit</button>
+  <button *ngIf="post.steps.length > 1" id="minus" mat-mini-fab="warn" (click)="removeStep()">-</button>
+  <button id="submit" mat-raised-button color="primary" (click)="makeAPost()">Submit</button>
 </form>
 
 <img src="https://pbs.twimg.com/media/DMDIKcyWsAEsKDj.jpg:large" id="reg">

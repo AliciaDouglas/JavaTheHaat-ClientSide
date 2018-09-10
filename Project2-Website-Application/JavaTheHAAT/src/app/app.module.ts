@@ -22,6 +22,8 @@ import { ElectronicsComponent } from './pages/Categories/electronics/electronics
 import { Material } from '../app/material';
 import { AdminNavBarComponent } from './admin-nav-bar/admin-nav-bar.component';
 import { UserNavBarComponent } from './user-nav-bar/user-nav-bar.component';
+import { UploadFileService } from './services/upload-file.service';
+import { SafePipe } from './pipes/safe.pipe';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,8 @@ import { UserNavBarComponent } from './user-nav-bar/user-nav-bar.component';
     OutdoorsPageComponent,
     ElectronicsComponent,
     AdminNavBarComponent,
-    UserNavBarComponent
+    UserNavBarComponent,
+    SafePipe,
   ],
   imports: [
     BrowserModule,
@@ -52,7 +55,7 @@ import { UserNavBarComponent } from './user-nav-bar/user-nav-bar.component';
     Material,
     HttpClientModule
   ],
-  providers: [],
+  providers: [UploadFileService, SafePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
