@@ -80,13 +80,6 @@
     <label for="exampleFormControlSelect2">Step {{step.stepNum}}: </label> <br>
     <img id="pImg" src="https://cdn.dribbble.com/users/791870/screenshots/2192118/cape_animation.gif"> <br><br>
     <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="step {{step.stepNum}} text here..." name ="stepText"[(ngModel)]="step.stepText" > 
-  <!-- <div class="form-group" *ngFor="let step of steps">
-    <label for="exampleFormControlSelect2">Step:</label>
-    <br>
-    <img id="pImg" src="https://4vector.com/i/free-vector-file-add-icon_101921_File_Add_Icon.png">
-    <br>
-    <br>
-    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="step 1"> -->
   </div> 
 
   <button id="add" mat-mini-fab="warn" (click)="addStep()">+</button>
