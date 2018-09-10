@@ -26,6 +26,7 @@ export class ProfileComponent implements OnInit {
     }
   }
 
+  // This method will get all posts... It hould be changed to getAllPostsByUid, so a user can only see their posts
   getAllPosts() {
     this.userService.getAllPosts().subscribe(result => {
       console.log('This is the JSON title of first:' + result[0].title);
@@ -33,6 +34,8 @@ export class ProfileComponent implements OnInit {
     });
   }
 
+  /* This method will get the currentLogged in user... Should be changed later because cognito will save the user in the userpool
+    So we can get them from there without making another reuqest to the server */
   getUser(uId: number) {
     this.userService.getUserById(uId).subscribe(result => {
       console.log('The user is: ' + result.fname);
