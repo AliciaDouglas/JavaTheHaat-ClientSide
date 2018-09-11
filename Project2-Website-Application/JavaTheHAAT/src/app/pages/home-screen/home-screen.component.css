@@ -1,61 +1,27 @@
-#homeBackground {
-    position: fixed;
-    z-index: 1;
-    width: 100%;
-}
-
 h1{
     position: fixed;
-    color: white;
+    color: rgb(230, 15, 15);
+    -webkit-text-stroke: 1px rgb(255, 255, 255);
     font-weight: bolder;
-    font-size: 700%;
-    margin-left: 32%;
-    margin-top: 15%;
-    z-index: 1;
-    text-shadow: 4px 4px 1px rgba(187, 30, 2, 0.664);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    opacity: .7;
+    font-size: 200%;
+    margin-left: 22%;
+    margin-top: -2.5%;
+    z-index: 5;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    opacity: 1;
     text-align: center;
 }
 
-
-h3{
+#SS{
     position: fixed;
-    z-index: 3;
-    font-size: 400%;
-    color: white;
-    margin-top: -90%;
-    margin-left: 3%;
-    opacity: .8;
-    font-weight: bold;
+    z-index: 5;
+    width: 3%;
+    margin-top: -3.1%;
+    margin-left: 30.5%;
 }
 
-
-
-#icons{
-    position: fixed;
-    margin-top: 10%;
-    margin-left: 11%;
-    z-index: -1.5;
-    opacity: .6;
-}
-
-#indicators{
-    margin-bottom: 60%;
-}
-
-#carouselExampleIndicators{
-    position: fixed;
-    width: 100%;
-}
-
-#slider{
-    width: 50%;
-    height: 50%;
-    
-}
-
-#item{
-    height: 20%;
+#hWall{
+    position: absolute;
+    width: 120%;
 }
 

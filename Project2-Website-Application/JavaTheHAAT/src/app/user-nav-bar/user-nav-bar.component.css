@@ -1,11 +1,21 @@
-
-
 #naviBar{
     color: white;
 }
 #navbarDropdownMenuLink{
     color: white;
 }
+
+#navigation{
+    background-image: url('http://getwallpapers.com/wallpaper/full/8/7/d/591761.jpg');
+    background-repeat: no-repeat;
+    background-position-y: 66%;
+    background-position-x: 50%;
+    opacity: 1;
+    border-style: solid;
+    border-color: rgb(0, 53, 102);
+    border-width: 4px;
+}
+
 #craft{
     color: black;
     font-weight: bold;
@@ -15,13 +25,11 @@
 #craft:hover{
     color: white;
     z-index: -1;
-    background-image: url('https://www.wallpaperup.com/uploads/wallpapers/2014/09/05/436402/6453bc345c8c2250220b82cea627a1e8-700.jpg');
+    background-image: url('https://steamcdn-a.akamaihd.net/steam/apps/720750/ss_5f9424f371d158550d9adccf7dc92dc1428b430b.1920x1080.jpg?t=1533226012');
     background-repeat: no-repeat;
     background-size: 200px;
     opacity: .7;
-    background-position-y: -65px;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black;
+    background-position-y: -40px;
 }
 
 #hI{
@@ -32,11 +40,11 @@
 #hI:hover{
     color: white;
     z-index: -1;
-    background-image: url('https://i.pinimg.com/originals/0e/2a/5b/0e2a5bb0c4a42c874384fcec0b74be9c.jpg');
+    background-image: url('http://i.newsarama.com/images/i/000/139/896/original/WELCOMEHOME_FIRSTSET2.jpg');
     background-repeat: no-repeat;
     background-size: 200px;
     opacity: .7;
-    background-position-y: -65px;
+    background-position-y: -40px;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: black;
 }
@@ -83,11 +91,11 @@
 #oG:hover{
     color: white;
     z-index: -1;
-    background-image: url('http://getwallpapers.com/wallpaper/full/5/5/3/1077071-large-japanese-garden-wallpapers-2048x1280-windows.jpg');
+    background-image: url('https://images4.alphacoders.com/783/783462.png');
     background-repeat: no-repeat;
     background-size: 200px;
     opacity: .7;
-    background-position-y: -65px;
+    background-position-y: -35px;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: black;
 }
