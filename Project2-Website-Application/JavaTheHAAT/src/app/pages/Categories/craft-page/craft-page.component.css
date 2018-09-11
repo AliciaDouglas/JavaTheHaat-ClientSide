@@ -1,7 +1,6 @@
 #craft{
     position: fixed;
-    z-index: 1;
-    width: auto;
+    z-index: -1;
     height: auto;
     width: 100%;
 }

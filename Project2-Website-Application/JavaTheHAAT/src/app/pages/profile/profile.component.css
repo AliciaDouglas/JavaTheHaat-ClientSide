@@ -13,13 +13,9 @@
     width: 25%;
 }
 
-#hero{
-    margin-left: 18%;
-    margin-top: 4%;
+#hWall{
     position: fixed;
-    height: auto;
-    width: auto;
-    opacity: .8;
+    width: 120%;
 }
 
 #prof:hover{
