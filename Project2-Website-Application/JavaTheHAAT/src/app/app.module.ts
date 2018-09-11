@@ -22,6 +22,8 @@ import { ElectronicsComponent } from './pages/Categories/electronics/electronics
 import { Material } from '../app/material';
 import { AdminNavBarComponent } from './admin-nav-bar/admin-nav-bar.component';
 import { UserNavBarComponent } from './user-nav-bar/user-nav-bar.component';
+import { UploadFileService } from './services/upload-file.service';
+import { SafePipe } from './pipes/safe.pipe';
 import { ViewAllPostsComponent } from 'src/app/adminPages/view-all-posts/view-all-posts.component';
 import { RegisterAdminComponent } from 'src/app/adminPages/register-admin/register-admin.component';
 import { CreateNewCategoryComponent } from 'src/app/adminPages/create-new-category/create-new-category.component';
@@ -47,6 +49,7 @@ import { AdminProfileComponent } from 'src/app/adminPages/admin-profile/admin-pr
     ElectronicsComponent,
     AdminNavBarComponent,
     UserNavBarComponent,
+    SafePipe,
     ViewAllPostsComponent,
     RegisterAdminComponent,
     CreateNewCategoryComponent,
@@ -63,7 +66,7 @@ import { AdminProfileComponent } from 'src/app/adminPages/admin-profile/admin-pr
     Material,
     HttpClientModule
   ],
-  providers: [],
+  providers: [UploadFileService, SafePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

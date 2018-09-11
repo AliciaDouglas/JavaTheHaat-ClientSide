@@ -3,7 +3,7 @@ import { AccountType } from './accountType';
 
 export class Users {
     uId?: number;
-    fname: string;
+    fname?: string;
     lname?: string;
     email?: string;
     username?: string;
@@ -12,5 +12,5 @@ export class Users {
     accTypeId?: number;
     accType?: AccountType;
     accStatusId?: number;
-    AccountStatus?: AccountStatus;
+    accStatus?: AccountStatus;
 }

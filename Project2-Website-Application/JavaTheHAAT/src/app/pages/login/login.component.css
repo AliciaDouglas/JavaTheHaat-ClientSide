@@ -8,15 +8,6 @@
     font-weight: bold;
 }
 
-#hero{
-    margin-left: 18%;
-    margin-top: 4%;
-    position: fixed;
-    height: auto;
-    width: auto;
-    opacity: .8;
-}
-
 h1{
     z-index: 3;
     position: fixed;
@@ -27,23 +18,12 @@ h1{
     margin-left: 3.5%;
 }
 
-#icons{
+#hWall{
     position: fixed;
-    margin-top: 10%;
-    margin-left: 11%;
-    z-index: -1.5;
-    opacity: .6;
+    width: 120%;
 }
 
-#slider{
-    width: 50%;
-    height: 50%;
-    
-}
 
-#item{
-    height: 20%;
-}
 
 
 
