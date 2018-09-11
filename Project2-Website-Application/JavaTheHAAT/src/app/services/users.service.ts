@@ -31,6 +31,11 @@ registerUser(user: Users): Observable<Users> {
   return this.http.post<Users>('http://localhost:3000/users', user, HTTP_OPTIONS);
 }
 
+// This method will get a specific user by Email need to know if implemented on server
+// getUserByEmail(email: String): Observable<Users> {
+//   return this.http.get<Users>('http://localhost:3000/users?uId=' + email, HTTP_OPTIONS);
+// }
+
 // This method will get a specific user by Id
 getUserById(uId: number): Observable<Users> {
   return this.http.get<Users>('http://localhost:3000/users?uId=' + uId, HTTP_OPTIONS);

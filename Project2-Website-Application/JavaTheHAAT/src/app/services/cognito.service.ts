@@ -114,7 +114,15 @@ export class CognitoService {
       onFailure: function(err: any) {
         console.log('[ERROR] - Failed to authenticate user');
         resultStream.next(err);
-      }
+      },
+      // newPasswordRequired: (userAttributes, requiredAttributes) => {
+      //   delete userAttributes.email_verified;
+      //   cognitoUser.completeNewPasswordChallenge(
+      //     'newPassword',
+      //     userAttributes,
+      //     this.
+      //   );
+      // }
     });
 
     return resultStream;

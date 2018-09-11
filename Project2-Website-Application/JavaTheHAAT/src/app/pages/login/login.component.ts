@@ -37,6 +37,8 @@ export class LoginComponent implements OnInit {
       {type: 'required', message: 'Password is required'}
     ]
   };
+  userService: any;
+  usersService: any;
 
   constructor(
     private cognitoService: CognitoService,
@@ -107,31 +109,31 @@ export class LoginComponent implements OnInit {
             * their information from the database.
             */
 
-            // this.userService.getUserByEmail(email).subscribe(
-            //   user => {
-            //     if (user) {
-            //       /*
-            //       * This is here to fix a strange problem. We are using json server
-            //       * to mimic a functional backend. When you query json server for a
-            //       * record, it tends to return a list even if there is only one matching
-            //       * row in the database. In the future when the real backend is connected,
-            //       * that won't be a problem. So I decided to check if the result is an
-            //       * array and if so get the first item as the user.
-            //       */
-            //       if (user['length']) {
-            //         user = user[0];
-            //       }
+            this.userService.getUserByEmail(email).subscribe(
+              user => {
+                if (user) {
+                  /*
+                  * This is here to fix a strange problem. We are using json server
+                  * to mimic a functional backend. When you query json server for a
+                  * record, it tends to return a list even if there is only one matching
+                  * row in the database. In the future when the real backend is connected,
+                  * that won't be a problem. So I decided to check if the result is an
+                  * array and if so get the first item as the user.
+                  */
+                  if (user['length']) {
+                    user = user[0];
+                  }
 
-            //       sessionStorage.setItem('user', JSON.stringify(user));
-            //       this.userService.user.next(user);
-            //       this.router.navigate(['dashboard']);
-            //     }
-            //   }
-            // );
-          // }
+                  sessionStorage.setItem('user', JSON.stringify(user));
+                  this.usersService.user.next(user);
+                  this.router.navigate(['dashboard']);
+                }
+              }
+            );
+          }
         }
-      // );
-    });
+      );
+    }
   }
-  }
+
 
