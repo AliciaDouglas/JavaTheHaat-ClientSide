@@ -70,4 +70,5 @@ createAPost(post: Posts): Observable<Posts> {
 deleteMyPost(uId: number, pId: number): Observable<Posts> {
   return this.http.delete<Posts>('http://localhost:3000/posts?uId=1&pId=1', HTTP_OPTIONS);
 }
+
 }

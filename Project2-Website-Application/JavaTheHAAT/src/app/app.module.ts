@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegistrationComponent } from './pages/registration/registration.component';
-import { AdminComponent } from './admin/admin.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { FormsModule } from '@angular/forms';
@@ -22,6 +21,8 @@ import { ElectronicsComponent } from './pages/Categories/electronics/electronics
 import { Material } from '../app/material';
 import { AdminNavBarComponent } from './admin-nav-bar/admin-nav-bar.component';
 import { UserNavBarComponent } from './user-nav-bar/user-nav-bar.component';
+import { UploadFileService } from './services/upload-file.service';
+import { SafePipe } from './pipes/safe.pipe';
 import { ViewAllPostsComponent } from 'src/app/adminPages/view-all-posts/view-all-posts.component';
 import { RegisterAdminComponent } from 'src/app/adminPages/register-admin/register-admin.component';
 import { CreateNewCategoryComponent } from 'src/app/adminPages/create-new-category/create-new-category.component';
@@ -35,7 +36,6 @@ import { CognitoService } from './services/cognito.service';
     NavBarComponent,
     LoginComponent,
     RegistrationComponent,
-    AdminComponent,
     ProfileComponent,
     HomeScreenComponent,
     CreatePostComponent,
@@ -47,6 +47,7 @@ import { CognitoService } from './services/cognito.service';
     ElectronicsComponent,
     AdminNavBarComponent,
     UserNavBarComponent,
+    SafePipe,
     ViewAllPostsComponent,
     RegisterAdminComponent,
     CreateNewCategoryComponent,
@@ -64,7 +65,7 @@ import { CognitoService } from './services/cognito.service';
     HttpClientModule,
 
   ],
-  providers: [CognitoService],
+  providers: [UploadFileService, SafePipe, CognitoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

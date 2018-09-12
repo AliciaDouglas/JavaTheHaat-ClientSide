@@ -13,6 +13,11 @@
     width: 25%;
 }
 
+#hWall{
+    position: fixed;
+    width: 120%;
+}
+
 #prof:hover{
     background-color: rgba(53, 49, 49, 0.952); 
 }
@@ -41,35 +46,13 @@ textarea{
     width: 100%;
 }
 
-#icons{
+#design{
+    width: 100%;
     position: fixed;
-    margin-top: 10%;
-    margin-left: 11%;
-    z-index: -1.5;
-    opacity: .6;
-}
-
-.carousel slide{
-    width: auto;
-    height: auto;
-}
-
-.carousel-item{
-    width: auto;
-    height: auto;
-}
-
-#slider{
-    width: 50%;
-    height: 50%;
-    
-}
-
-#item{
-    height: 20%;
 }
 
 #table{
+    z-index: 1;
     position: absolute;
     margin-left: 30%;
     margin-top: 5%;

@@ -1,3 +1,29 @@
-#login{
-    text-align: right;
+#log{
+    z-index: 3;
+    position: fixed;
+    margin-top: 14%;
+    margin-left: 2.5%;
+    width: 20%;
+    color: aliceblue;
+    font-weight: bold;
 }
+
+h1{
+    z-index: 3;
+    position: fixed;
+    color: white;
+    font-weight: bolder;
+    font-size: 800%;
+    margin-top: 5%;
+    margin-left: 3.5%;
+}
+
+#hWall{
+    position: fixed;
+    width: 120%;
+}
+
+
+
+
+

@@ -1,8 +1,8 @@
 #out{
     position: fixed;
     z-index: 1;
-    width: auto;
     height: auto;
+    width: auto;
 }
 
 h1{
