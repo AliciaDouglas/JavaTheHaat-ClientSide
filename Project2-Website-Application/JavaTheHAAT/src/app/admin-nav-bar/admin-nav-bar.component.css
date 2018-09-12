@@ -7,24 +7,86 @@
     color: limegreen;
 }
 
-.navbar{
-    background-image: url('https://yt3.ggpht.com/a-/AN66SAwQlZAow0EBMi2-tFht-HvmozkqAXlkejVc4A=s900-mo-c-c0xffffffff-rj-k-no');
-    background-size: 500px;
-    opacity: .4;
-    background-position-y: -200px;
-    border-style: solid;
-    border-color: white;
-    border-width: 5px;
+#navbarDropdownMenuLink{
+    color: white;
 }
 
-.navbar:hover{
-    color: white;
-    z-index: -1;
-    background-image: url('https://media.giphy.com/media/vBjLa5DQwwxbi/giphy.gif');
-    background-size: 500px;
-    opacity: .8;
-    background-position-y: -65px;
+#navigation{
+    background-image: url('http://getwallpapers.com/wallpaper/full/8/7/d/591761.jpg');
+    background-repeat: no-repeat;
+    background-position-y: 36%;
+    background-position-x: 20%;
+    opacity: 1;
     border-style: solid;
-    border-color: white;
-    border-width: 5px;
+    border-color: rgb(0, 53, 102);
+    border-width: 4px;
 }
+
+.dropdown-menu{
+    border-style: solid;
+    border-width: 5px;
+    border-color: darkred;
+    background-color: rgba(155, 1, 1, 0.589);
+}
+
+#hQ{
+    color: white;
+    font-weight: bold;
+}
+#hQ:hover{
+    color: white;
+    font-size: 25px;
+    z-index: -1;
+    background-image: url('http://cdn1.sciencefiction.com/wp-content/uploads/2017/10/Captain_Marvel-avengers.jpg');
+    background-repeat: no-repeat;
+    background-size: 250px;
+    opacity: 1;
+    background-position-y: -12px;
+}
+
+#cNC{
+    color: white;
+    font-weight: bold;
+}
+#cNC:hover{
+    color: white;
+    font-size: 25px;
+    z-index: -1;
+    background-image: url('https://steamcdn-a.akamaihd.net/steam/apps/720750/ss_5f9424f371d158550d9adccf7dc92dc1428b430b.1920x1080.jpg?t=1533226012');
+    background-repeat: no-repeat;
+    background-size: 200px;
+    opacity: 1;
+    background-position-y: -40px;
+}
+
+#team{
+    color: white;
+    font-weight: bold;
+}
+#team:hover{
+    color: white;
+    font-size: 25px;
+    z-index: -1;
+    background-image: url('https://steamcdn-a.akamaihd.net/steam/apps/720750/ss_5f9424f371d158550d9adccf7dc92dc1428b430b.1920x1080.jpg?t=1533226012');
+    background-repeat: no-repeat;
+    background-size: 200px;
+    opacity: 1;
+    background-position-y: -40px;
+}
+
+#prof{
+    color: white;
+    font-weight: bold;
+}
+#prof:hover{
+    color: white;
+    font-size: 25px;
+    z-index: -1;
+    background-image: url('https://steamcdn-a.akamaihd.net/steam/apps/720750/ss_5f9424f371d158550d9adccf7dc92dc1428b430b.1920x1080.jpg?t=1533226012');
+    background-repeat: no-repeat;
+    background-size: 200px;
+    opacity: 1;
+    background-position-y: -40px;
+}
+
+

@@ -4,106 +4,118 @@
 #navbarDropdownMenuLink{
     color: white;
 }
+.dropdown-menu{
+    border-style: solid;
+    border-width: 5px;
+    border-color: darkred;
+    background-color: rgba(155, 1, 1, 0.589);
+}
+
+#navigation{
+    background-image: url('http://getwallpapers.com/wallpaper/full/8/7/d/591761.jpg');
+    background-repeat: no-repeat;
+    background-position-y: 66%;
+    background-position-x: 50%;
+    opacity: 1;
+    border-style: solid;
+    border-color: rgb(0, 53, 102);
+    border-width: 4px;
+}
 
 #craft{
-    color: black;
+    color: white;
     font-weight: bold;
 
 }
 
 #craft:hover{
     color: white;
+    font-size: 30px;
     z-index: -1;
-    background-image: url('https://www.wallpaperup.com/uploads/wallpapers/2014/09/05/436402/6453bc345c8c2250220b82cea627a1e8-700.jpg');
+    background-image: url('https://steamcdn-a.akamaihd.net/steam/apps/720750/ss_5f9424f371d158550d9adccf7dc92dc1428b430b.1920x1080.jpg?t=1533226012');
     background-repeat: no-repeat;
     background-size: 200px;
-    opacity: .7;
-    background-position-y: -65px;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black;
+    opacity: 1;
+    background-position-y: -40px;
 }
 
 #hI{
-    color: black;
+    color: white;
     font-weight: bold;
+    
 }
 
 #hI:hover{
     color: white;
+    font-size: 30px;
     z-index: -1;
-    background-image: url('https://i.pinimg.com/originals/0e/2a/5b/0e2a5bb0c4a42c874384fcec0b74be9c.jpg');
+    background-image: url('http://i.newsarama.com/images/i/000/139/896/original/WELCOMEHOME_FIRSTSET2.jpg');
     background-repeat: no-repeat;
-    background-size: 200px;
-    opacity: .7;
-    background-position-y: -65px;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black;
+    background-size: 800px;
+    opacity: 1;
+    background-position-y: 25%;
 }
 
 #food{
-    color: black;
+    color: white;
     font-weight: bold;
 }
 
 #food:hover{
     color: white;
+    font-size: 30px;
     z-index: -1;
-    background-image: url('https://food-images.files.bbci.co.uk/food/recipes/mediterranean_puff_50963_16x9.jpg');
+    background-image: url('https://static.comicvine.com/uploads/original/11122/111223314/4824418-daredevil-with-luke-cage.jpg');
     background-repeat: no-repeat;
     background-size: 200px;
-    opacity: .7;
-    background-position-y: -65px;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black;
+    opacity: 1;
+    background-position-y: -40px;
 }
 
 #art{
-    color: black;
+    color: white;
     font-weight: bold;
 }
 
 #art:hover{
     color: white;
+    font-size: 30px;
     z-index: -1;
-    background-image: url('https://i.pinimg.com/originals/19/a1/b2/19a1b216f31a5d18a054aef242ccacab.jpg');
+    background-image: url('https://s3-ap-southeast-2.amazonaws.com/patrickbrownart/1001/MarvelVillians_2000px.jpg');
     background-repeat: no-repeat;
     background-size: 200px;
-    opacity: .7;
-    background-position-y: -65px;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black;
+    opacity: 1;
+    background-position-y: -40px;
 }
 
 #oG{
-    color: black;
+    color: white;
     font-weight: bold;
 }
 
 #oG:hover{
     color: white;
+    font-size: 30px;
     z-index: -1;
-    background-image: url('http://getwallpapers.com/wallpaper/full/5/5/3/1077071-large-japanese-garden-wallpapers-2048x1280-windows.jpg');
+    background-image: url('https://images4.alphacoders.com/783/783462.png');
     background-repeat: no-repeat;
     background-size: 200px;
-    opacity: .7;
-    background-position-y: -65px;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black;
+    opacity: 1;
+    background-position-y: -35px;
 }
 
 #elec{
-    color: black;
+    color: white;
     font-weight: bold; 
 }
 
 #elec:hover{
     color: white;
+    font-size: 30px;
     z-index: -1;
-    background-image: url('http://www.ultrahdfreewallpapers.com/uploads/large/3d-and-abstract/3d-hd-wallpaper-0288.jpg');
+    background-image: url('http://test.martiromances.com/wp-content/uploads/IRON_MAN_BUST_MARTI_ROMANCES.png');
     background-repeat: no-repeat;
     background-size: 200px;
-    opacity: .7;
-    background-position-y: -65px;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black;
+    opacity: 1;
+    background-position-y: -50px;
 }
