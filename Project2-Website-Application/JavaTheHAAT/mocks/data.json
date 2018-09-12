@@ -357,7 +357,7 @@
       },
       "title": "Learn how to write better",
       "description": "This post is about how to write better... :) Testing please work ",
-      "video": "",
+      "video": "https://java-the-haat.s3.us-east-2.amazonaws.com/jsa-s3/HowToWriteBetter.mp4",
       "categoryId": 2,
       "steps": [
         {
