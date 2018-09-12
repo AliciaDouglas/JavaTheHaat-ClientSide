@@ -29,7 +29,7 @@ import { RegisterAdminComponent } from 'src/app/adminPages/register-admin/regist
 import { CreateNewCategoryComponent } from 'src/app/adminPages/create-new-category/create-new-category.component';
 import { ViewAllUsersComponent } from 'src/app/adminPages/view-all-users/view-all-users.component';
 import { AdminProfileComponent } from 'src/app/adminPages/admin-profile/admin-profile.component';
-
+import { CognitoService } from './services/cognito.service';
 
 @NgModule({
   declarations: [
@@ -64,9 +64,10 @@ import { AdminProfileComponent } from 'src/app/adminPages/admin-profile/admin-pr
     MatButtonModule,
     MatCheckboxModule,
     Material,
-    HttpClientModule
+    HttpClientModule,
+
   ],
-  providers: [UploadFileService, SafePipe],
+  providers: [UploadFileService, SafePipe, CognitoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

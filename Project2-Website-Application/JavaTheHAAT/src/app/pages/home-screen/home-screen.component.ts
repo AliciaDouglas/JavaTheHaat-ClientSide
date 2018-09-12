@@ -7,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeScreenComponent implements OnInit {
 
+  bAuthenticated = false;
+
   constructor() { }
 
   ngOnInit() {
-  }
 
+}
 }

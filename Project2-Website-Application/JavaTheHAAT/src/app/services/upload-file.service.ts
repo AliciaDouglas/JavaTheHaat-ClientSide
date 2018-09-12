@@ -15,8 +15,8 @@ export class UploadFileService {
     // Defining & locating the s3 bucket instance
     const bucket = new S3(
       {
-        accessKeyId: '***************',
-        secretAccessKey: '************************',
+        accessKeyId: 'AKIAJFYNVO3KZQLOGCTQ',
+        secretAccessKey: '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',
         region: 'us-east-1'
       }
     );

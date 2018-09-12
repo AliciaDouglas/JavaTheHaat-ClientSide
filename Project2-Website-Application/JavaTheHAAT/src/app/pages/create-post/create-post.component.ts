@@ -28,8 +28,8 @@ export class CreatePostComponent implements OnInit {
 
   // I will send this post object to the api after the user completes all the fields required for it
   post: Posts = {
-     id: 193,
-     pId: 97,
+     id: 194,
+     pId: 98,
      user: {
        uId: 4,
        fname: 'Tyler',
