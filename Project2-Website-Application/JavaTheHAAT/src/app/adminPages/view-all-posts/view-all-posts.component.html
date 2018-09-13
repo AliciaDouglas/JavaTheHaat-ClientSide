@@ -1,1 +1,28 @@
-<img src="https://www.desktopbackground.org/download/o/2012/09/18/454523_download-abstract-macbook-pro-wallpapers-3421-2880x1800-px-high_2880x1800_h.jpg">
+<!-- Table containing the User post -->
+<!-- Titles for each row-->
+<table id="table" class="table table-dark">
+    <thead>
+        <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Video</th>
+            <th scope="col">Steps</th>
+        </tr>
+    </thead>
+    <!-- Post information, ordered by above <thead> -->
+    <tbody>
+        <tr *ngFor="let postsAll of posts">
+            <th>{{postsAll.title}}</th>
+            <th>
+                {{postsAll.description}}
+            </th>
+            <td>
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/4KBEb-_B45o" allowfullscreen></iframe>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<img id="background" src="https://images8.alphacoders.com/567/567772.jpg">
