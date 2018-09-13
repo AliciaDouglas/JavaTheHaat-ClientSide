@@ -7,7 +7,7 @@ import { Users } from '../../models/users';
   styleUrls: ['./home-screen.component.css']
 })
 export class HomeScreenComponent implements OnInit {
- 
+
   bAuthenticated = false;
 
   constructor() { }
