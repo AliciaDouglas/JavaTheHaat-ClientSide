@@ -2,6 +2,12 @@
     color: white;
 }
 
+.nav-link:hover{
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0px 0px 1px 1px;
+}
+
 .btn{
     background-color: green;
     color: limegreen;
@@ -37,7 +43,7 @@
     color: white;
     font-size: 25px;
     z-index: -1;
-    background-image: url('http://cdn1.sciencefiction.com/wp-content/uploads/2017/10/Captain_Marvel-avengers.jpg');
+    background-image: url('https://s3.amazonaws.com/s3.kywam.radio.com/styles/nts_image_cover_tall_775x425/s3/Batwoman.jpg?itok=UiHVshzk&c=2bcb2b35c2933901ac4ec23260cd8c04');
     background-repeat: no-repeat;
     background-size: 250px;
     opacity: 1;
@@ -52,11 +58,11 @@
     color: white;
     font-size: 25px;
     z-index: -1;
-    background-image: url('https://steamcdn-a.akamaihd.net/steam/apps/720750/ss_5f9424f371d158550d9adccf7dc92dc1428b430b.1920x1080.jpg?t=1533226012');
+    background-image: url('https://files.shandymedia.com/wp-content/uploads/2017/05/14162143/the-ray-first-gay-superhero-lead-cw-seed.png');
     background-repeat: no-repeat;
-    background-size: 200px;
+    background-size: 225px;
     opacity: 1;
-    background-position-y: -40px;
+    background-position-y: -65px;
 }
 
 #team{
@@ -67,11 +73,11 @@
     color: white;
     font-size: 25px;
     z-index: -1;
-    background-image: url('https://steamcdn-a.akamaihd.net/steam/apps/720750/ss_5f9424f371d158550d9adccf7dc92dc1428b430b.1920x1080.jpg?t=1533226012');
+    background-image: url('https://i2.wp.com/comicbooksgalaxy.com/wp-content/uploads/2017/11/Dick-Grayson-as-Nightwing.jpg?resize=1000%2C600');
     background-repeat: no-repeat;
     background-size: 200px;
     opacity: 1;
-    background-position-y: -40px;
+    background-position-y: -25px;
 }
 
 #prof{
@@ -82,11 +88,11 @@
     color: white;
     font-size: 25px;
     z-index: -1;
-    background-image: url('https://steamcdn-a.akamaihd.net/steam/apps/720750/ss_5f9424f371d158550d9adccf7dc92dc1428b430b.1920x1080.jpg?t=1533226012');
+    background-image: url('http://media.hollywood.com/images/638x425/3980857.jpg');
     background-repeat: no-repeat;
     background-size: 200px;
     opacity: 1;
-    background-position-y: -40px;
+    background-position-y: -25px;
 }
 
 
