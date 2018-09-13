@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 import { Users } from '../models/users';
 import { Posts } from '../models/posts';
 
@@ -16,12 +16,24 @@ const HTTP_OPTIONS = {
 })
 export class UsersService {
 
+  user: BehaviorSubject<Users> = new BehaviorSubject<Users>(null);
+
+  // static registerUser(Users: typeof Users): any {
+  //   throw new Error("Method not implemented.");
+  // }
+
   constructor(private http: HttpClient) { }
+
 
 
 // This method registers/creates a user in the database
 registerUser(user: Users): Observable<Users> {
   return this.http.post<Users>('http://localhost:3000/users', user, HTTP_OPTIONS);
+}
+
+// This method will get a specific user by Email and password for user authentication in DB
+getUserByEmailAndPassword(email: String, password: String): Observable<Users> {
+  return this.http.get<Users>('http://localhost:3000/users?email=' + email + '&password=' + password, HTTP_OPTIONS);
 }
 
 // This method will get a specific user by Id

@@ -1,74 +1,38 @@
-<h1>Register</h1>
 
-<mat-vertical-stepper id="regi" [linear]="isLinear" #stepper>
-  <mat-step [stepControl]="formGroup1">
-    <form [formGroup]="formGroup1">
-      <ng-template matStepLabel>First Name</ng-template>
-      <mat-form-field>
-        <input matInput placeholder="First name" formControlName="firstCtrl" required>
-      </mat-form-field>
-      <div>
-        <button mat-button matStepperNext>Next</button>
-      </div>
-    </form>
-  </mat-step>
-  <mat-step [stepControl]="formGroup2">
-    <form [formGroup]="formGroup2">
-      <ng-template matStepLabel>Last Name</ng-template>
-      <mat-form-field>
-        <input matInput placeholder="Last Name" formControlName="secondCtrl" required>
-      </mat-form-field>
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
-      </div>
-    </form>
-  </mat-step>
-  <mat-step [stepControl]="formGroup3">
-    <form [formGroup]="formGroup3">
-      <ng-template matStepLabel>Email</ng-template>
-      <mat-form-field>
-        <input matInput placeholder="Email" formControlName="thirdCtrl" required>
-      </mat-form-field>
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
-      </div>
-    </form>
-  </mat-step>
-  <mat-step [stepControl]="formGroup4">
-    <form [formGroup]="formGroup4">
-      <ng-template matStepLabel>Username</ng-template>
-      <mat-form-field>
-        <input matInput placeholder="Username" formControlName="fourthCtrl" required>
-      </mat-form-field>
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
-      </div>
-    </form>
-  </mat-step>
-  <mat-step [stepControl]="formGroup5">
-    <form [formGroup]="formGroup5">
-      <ng-template matStepLabel>Password</ng-template>
-      <mat-form-field>
-        <input matInput placeholder="Password" formControlName="fifthCtrl" required>
-      </mat-form-field>
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
-      </div>
-    </form>
-  </mat-step>
-  <mat-step>
-    <ng-template matStepLabel>Done</ng-template>
-    You are now done.
-    <div>
-      <button mat-button matStepperPrevious>Back</button>
-      <button mat-button (click)="stepper.reset()">Reset</button>
+<br>
+<br>
+
+<div id="login" class="jumbotron">
+  <form [formGroup]="registrationForm">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email</label>
+      <input placeholder="Email" formControlName="email" required>
     </div>
-  </mat-step>
-</mat-vertical-stepper>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input placeholder="Password" type="password" formControlName="password" required>
+    </div>
+    <!-- <div class="form-group">
+      <label for="verifypassword"> Verify Password</label>
+      <input placeholder="Confirm Password" type="password" formControlName="verifypassword" required>
+    </div> -->
+    <div class="form-group">
+      <label for="firstName"> First Name</label>
+      <input placeholder="First Name" type="text" formControlName="firstName" required>
+    </div>
+    <div class="form-group">
+      <label for="verifypassword"> Last Name</label>
+      <input placeholder="Last Name" type="text" formControlName="lastName" required>
+    </div>
+    <div class="form-group">
+      <label for="username"> Username</label>
+      <input placeholder="Last Name" type="text" formControlName="username" required>
+    </div>
+    <button mat-raised-button color="primary" (click)="register()">Register</button>
+  </form>
+  
+  </div>
+
 
 <img src="https://wallpapercave.com/wp/DTvUQor.jpg" id="outter">
 
