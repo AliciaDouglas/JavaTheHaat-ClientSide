@@ -7,7 +7,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegistrationComponent } from './pages/registration/registration.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { AppRoutingModule } from './/app-routing.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeScreenComponent } from './pages/home-screen/home-screen.component';
 import { MatButtonModule, MatCheckboxModule } from '@angular/material';
@@ -29,6 +29,8 @@ import { CreateNewCategoryComponent } from 'src/app/adminPages/create-new-catego
 import { ViewAllUsersComponent } from 'src/app/adminPages/view-all-users/view-all-users.component';
 import { AdminProfileComponent } from 'src/app/adminPages/admin-profile/admin-profile.component';
 import { CognitoService } from './services/cognito.service';
+import { UsersService } from './services/users.service';
+
 
 @NgModule({
   declarations: [
@@ -63,9 +65,10 @@ import { CognitoService } from './services/cognito.service';
     MatCheckboxModule,
     Material,
     HttpClientModule,
+    ReactiveFormsModule
 
   ],
-  providers: [UploadFileService, SafePipe, CognitoService],
+  providers: [UploadFileService, SafePipe, CognitoService, UsersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

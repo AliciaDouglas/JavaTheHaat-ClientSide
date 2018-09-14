@@ -17,7 +17,7 @@ constructor(private http: HttpClient) { }
 
 // This method registers/creates a user in the database
 registerUser(user: Users): Observable<Users> {
-  return this.http.post<Users>('http://ec2-18-223-33-87.us-east-2.compute.amazonaws.com:8080/users', user);
+  return this.http.post<Users>('http://ec2-18-223-33-87.us-east-2.compute.amazonaws.com:8080/users', user );
 }
 
 // This method will get a specific user by Email and password for user authentication in DB
