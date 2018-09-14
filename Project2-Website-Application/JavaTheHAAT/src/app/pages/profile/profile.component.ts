@@ -17,19 +17,20 @@ export class ProfileComponent implements OnInit {
 
   constructor(private http: HttpClient, private userService: UsersService, private safePipe: SafePipe) { }
 
+  // This will initiate when the page loads
   ngOnInit() {
-    this.getAllPosts();
     this.user = null;
-    this.getUser(2);
+    this.getUser(21);
+    this.getAllPostsByUserId(this.user.uId);
     for (let i = 0; i < this.posts.length; i++) {
       this.posts[i].video = this.safePipe.transform(this.posts[i].video);
     }
   }
 
   // This method will get all posts... It hould be changed to getAllPostsByUid, so a user can only see their posts
-  getAllPosts() {
-    this.userService.getAllPosts().subscribe(result => {
-      console.log('This is the JSON title of first:' + result[0].title);
+  getAllPostsByUserId(uId: number) {
+    this.userService.getAllPostsByUser(this.user.uId).subscribe(result => {
+      console.log('This is the JSON title of first:' + result);
       this.posts = result;
     });
   }

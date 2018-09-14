@@ -1,3 +1,4 @@
+import { Category } from './../../models/category';
 import { SafeResourceUrl } from '@angular/platform-browser';
 import { UsersService } from './../../services/users.service';
 import { Component, OnInit } from '@angular/core';
@@ -17,6 +18,11 @@ export class CreatePostComponent implements OnInit {
   user: Users;
   stepsAmount: number[] = [0];
   stepNumber = 0;
+  stepArrayIndexNum = 0;
+
+  // Declaring variable of type FileList, this will store the files uploaded by the user
+  selectedFiles: FileList;
+  stepPicFiles: FileList;
 
   // I will .push a new stepper into the post.steps [] if the user clicks add button
   stepper: Steps = {
@@ -26,29 +32,9 @@ export class CreatePostComponent implements OnInit {
     pic: ''
   };
 
-  // I will send this post object to the api after the user completes all the fields required for it
+  // Initalize Object. I will send this post object to the api after the user completes all the fields required for it
   post: Posts = {
-     id: 194,
-     pId: 98,
-     user: {
-       uId: 4,
-       fname: 'Tyler',
-       lname: 'Ak',
-       email: 'Tyler@reva.com',
-      username: 'Tyler',
-      password: '123',
-      profilePic: 'string to pic',
-      accTypeId: 1,
-      accType: {
-          accTypeId: 1,
-          accType: 'User'
-      },
-       accStatusId: 1,
-       accStatus: {
-          accStatusId: 1,
-          accStatus: 'active'
-        }
-},
+     uId: 194,
      title : '',
      description: '',
      video : '',
@@ -62,9 +48,6 @@ export class CreatePostComponent implements OnInit {
        }
      ]
   };
-
-  // Declaring variable of type FileList, this will store the files uploaded by the user
-  selectedFiles: FileList;
 
   // Dependency Injection of UsersService, UploadFileService
   constructor(private userService: UsersService, private uploadService: UploadFileService) { }
@@ -111,9 +94,67 @@ export class CreatePostComponent implements OnInit {
     this.uploadService.uploadfile(file);
   }
 
+  // This method will send the uploaded file to AWS S3 bucket. Also, it sets the link for the post.video = to the S3 bucket location
+  uploadStepPics() {
+    const file = this.stepPicFiles.item(0);
+    const fileName: SafeResourceUrl = file.name.split(' ').join('+');
+    this.post.steps[this.stepArrayIndexNum].pic = 'https://s3.us-east-2.amazonaws.com/java-the-haat/jsa-s3/' + fileName;
+    this.uploadService.uploadfilePic(file);
+    setTimeout(this.changeImage('https://s3.us-east-2.amazonaws.com/java-the-haat/jsa-s3/' + fileName), 10000);
+  }
   // This method will be invoked when a user uploads a file. it sets the file equal to this.selectedFiles global variable
   selectFile(event) {
     this.selectedFiles = event.target.files;
   }
 
+  stepPicUpload(step: Steps) {
+    this.stepArrayIndexNum = step.stepNum - 1;
+    const fileUpload = document.getElementById('FileUpload1');
+    fileUpload.click();
+  }
+
+  readFileUpload(event) {
+    this.stepPicFiles = event.target.files;
+    this.uploadStepPics();
+  }
+
+  changeImage(srcLink: string) {
+    const image = (<HTMLImageElement>document.getElementsByClassName('pImg')[this.stepArrayIndexNum]);
+    console.log(image);
+    image.src = srcLink;
+  }
+
+  setCategory(event) {
+
+    switch (event.target.value) {
+
+      case 'Craft': {
+         this.post.categoryId = 1;
+         break;
+      }
+      case 'Home Improvement': {
+        this.post.categoryId = 2;
+         break;
+      }
+      case 'Food': {
+        this.post.categoryId = 3;
+         break;
+      }
+      case 'Art': {
+        this.post.categoryId = 4;
+         break;
+      }
+      case 'Outdoors/Garden': {
+        this.post.categoryId = 5;
+         break;
+      }
+      case 'Electronics': {
+        this.post.categoryId = 6;
+         break;
+      }
+      default: {
+         break;
+      }
+   }
+}
 }
