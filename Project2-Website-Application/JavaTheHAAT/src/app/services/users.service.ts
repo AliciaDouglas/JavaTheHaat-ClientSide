@@ -9,6 +9,7 @@ import { Posts } from '../models/posts';
 })
 export class UsersService {
 
+currentUser: Users;
 
 user: BehaviorSubject<Users> = new BehaviorSubject<Users>(null);
 
