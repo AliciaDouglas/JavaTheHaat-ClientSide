@@ -20,10 +20,6 @@ export class UsersService {
 
   currentUser: Users;
 
-  // static registerUser(Users: typeof Users): any {
-  //   throw new Error("Method not implemented.");
-  // }
-
   constructor(private http: HttpClient) { }
 
 
