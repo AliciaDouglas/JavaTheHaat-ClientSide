@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Users } from '../../models/users';
+import { UsersService } from '../../services/users.service';
 
 @Component({
   selector: 'app-home-screen',
@@ -10,10 +11,10 @@ export class HomeScreenComponent implements OnInit {
 
   bAuthenticated = false;
 
-  constructor() { }
+  constructor(private userService: UsersService) { }
 
   ngOnInit() {
-
+    console.log(this.userService.currentUser.fname);
 
 }
 }
