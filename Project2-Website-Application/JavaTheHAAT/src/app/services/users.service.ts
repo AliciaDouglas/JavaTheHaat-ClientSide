@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpHeaders, HttpClient } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { Users } from '../models/users';
 import { Posts } from '../models/posts';
@@ -9,6 +9,7 @@ import { Posts } from '../models/posts';
 })
 export class UsersService {
 
+
   user: BehaviorSubject<Users> = new BehaviorSubject<Users>(null);
 
   constructor(private http: HttpClient) { }
@@ -17,6 +18,11 @@ export class UsersService {
 // This method registers/creates a user in the database
 registerUser(user: Users): Observable<Users> {
   return this.http.post<Users>('http://ec2-18-223-33-87.us-east-2.compute.amazonaws.com:8080/users', user);
+}
+
+// This method will get a specific user by Email and password for user authentication in DB
+getUserByEmailAndPassword(inputUser: Users): Observable<Users> {
+  return this.http.post<Users>('http://ec2-18-223-33-87.us-east-2.compute.amazonaws.com:8080/login/', inputUser);
 }
 
 // This method will get a specific user by Id

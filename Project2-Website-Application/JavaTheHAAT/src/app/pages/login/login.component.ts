@@ -53,26 +53,8 @@ export class LoginComponent implements OnInit {
   * is logged in and, if they are, sends them to the dashboard page.
   */
   ngOnInit() {
-    // if (sessionStorage.getItem('user')) {
-    //   this.userService.user.next(JSON.parse(sessionStorage.getItem('user')));
-    //   this.router.navigate(['dashboard']);
     }
 
-    /*
-    * If the user has just registered a new account, this will display a message
-    * telling them to click the verification link in the email we sent them.
-    */
-    // const info = sessionStorage.getItem('info');
-    // if (info) {
-    //   this.infoMessage = info;
-    // }
-  // }
-
-  /**
-  * This method is called whenever the user clicks the login button. It will attempt
-  * to authenticate the user in the cognito user pool and if the credentials are valid
-  * it will send them to the dashboard.
-  */
   login() {
     console.log('login method called');
     // Clear the error message
@@ -82,16 +64,8 @@ export class LoginComponent implements OnInit {
     this.infoMessage = '';
     sessionStorage.clear();
 
-    // Check if there are any errors in the form
-    // if (
-    //   this.loginForm.get('email').errors ||
-    //   this.loginForm.get('password').errors
-    // ) {
-    //   this.errorMessage = 'Errors exist on the form';
-    // } else {
-      // No form errors. Attempt to login.
-      const email = this.loginForm.get('email').value;
-      const password = this.loginForm.get('password').value;
+    const email = this.loginForm.get('email').value;
+    const password = this.loginForm.get('password').value;
 
       // First get the user's id token from cognito
       this.cognitoService.signIn(email, password).subscribe(
@@ -109,31 +83,16 @@ export class LoginComponent implements OnInit {
             * their information from the database.
             */
 
-            this.userService.getUserByEmail(email).subscribe(
+            this.userService.getUserByEmailAndPassword(email, password).subscribe(
               user => {
-                if (user) {
-                  /*
-                  * This is here to fix a strange problem. We are using json server
-                  * to mimic a functional backend. When you query json server for a
-                  * record, it tends to return a list even if there is only one matching
-                  * row in the database. In the future when the real backend is connected,
-                  * that won't be a problem. So I decided to check if the result is an
-                  * array and if so get the first item as the user.
-                  */
-                  if (user['length']) {
-                    user = user[0];
-                  }
+
 
                   sessionStorage.setItem('user', JSON.stringify(user));
                   this.usersService.user.next(user);
-                  this.router.navigate(['dashboard']);
-                }
-              }
-            );
+                  this.router.navigate(['home-screen']);
+
+              });
           }
-        }
-      );
+        });
+      }
     }
-  }
-
-

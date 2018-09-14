@@ -1,4 +1,29 @@
 <h1>Craft</h1>
 
+<table id="table" class="table table-dark">
+    <thead>
+        <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Video</th>
+            <th scope="col">Steps</th>
+        </tr>
+    </thead>
+    <!-- Post information, ordered by above <thead> -->
+    <tbody>
+        <tr *ngFor="let postsAll of posts">
+            <th>{{postsAll.title}}</th>
+            <th>
+                {{postsAll.description}}
+            </th>
+            <td>
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/4KBEb-_B45o" allowfullscreen></iframe>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
 <img src="https://steamcdn-a.akamaihd.net/steam/apps/720750/ss_5f9424f371d158550d9adccf7dc92dc1428b430b.1920x1080.jpg?t=1533226012"
     id="craft">

@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import * as AWS from 'aws-sdk/global';
 import * as S3 from 'aws-sdk/clients/s3';
 
 @Injectable()
@@ -10,8 +9,8 @@ export class UploadFileService {
         // Defining & locating the s3 bucket instance
         bucket = new S3(
           {
-            accessKeyId: 'AKIAJOUMVWAWZ6BZZNZQ',
-            secretAccessKey: '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',
+            accessKeyId: '***********************',
+            secretAccessKey: '********************',
             region: 'us-east-1'
           }
         );

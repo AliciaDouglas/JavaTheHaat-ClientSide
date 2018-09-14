@@ -14,3 +14,4 @@ export class Users {
     accStatusId?: number;
     accStatus?: AccountStatus;
 }
+

@@ -107,23 +107,32 @@ export class CreatePostComponent implements OnInit {
     this.selectedFiles = event.target.files;
   }
 
+  // This method be invoked when a user clicks on the "add pic" image.
+  // It takes in the current step object as a parameter, and forces a click event on the <input type="file"..> HTML Element
   stepPicUpload(step: Steps) {
     this.stepArrayIndexNum = step.stepNum - 1;
     const fileUpload = document.getElementById('FileUpload1');
     fileUpload.click();
   }
 
+
+  // (invoked) Change event on <input type="file"..> HTML Element
+  // This method reads the file that the user uploads and sets the global variable stepPicFiles equal to it
   readFileUpload(event) {
     this.stepPicFiles = event.target.files;
     this.uploadStepPics();
   }
 
+  // Method invoked inside the uploadStepPics() method
+  // It changes the current src of the HTML image element to the s3 bucket url path of the file they just uploaded
   changeImage(srcLink: string) {
     const image = (<HTMLImageElement>document.getElementsByClassName('pImg')[this.stepArrayIndexNum]);
     console.log(image);
     image.src = srcLink;
   }
 
+  /* Invoked as a change event. When a user selects a category for the post.
+   This method will assign the corresponding categoryId to the post */
   setCategory(event) {
 
     switch (event.target.value) {

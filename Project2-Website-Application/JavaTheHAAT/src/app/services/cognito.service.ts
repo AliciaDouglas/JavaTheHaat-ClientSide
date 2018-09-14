@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import * as AWSCognito from 'amazon-cognito-identity-js';
 import { CognitoIdToken } from 'amazon-cognito-identity-js';
 import { BehaviorSubject } from 'rxjs';
+import { Users } from '../models/users';
+import { UsersService } from './users.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,13 +12,8 @@ export class CognitoService {
 
   private userPool: AWSCognito.CognitoUserPool;
 
-  /**
-  * When the cognito service is intialized, it creates the user pool.
-  * In a future sprint, I would recommend that these credentials not
-  * be hard coded. I didn't have the time to fix this when I was working
-  * on the project.
-  */
-  constructor() {
+// Amazon Cognito userpool credentials Needed for Cognito Functionality
+  constructor(private userService: UsersService) {
     const poolData = {
       UserPoolId : 'us-east-2_5gy8Fh6Rg',
       ClientId : '7323ifamj94epcbammi3edpei7'
@@ -25,17 +22,8 @@ export class CognitoService {
     this.userPool = new AWSCognito.CognitoUserPool(poolData);
   }
 
-  /**
-  * This method will create a new user in the cognito user pool. When
-  * a user is created, cognito will send that user an email to verify
-  * their email account.
-  *
-  * @param  email     The new user's email address
-  * @param  password  The new user's password
-  * @param  firstName The new user's first name
-  * @param  lastName  The new user's last name
-  */
-  registerUser(email: string, password: string, firstName: string, lastName: string): BehaviorSubject<object> {
+  // Register User FOR COGNITO! method takes in user info , passes to Behavior Subject Object FOR COGNITO
+  registerUser(email: string, password: string, firstName: string, lastName: string): BehaviorSubject<Users> {
     console.log('[LOG] - In CognitoService.registerUser()');
 
     const attributeList = [];
@@ -115,14 +103,7 @@ export class CognitoService {
         console.log('[ERROR] - Failed to authenticate user');
         resultStream.next(err);
       },
-      // newPasswordRequired: (userAttributes, requiredAttributes) => {
-      //   delete userAttributes.email_verified;
-      //   cognitoUser.completeNewPasswordChallenge(
-      //     'newPassword',
-      //     userAttributes,
-      //     this.
-      //   );
-      // }
+
     });
 
     return resultStream;

@@ -1,17 +1,51 @@
 #home{
-    position: absolute;
+    position: fixed;
     z-index: -1;
     width: auto;
     height: 100%;
+    animation: home 70s linear infinite;
+    animation-direction: alternate;
+}
+
+@keyframes home {
+    0% {
+        transform: translateX(0%)
+    }
+    100% {
+        transform: translateX(-62%)
+    }
+}
+
+#table{
+    position: absolute;
+    margin-top: 6.3%;
+    width: 100%;
+    border-style: solid;
+    border-width: 5px;
+    border-color: rgb(73, 64, 46);
+    background-color: rgba(184, 121, 4, 0.39);
+    opacity: .7;
+}
+
+#table:hover{
+    opacity: .9;
+}
+
+td{
+    width: 10%;
+}
+
+th{
+    width: 5%;
+    font-size: 150%;
 }
 
 h1{
     z-index: 3;
     position: fixed;
     color: white;
-    font-weight: bolder;
     opacity: .8;
+    font-weight: bolder;
     font-size: 500%;
-    margin-left: 2%;
-    margin-top: 4%;
+    margin-top: 2%;
 }

@@ -18,6 +18,7 @@ export class ProfileComponent implements OnInit {
   constructor(private http: HttpClient, private userService: UsersService, private safePipe: SafePipe) { }
 
   // This will initiate when the page loads
+  // Using safePipe - This will sanitize the dynamtic src url for <iframe> tag (Needed in order to perform interpolation element attribute
   ngOnInit() {
     this.user = null;
     this.getUser(21);
