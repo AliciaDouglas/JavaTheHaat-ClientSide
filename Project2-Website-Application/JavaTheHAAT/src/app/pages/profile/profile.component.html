@@ -15,6 +15,7 @@
     </div>
   </mat-card-content>
   <mat-card-actions>
+    <button id="edit" mat-raised-button color="primary">Edit Profile</button>
     <button id="rP" mat-raised-button color="warn">Reset Password</button>
   </mat-card-actions>
 </mat-card>
@@ -28,7 +29,7 @@
       <th scope="col">Title</th>
       <th scope="col">Description</th>
       <th scope="col">Video</th>
-      <th scope="col">Steps</th>
+      <th scope="col">Edit</th>
     </tr>
   </thead>
   <!-- Post information, ordered by above <thead> -->
@@ -39,10 +40,14 @@
         {{postsAll.description}}
       </th>
       <td>
-        <div class="embed-responsive embed-responsive-16by9">
+        <div id="video" class="embed-responsive embed-responsive-16by9">
           <iframe *ngIf="postsAll.video" class="embed-responsive-item" [src]="postsAll.video | safe" allowfullscreen></iframe>
           <iframe *ngIf="!postsAll.video" class="embed-responsive-item" src="https://www.youtube.com/embed/4KBEb-_B45o" allowfullscreen></iframe>
         </div>
+      </td>
+      <td id="buttons">
+        <button mat-raised-button color="primary" id="update">Update</button>
+        <button mat-raised-button color="warn" id="delete">Delete</button>
       </td>
     </tr>
   </tbody>

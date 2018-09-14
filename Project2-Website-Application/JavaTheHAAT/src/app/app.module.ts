@@ -28,6 +28,7 @@ import { RegisterAdminComponent } from 'src/app/adminPages/register-admin/regist
 import { CreateNewCategoryComponent } from 'src/app/adminPages/create-new-category/create-new-category.component';
 import { ViewAllUsersComponent } from 'src/app/adminPages/view-all-users/view-all-users.component';
 import { AdminProfileComponent } from 'src/app/adminPages/admin-profile/admin-profile.component';
+import { VideoInfoComponent } from './pages/video-info/video-info.component';
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import { AdminProfileComponent } from 'src/app/adminPages/admin-profile/admin-pr
     RegisterAdminComponent,
     CreateNewCategoryComponent,
     ViewAllUsersComponent,
-    AdminProfileComponent
+    AdminProfileComponent,
+    VideoInfoComponent
   ],
   imports: [
     BrowserModule,

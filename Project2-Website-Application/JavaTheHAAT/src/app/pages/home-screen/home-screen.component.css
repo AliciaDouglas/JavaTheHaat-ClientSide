@@ -3,6 +3,37 @@
     width: 120%;
 }
 
+#slide{
+    position: fixed;
+    z-index: 1;
+    margin-left: 30%;
+    width: 40%;
+    height: 60%;
+    margin-top: 6%;
+}
+
+#slide2{
+    border-style: solid;
+    border-color: rgb(110, 0, 0);
+    border-width: 6px;
+    background-color: rgba(139, 16, 0, 0.746);
+}
+
+#label{
+    font-size: 200%;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: rgb(253, 253, 253);
+    -webkit-text-stroke: 1px rgb(255, 0, 0);
+    font-weight: bolder;
+    margin-left: 30%;
+}
+
+#label2{ 
+    font-size: 200%;
+    color: white;
+    margin-left: 40%;
+}
+
 h1{
     position: fixed;
     color: rgb(230, 15, 15);

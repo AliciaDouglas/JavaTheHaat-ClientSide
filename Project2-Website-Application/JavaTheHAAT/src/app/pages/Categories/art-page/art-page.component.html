@@ -1,29 +1,31 @@
 <h1>Art</h1>
 
+<!-- Table containing the User post -->
+<!-- Titles for each row-->
 <table id="table" class="table table-dark">
     <thead>
-        <tr>
-            <th scope="col">Title</th>
-            <th scope="col">Description</th>
-            <th scope="col">Video</th>
-            <th scope="col">Steps</th>
-        </tr>
+      <tr>
+        <th scope="col">Title</th>
+        <th scope="col">Description</th>
+        <th scope="col">Video</th>
+      </tr>
     </thead>
     <!-- Post information, ordered by above <thead> -->
     <tbody>
-        <tr *ngFor="let postsAll of posts">
-            <th>{{postsAll.title}}</th>
-            <th>
-                {{postsAll.description}}
-            </th>
-            <td>
-                <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/4KBEb-_B45o" allowfullscreen></iframe>
-                </div>
-            </td>
-        </tr>
+      <tr *ngFor="let postsAll of posts">
+        <th>{{postsAll.title}}</th>
+        <th>
+          {{postsAll.description}}
+        </th>
+        <td>
+          <div id="video" class="embed-responsive embed-responsive-16by9">
+            <iframe *ngIf="postsAll.video" class="embed-responsive-item" [src]="postsAll.video | safe" allowfullscreen></iframe>
+            <iframe *ngIf="!postsAll.video" class="embed-responsive-item" src="https://www.youtube.com/embed/4KBEb-_B45o" allowfullscreen></iframe>
+          </div>
+        </td>
+      </tr>
     </tbody>
-</table>
+  </table>
 
 <div>
     <img src="https://s3-ap-southeast-2.amazonaws.com/patrickbrownart/1001/MarvelVillians_2000px.jpg" id="art">
