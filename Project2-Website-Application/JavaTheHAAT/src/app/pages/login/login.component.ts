@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { NgForm, FormBuilder, FormControl, Validators } from '@angular/forms';
+import { NgForm, FormBuilder, FormControl, Validators, FormGroup } from '@angular/forms';
 import { CognitoService } from '../../services/cognito.service';
 import { Users } from '../../models/users';
+import { UsersService } from '../../services/users.service';
 
 
 
@@ -12,40 +13,17 @@ import { Users } from '../../models/users';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  // This is used to display non-error related information to the user
+  user: Users;
   infoMessage: string;
-
-  // This is used to display errors to the user
   errorMessage: string;
-
-  // Build the form controls.
-  loginForm = new FormBuilder().group({
-    email: new FormControl('', Validators.compose([
-      Validators.required,
-      Validators.email
-    ])),
-    password: new FormControl('', Validators.required)
-  });
-
-  // The list of error messages displayed in the mat-error elements
-  loginValidationMessages = {
-    'email': [
-      {type: 'required', message: 'Email is required'},
-      {type: 'email', message: 'Not a valid email'}
-    ],
-    'password': [
-      {type: 'required', message: 'Password is required'}
-    ]
-  };
-  userService: any;
-  usersService: any;
+  loginForm: FormGroup;
+  submitted: boolean;
 
   constructor(
     private cognitoService: CognitoService,
     private router: Router,
-    // private userIdle: UserIdleService,
-    // private appComponent: AppComponent,
-    // private modal: NgbModal
+    private userService: UsersService,
+    private formBuilder: FormBuilder
   ) { }
 
   /**
@@ -53,19 +31,42 @@ export class LoginComponent implements OnInit {
   * is logged in and, if they are, sends them to the dashboard page.
   */
   ngOnInit() {
-    }
+    this.loginForm = this.formBuilder.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', Validators.required]
+    });
+   this.user = {
+      uId: 0,
+      fname: '',
+      lname: '',
+      email: '',
+      username: '',
+      password: '',
+      profilePic: '',
+      accTypeId: 0,
+      accType: null,
+      accStatusId: 0,
+      accStatus: null
+    };
+}
+get f() { return this.loginForm.controls; }
 
-  login() {
+  onSubmit() {
     console.log('login method called');
-    // Clear the error message
     this.errorMessage = '';
-
-    // Clear sessionStorage as well
     this.infoMessage = '';
+    this.submitted = true;
     sessionStorage.clear();
 
     const email = this.loginForm.get('email').value;
     const password = this.loginForm.get('password').value;
+    this.user.email = this.loginForm.get('email').value;
+    this.user.password = this.loginForm.get('password').value;
+
+    if (this.loginForm.invalid) {
+      alert('Please Check Form Entries for Accuracy');
+      return;
+    }
 
       // First get the user's id token from cognito
       this.cognitoService.signIn(email, password).subscribe(
@@ -82,13 +83,12 @@ export class LoginComponent implements OnInit {
             * password, and has verified their email address. Now we need to get
             * their information from the database.
             */
+            this.userService.getUserByEmailAndPassword(this.user).subscribe(
+              currentUser => {
 
-            this.userService.getUserByEmailAndPassword(email, password).subscribe(
-              user => {
-
-
-                  sessionStorage.setItem('user', JSON.stringify(user));
-                  this.usersService.user.next(user);
+                  sessionStorage.setItem('user', JSON.stringify(currentUser));
+                  this.userService.user.next(currentUser);
+                  this.userService.currentUser = currentUser;
                   this.router.navigate(['home-screen']);
 
               });
