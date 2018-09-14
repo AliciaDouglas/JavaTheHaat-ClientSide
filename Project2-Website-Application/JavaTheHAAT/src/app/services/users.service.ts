@@ -18,9 +18,7 @@ export class UsersService {
 
   user: BehaviorSubject<Users> = new BehaviorSubject<Users>(null);
 
-  // static registerUser(Users: typeof Users): any {
-  //   throw new Error("Method not implemented.");
-  // }
+  currentUser: Users;
 
   constructor(private http: HttpClient) { }
 
@@ -28,17 +26,17 @@ export class UsersService {
 
 // This method registers/creates a user in the database
 registerUser(user: Users): Observable<Users> {
-  return this.http.post<Users>('http://localhost:3000/users', user, HTTP_OPTIONS);
+  return this.http.post<Users>('http://ec2-18-223-33-87.us-east-2.compute.amazonaws.com:8080/users', user );
 }
 
 // This method will get a specific user by Email and password for user authentication in DB
-getUserByEmailAndPassword(email: String, password: String): Observable<Users> {
-  return this.http.get<Users>('http://localhost:3000/users?email=' + email + '&password=' + password, HTTP_OPTIONS);
+getUserByEmailAndPassword(inputUser: Users): Observable<Users> {
+  return this.http.post<Users>('http://ec2-18-223-33-87.us-east-2.compute.amazonaws.com:8080/login/', inputUser);
 }
 
 // This method will get a specific user by Id
 getUserById(uId: number): Observable<Users> {
-  return this.http.get<Users>('http://localhost:3000/users?uId=' + uId, HTTP_OPTIONS);
+  return this.http.get<Users>('http://localhost:3000/users?uId=' + uId );
 }
 
 // This method will update a user's profile info
