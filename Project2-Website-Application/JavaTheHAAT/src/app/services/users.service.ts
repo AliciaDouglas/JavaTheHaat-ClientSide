@@ -10,9 +10,9 @@ import { Posts } from '../models/posts';
 export class UsersService {
 
 
-  user: BehaviorSubject<Users> = new BehaviorSubject<Users>(null);
+user: BehaviorSubject<Users> = new BehaviorSubject<Users>(null);
 
-  constructor(private http: HttpClient) { }
+constructor(private http: HttpClient) { }
 
 
 // This method registers/creates a user in the database
