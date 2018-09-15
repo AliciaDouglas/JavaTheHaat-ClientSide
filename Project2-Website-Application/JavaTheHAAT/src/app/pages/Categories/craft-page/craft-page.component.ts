@@ -29,6 +29,7 @@ export class CraftPageComponent implements OnInit {
     });
   }
 
+  // When they click on a post they are redirected to the single-post view
   viewPost(pId: number) {
     this.router.navigate(['video-info/' + pId]);
   }

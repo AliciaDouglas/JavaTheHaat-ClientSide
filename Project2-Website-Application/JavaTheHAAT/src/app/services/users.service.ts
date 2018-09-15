@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { Users } from '../models/users';
 import { Posts } from '../models/posts';
+import { Comments } from '../models/comments';
 
 @Injectable({
   providedIn: 'root'
@@ -87,6 +88,11 @@ createAPost(post: Posts): Observable<Posts> {
 // This method will allow a user to delete one of their posts
 deleteMyPost(post: Posts): Observable<Posts> {
   return this.http.delete<Posts>('http://ec2-18-223-33-87.us-east-2.compute.amazonaws.com:8080/posts');
+}
+
+// This method will create a new comment for a post
+createComment(comment: Comments): Observable<Comments> {
+  return this.http.post<Posts>('http://ec2-18-223-33-87.us-east-2.compute.amazonaws.com:8080/comments', comment);
 }
 
 }
