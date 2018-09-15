@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { Users } from '../../models/users';
 import { UsersService } from '../../services/users.service';
@@ -10,11 +11,18 @@ import { UsersService } from '../../services/users.service';
 export class HomeScreenComponent implements OnInit {
 
   bAuthenticated = false;
+  currentUser: Users;
+  isAdmin = true;
 
-  constructor(private userService: UsersService) { }
+  constructor(private userService: UsersService, private router: Router) { }
 
   ngOnInit() {
-    console.log(this.userService.currentUser.fname);
-
+    this.currentUser = this.userService.currentUser;
+    // if (this.currentUser === undefined) {
+    //   this.router.navigate(['login']);
+    // }
+    if (this.currentUser.accTypeId === 1) {
+      this.isAdmin = false;
+    }
 }
 }
