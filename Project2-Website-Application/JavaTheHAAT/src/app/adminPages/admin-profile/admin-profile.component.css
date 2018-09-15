@@ -4,6 +4,22 @@
     width: 100%;
 }
 
+#venom{
+    position: fixed;
+    margin-left: 86%;
+    width: 15%;
+    animation: venom 16s linear infinite;
+}
+
+@keyframes venom {
+    0% {
+        transform: translateY(300%)
+    }
+    100% {
+        transform: translateY(-500%)
+    }
+}
+
 #spider{
     opacity: 0;
     margin-left: 13%;

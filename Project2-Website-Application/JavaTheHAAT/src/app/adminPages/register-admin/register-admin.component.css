@@ -1,6 +1,39 @@
+h1{
+    font-size: 300%;
+    z-index: 3;
+    position: fixed;
+    color: white;
+    margin-top: 10%;
+    margin-left: 43%;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: rgb(230, 15, 15);
+    -webkit-text-stroke: 1px rgb(255, 255, 255);
+    font-weight: bolder;
+
+}
+
 #background{
     position: absolute;
     z-index: -1;
     width: auto;
     height: 100%;
+}
+
+#registerAd{
+    color: white;
+    font-size: 125%;
+    font-weight: bold;
+    position: fixed;
+    margin-left: 32.5%;
+    border-style: solid;
+    border-width: 8px;
+    border-color: rgba(34, 34, 100, 0.815);
+    margin-top: 14%;
+    width: 32%;
+    background-color: rgba(57, 57, 102, 0.616);
+    opacity: .7;
+}
+
+#registerAd:hover{
+    opacity: 2;
 }

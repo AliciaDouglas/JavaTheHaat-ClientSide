@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Posts } from 'src/app/models/posts';
+import { HttpClient } from '@angular/common/http';
+import { UsersService } from 'src/app/services/users.service';
+import { SafePipe } from 'src/app/pipes/safe.pipe';
 import { Users } from '../../models/users';
-import { UsersService } from '../../services/users.service';
 
 @Component({
   selector: 'app-home-screen',
@@ -8,6 +11,7 @@ import { UsersService } from '../../services/users.service';
   styleUrls: ['./home-screen.component.css']
 })
 export class HomeScreenComponent implements OnInit {
+  posts: Posts[];
 
   bAuthenticated = false;
 

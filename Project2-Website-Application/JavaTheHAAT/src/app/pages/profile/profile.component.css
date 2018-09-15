@@ -22,10 +22,20 @@
     background-color: rgba(53, 49, 49, 0.952); 
 }
 
-#rP{
-    box-shadow: 0px 0px 5px 5px;
+#edit{
+    margin-left: 20%;
     border-radius: 10% 10%;
-    margin-left: 35%
+}
+#edit:hover{
+    box-shadow: 0px 0px 2px 2px;
+}
+
+#rP{
+    margin-left: 5%;
+    border-radius: 10% 10%;
+}
+#rP:hover{
+    box-shadow: 0px 0px 2px 2px;
 }
 
 #fontt{
@@ -68,10 +78,31 @@ textarea{
     opacity: .9;
 }
 
-td{
-    width: 10%;
+th{
+    font-size: 150%;
+    text-align: center;
+    width: 4%;
 }
 
-th{
-    width: 5%;
+#update{
+    padding: 5%;
+    margin-left:10%;
+    margin-top: 13%;
+    font-size: 100%;
+}
+#update:hover{
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0px 0px 1px 1px;
+}
+
+#delete{
+    padding: 5%;
+    margin-left:20%;
+    font-size: 100%;
+}
+#delete:hover{
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0px 0px 1px 1px;
 }

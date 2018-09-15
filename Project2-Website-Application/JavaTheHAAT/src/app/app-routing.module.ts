@@ -1,3 +1,4 @@
+import { VideoInfoComponent } from './pages/video-info/video-info.component';
 import { ViewAllUsersComponent } from './adminPages/view-all-users/view-all-users.component';
 import { ViewAllPostsComponent } from './adminPages/view-all-posts/view-all-posts.component';
 import { AdminProfileComponent } from './adminPages/admin-profile/admin-profile.component';
@@ -35,7 +36,8 @@ export const routes: Routes = [
   {path: 'create-new-category', component: CreateNewCategoryComponent},
   {path: 'register-admin', component: RegisterAdminComponent},
   {path: 'view-all-posts', component: ViewAllPostsComponent},
-  {path: 'view-all-users', component: ViewAllUsersComponent}
+  {path: 'view-all-users', component: ViewAllUsersComponent},
+  {path: 'video-info', component: VideoInfoComponent}
 ];
 
 
