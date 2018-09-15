@@ -1,22 +1,15 @@
 <mat-card id="prof" class="example-card">
   <mat-card-header>
     <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-subtitle id="fontt">{{user.username}}</mat-card-subtitle>
-    <mat-card-subtitle id="fontt">{{user.fname}} </mat-card-subtitle>
-    <mat-card-subtitle id="fontt">{{user.lname}}</mat-card-subtitle>
-    <mat-card-subtitle id="fontt">{{user.email}}</mat-card-subtitle>
+    <mat-card-subtitle style="font-size:1vw;" id="fontt">{{user.username}}</mat-card-subtitle>
+    <mat-card-subtitle style="font-size:1vw;" id="fontt">{{user.fname}} </mat-card-subtitle>
+    <mat-card-subtitle style="font-size:1vw;" id="fontt">{{user.lname}}</mat-card-subtitle>
+    <mat-card-subtitle style="font-size:1vw;" id="fontt">{{user.email}}</mat-card-subtitle>
   </mat-card-header>
   <img id="pic" mat-card-image src="https://t3.ftcdn.net/jpg/00/64/67/80/240_F_64678017_zUpiZFjj04cnLri7oADnyMH0XBYyQghG.jpg">
-  <mat-card-content>
-    <div style="font-size:1vw;">
-      About me
-      <br>
-      <textarea cols="67" rows="5"></textarea>
-    </div>
-  </mat-card-content>
   <mat-card-actions>
-    <button id="edit" mat-raised-button color="primary">Edit Profile</button>
-    <button id="rP" mat-raised-button color="warn">Reset Password</button>
+    <button style="font-size:1vw;" id="edit" mat-raised-button color="primary">Edit Profile</button>
+    <button style="font-size:1vw;" id="rP" mat-raised-button color="warn">Reset Password</button>
   </mat-card-actions>
 </mat-card>
 
@@ -32,6 +25,7 @@
       <th style="font-size:1.2vw;" scope="col">Edit</th>
     </tr>
   </thead>
+  
   <!-- Post information, ordered by above <thead> -->
   <tbody>
     <tr *ngFor="let postsAll of posts">

@@ -5,6 +5,22 @@
     height: 100%;
 }
 
+#venom{
+    position: fixed;
+    margin-left: 86%;
+    width: 15%;
+    animation: venom 16s linear infinite;
+}
+
+@keyframes venom {
+    0% {
+        transform: translateY(350%)
+    }
+    100% {
+        transform: translateY(-600%)
+    }
+}
+
 #table{
     position: absolute;
     margin-top: 3.2%;
