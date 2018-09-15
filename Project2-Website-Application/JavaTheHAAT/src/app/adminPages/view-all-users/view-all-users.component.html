@@ -5,24 +5,23 @@
             <th scope="col">Email</th>
             <th scope="col">First Name</th>
             <th scope="col">Last Name</th>
+            <th scope="col">Status</th>
             <th scope="col">Edit</th>
         </tr>
     </thead>
     <!-- Post information, ordered by above <thead> -->
     <tbody>
-        <tr *ngFor="let postsAll of posts">
-            <th></th>
-            <th>
-
-            </th>
-            <td>
-
+        <tr class="postRow" *ngFor="let user of allUsers">
+            <th class="clickable" (click)="viewUser(user.uId)" >{{user.username}}</th>
+            <th class="clickable" (click)="viewUser(user.uId)" >{{user.email}}</th>
+            <th class="clickable" (click)="viewUser(user.uId)" >{{user.fname}}</th>
+            <th class="clickable" (click)="viewUser(user.uId)" >{{user.lname}}</th>
+            <th class="clickable" (click)="viewUser(user.uId)" >{{user.accStatus.accStatus}}</th>
+            <td class="clickable" *ngIf="user.accStatus.accStatus === 'Active'">
+                <button mat-raised-button color="warn" id="delete" (click)="makeInactive(user)">Deactivate Account</button>
             </td>
-            <td>
-              
-            </td>
-            <td>
-                <button mat-raised-button color="warn" id="delete">Delete</button>
+            <td *ngIf="user.accStatus.accStatus === 'Inactive'">
+                <button mat-raised-button color="warn" id="delete" (click)="makeActive(user)">Activate Account</button>
             </td>
         </tr>
     </tbody>
