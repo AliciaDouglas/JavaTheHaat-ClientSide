@@ -22,9 +22,6 @@ export class HomeScreenComponent implements OnInit {
 
   ngOnInit() {
     this.currentUser = this.userService.currentUser;
-    // if (this.currentUser === undefined) {
-    //   this.router.navigate(['login']);
-    // }
     if (this.currentUser.accTypeId === 1) {
       this.isAdmin = false;
     }
