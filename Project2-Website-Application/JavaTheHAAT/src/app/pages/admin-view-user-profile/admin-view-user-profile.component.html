@@ -36,8 +36,8 @@
   <!-- Post information, ordered by above <thead> -->
   <tbody>
     <tr *ngFor="let postsAll of posts">
-      <th style="font-size:1.2vw;">{{postsAll.title}}</th>
-      <th style="font-size:1.2vw;">
+      <th style="font-size:1.2vw;" (click)="viewPost(postsAll.pId)">{{postsAll.title}}</th>
+      <th style="font-size:1.2vw;" (click)="viewPost(postsAll.pId)">
         {{postsAll.description}}
       </th>
       <td>
@@ -47,8 +47,7 @@
         </div>
       </td>
       <td id="buttons">
-        <button style="font-size:1vw;" mat-raised-button color="primary" id="update">Update</button>
-        <button style="font-size:1vw;" mat-raised-button color="warn" id="delete">Delete</button>
+        <button style="font-size:1vw;" mat-raised-button color="warn" id="delete" (click)="deletePost(postsAll)">Delete</button>
       </td>
     </tr>
   </tbody>

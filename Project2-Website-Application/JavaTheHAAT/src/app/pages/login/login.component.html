@@ -3,7 +3,8 @@
               <form id="log" class="container-fluid" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
                   <div class="form-group">
                       <label>Email</label>
-                      <input [(ngModel)]="user.email" name="email" type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                      <input [(ngModel)]="user.email" name="email" type="text" formControlName="email" 
+                      class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
                       <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
                           <div *ngIf="f.email.errors.required">Email is required</div>
                           <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
@@ -18,7 +19,7 @@
                       </div>
                   </div>
                   <div class="form-group">
-                      <button [disabled]="loading" class="btn btn-primary">Super Jumbo Login</button>
+                      <button [disabled]="loading" class="btn btn-primary">Login</button>
                   </div>
               </form>
        

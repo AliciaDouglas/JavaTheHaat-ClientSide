@@ -51,10 +51,10 @@ export class VideoInfoComponent implements OnInit {
   });
   }
 
-  // Essentially this method modifies a post by creating a new comment object inside the post. Then via post requestm
+  // Essentially this method modifies a post by creating a new comment object inside the post. Then via post request
   // Sending that comment object to the server. We then make another request to the database to get the most recent post.
   makeNewComment() {
-    console.log('sending: ' + this.newComment);
+    console.log('sending: ' + this.newComment.commentText);
   this.userService.createComment(this.newComment).subscribe((r) => {});
   this.userService.getAllPostsByPid(+this.route.snapshot.paramMap.get('id')).subscribe((post) => {
     console.log(post);
