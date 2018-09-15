@@ -9,7 +9,25 @@ import { Posts } from '../models/posts';
 })
 export class UsersService {
 
-currentUser: Users;
+currentUser: Users = {
+   uId: 102,
+   fname: 'Oliver',
+   lname: 'Queen',
+   email: 'greenarrow@gmail.com',
+   username: 'greenarrow',
+   password: '111111',
+   profilePic: null,
+   accTypeId: 2,
+   accType: {
+     accTypeId: 2,
+     accType: 'Admin'
+    },
+   accStatusId: 1,
+   accStatus: {
+     accStatusId: 1,
+     accStatus: 'Active'
+    }
+};
 
 user: BehaviorSubject<Users> = new BehaviorSubject<Users>(null);
 
@@ -24,6 +42,11 @@ registerUser(user: Users): Observable<Users> {
 // This method will get a specific user by Email and password for user authentication in DB
 getUserByEmailAndPassword(inputUser: Users): Observable<Users> {
   return this.http.post<Users>('http://ec2-18-223-33-87.us-east-2.compute.amazonaws.com:8080/login/', inputUser);
+}
+
+// This method will get all users from the database
+getAllUsers(): Observable<Users[]> {
+  return this.http.get<Users[]>('http://ec2-18-223-33-87.us-east-2.compute.amazonaws.com:8080/users');
 }
 
 // This method will get a specific user by Id
@@ -43,12 +66,17 @@ getAllPosts(): Observable<Posts[]> {
 
 // This method will get all of a specific user's posts
 getAllPostsByUser(uId: number): Observable<Posts[]> {
-  return this.http.get<Posts[]>('http://ec2-18-223-33-87.us-east-2.compute.amazonaws.com:8080/posts/' + uId);
+  return this.http.get<Posts[]>('http://ec2-18-223-33-87.us-east-2.compute.amazonaws.com:8080/posts/users/' + uId);
 }
 
 // This method gets all posts of a specific category
 getAllPostsByCategory(categoryId: number): Observable<Posts[]> {
   return this.http.get<Posts[]>('http://ec2-18-223-33-87.us-east-2.compute.amazonaws.com:8080/posts/category/' + categoryId);
+}
+
+// This method will get a post by pId (specific post)
+getAllPostsByPid(pId: number): Observable<Posts> {
+  return this.http.get<Posts>('http://ec2-18-223-33-87.us-east-2.compute.amazonaws.com:8080/posts/' + pId);
 }
 
 // This method will make a post (send it to DB for persistance)
