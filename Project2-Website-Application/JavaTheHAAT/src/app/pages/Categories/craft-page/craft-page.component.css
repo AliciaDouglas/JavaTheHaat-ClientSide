@@ -61,3 +61,7 @@ h1{
     font-size: 500%;
     margin-top: 2%;
 }
+
+.postRow:hover {
+    background-color: rgba(139, 0, 0, 0.966);
+}
