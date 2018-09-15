@@ -1,15 +1,19 @@
+<!-- The details of a single post-->
 <div class="card" >
     <div class="card-body">
-      <h5 class="card-title">Soft Light Box</h5>
+      <h5 class="card-title">{{currentPost.title}}</h5>
       <iframe id="video" class="embed-responsive embed-responsive-16by9" class="card-img-top" src="https://www.youtube.com/embed/4KBEb-_B45o" ></iframe>
-      <p class="card-text">Video Description: <br> This video is based around designing a soft box light for taking exceptional photography. For more on this topic visit my YouTube channel for daily updates!</p>
+      <p class="card-text">Video Description: <br>{{currentPost.description}}</p>
     </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">Step 1:</li>
-      <li class="list-group-item">That background though, whoever styled this page did a phenominal job!</li>
-      <textarea class="list-group-item" placeholder="Enter Comment"></textarea>
-      <button id="submit" mat-raised-button color="primary">Submit Comment</button>
+    <ul class="list-group list-group-flush" *ngFor="let steps of currentPost.steps">
+      <li class="list-group-item">Step {{steps.stepNum}}: {{steps.stepName}}</li>
+      <li class="list-group-item">{{steps.stepText}}</li>
+      <div *ngFor="let comments of currentPost.comments">
+      <li class="list-group-item">{{comments.timeSubmission | date:'short'}}  <br> {{comments.uId.fname}} {{comments.uId.lname}}: {{comments.commentText}} </li>
+      </div>
     </ul>
+    <textarea class="list-group-item" placeholder="Enter Comment" name="commentText" [(ngModel)]="newComment.commentText"></textarea>
+    <button id="submit" mat-raised-button color="primary" (click)= "makeNewComment()">Submit Comment</button>
   </div>
 
   <img src="https://img00.deviantart.net/490a/i/2016/272/d/7/much_punches___one_punch_man_wallpaper_by_deto15-dajafem.png" id="oneP">

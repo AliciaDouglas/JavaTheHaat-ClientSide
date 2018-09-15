@@ -31,6 +31,7 @@ import { AdminProfileComponent } from 'src/app/adminPages/admin-profile/admin-pr
 import { VideoInfoComponent } from './pages/video-info/video-info.component';
 import { CognitoService } from './services/cognito.service';
 import { UsersService } from './services/users.service';
+import { AdminViewUserProfileComponent } from './pages/admin-view-user-profile/admin-view-user-profile.component';
 
 
 @NgModule({
@@ -56,7 +57,8 @@ import { UsersService } from './services/users.service';
     CreateNewCategoryComponent,
     ViewAllUsersComponent,
     AdminProfileComponent,
-    VideoInfoComponent
+    VideoInfoComponent,
+    AdminViewUserProfileComponent
   ],
   imports: [
     BrowserModule,
