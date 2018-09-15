@@ -20,6 +20,7 @@ export class ViewAllUsersComponent implements OnInit {
     });
   }
 
+  // This click event will change a user's status from active to inactive
   makeInactive(user: Users) {
     console.log(user);
     user.accStatusId = 2;
@@ -28,6 +29,7 @@ export class ViewAllUsersComponent implements OnInit {
     this.usersService.updateUserInfo(user).subscribe((r) => {});
   }
 
+  // This click event will change a user's status from inactive to active
   makeActive(user: Users) {
     user.accStatusId = 1;
     user.accStatus.accStatus = 'Active';
@@ -35,6 +37,7 @@ export class ViewAllUsersComponent implements OnInit {
     this.usersService.updateUserInfo(user).subscribe((r) => {});
   }
 
+  // The admin can go to view the specific user's profile
   viewUser(userId: number) {
     this.router.navigate(['admin-view-profile/' + userId]);
   }
