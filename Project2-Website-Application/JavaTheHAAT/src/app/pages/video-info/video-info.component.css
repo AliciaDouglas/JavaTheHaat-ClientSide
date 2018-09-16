@@ -9,14 +9,12 @@
     background-color: rgba(139, 0, 0, 0.822);
     border-style:double;
     border-width: 8px;
-
 }
 
 #submit{
     width: 50%;
     margin-left: 25%;
     background-color: rgba(116, 116, 2, 0.774);
-    font-size: 120%;
 }
 #submit:hover{
     background-color: rgba(173, 173, 3, 0.774);

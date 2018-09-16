@@ -1,22 +1,22 @@
-<h1>Home</h1>
+<h1 style="font-size:4vw;">Home</h1>
 
 <!-- Table containing the User post -->
 <!-- Titles for each row-->
 <table id="table" class="table table-dark">
     <thead>
       <tr>
-        <th scope="col">Title</th>
-        <th scope="col">Description</th>
-        <th scope="col">Video</th>
+          <th style="font-size:2vw;" scope="col">Title</th>
+          <th style="font-size:2vw;" scope="col">Description</th>
+          <th style="font-size:2vw;" scope="col">Video</th>
       </tr>
     </thead>
     <!-- Post information, ordered by above <thead> -->
     <tbody>
-      <tr *ngFor="let postsAll of posts">
-        <th>{{postsAll.title}}</th>
-        <th>
-          {{postsAll.description}}
-        </th>
+        <tr *ngFor="let postsAll of posts">
+            <th style="font-size:1.5vw;">{{postsAll.title}}</th>
+            <th style="font-size:1.5vw;">
+              {{postsAll.description}}
+            </th>
         <td>
           <div id="video" class="embed-responsive embed-responsive-16by9">
             <iframe *ngIf="postsAll.video" class="embed-responsive-item" [src]="postsAll.video | safe" allowfullscreen></iframe>
