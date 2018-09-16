@@ -9,7 +9,7 @@ import { SearchPageComponent } from '../pages/search-page/search-page.component'
 })
 export class NavBarComponent implements OnInit {
 
-search: String;
+search: string;
 
   constructor(private router: Router, private childComponent: SearchPageComponent) { }
 
@@ -17,8 +17,10 @@ search: String;
   }
 
 searchString() {
-  this.childComponent.ngOnInit();
   this.router.navigate(['search/' + this.search]);
+  this.childComponent.searchFor = this.search;
+  this.childComponent.ngOnInit();
+  this.childComponent.searchFor = this.search;
 }
 
 }

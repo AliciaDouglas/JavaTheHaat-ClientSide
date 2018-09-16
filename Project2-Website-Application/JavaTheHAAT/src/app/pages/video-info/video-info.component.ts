@@ -74,6 +74,7 @@ export class VideoInfoComponent implements OnInit {
    this.newComment.pId = post.pId;
    this.newComment.commentText = '';
  });
+   this.ngOnInit();
   }
 
 }
