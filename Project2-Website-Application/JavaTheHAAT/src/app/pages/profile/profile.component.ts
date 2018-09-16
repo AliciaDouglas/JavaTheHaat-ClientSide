@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Posts } from '../../models/posts';
 import { Users } from '../../models/users';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -15,7 +16,7 @@ export class ProfileComponent implements OnInit {
   posts: Posts[];
   currentUser: Users;
 
-  constructor(private http: HttpClient, private userService: UsersService, private safePipe: SafePipe) { }
+  constructor(private http: HttpClient, private userService: UsersService, private safePipe: SafePipe, private router: Router) { }
 
   // This will initiate when the page loads
   // Using safePipe - This will sanitize the dynamtic src url for <iframe> tag (Needed in order to perform interpolation element attribute
@@ -34,5 +35,9 @@ export class ProfileComponent implements OnInit {
       this.posts = result;
     });
   }
+    // When they click on a post they are redirected to the single-post view
+    viewPost(pId: number) {
+      this.router.navigate(['video-info/' + pId]);
+    }
 
 }

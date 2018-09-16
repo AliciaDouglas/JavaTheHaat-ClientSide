@@ -85,7 +85,7 @@ getAllPostsByPid(pId: number): Observable<Posts> {
 
 // This method will make a post (send it to DB for persistance)
 createAPost(post: Posts): Observable<Posts> {
-  return this.http.post<Posts>('http://ec2-18-223-33-87.us-east-2.compute.amazonaws.com:8080/posts', Posts);
+  return this.http.post<Posts>('http://ec2-18-223-33-87.us-east-2.compute.amazonaws.com:8080/posts', post);
 }
 
 // This method will allow a user to delete one of their posts
@@ -98,4 +98,8 @@ createComment(comment: Comments): Observable<Comments> {
   return this.http.post<Posts>('http://ec2-18-223-33-87.us-east-2.compute.amazonaws.com:8080/comments', comment);
 }
 
+// This method will be used by the admin to delete a comment
+deleteComment(comment: Comments): Observable<Comments> {
+  return this.http.delete<Posts>('http://ec2-18-223-33-87.us-east-2.compute.amazonaws.com:8080/comments');
+}
 }
