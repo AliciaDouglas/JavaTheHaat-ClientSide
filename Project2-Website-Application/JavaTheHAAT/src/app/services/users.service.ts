@@ -80,6 +80,7 @@ getAllPostsByPid(pId: number): Observable<Posts> {
   return this.http.get<Posts>('http://ec2-18-223-33-87.us-east-2.compute.amazonaws.com:8080/posts/' + pId);
 }
 
+
 // This method will make a post (send it to DB for persistance)
 createAPost(post: Posts): Observable<Posts> {
   return this.http.post<Posts>('http://ec2-18-223-33-87.us-east-2.compute.amazonaws.com:8080/posts', Posts);

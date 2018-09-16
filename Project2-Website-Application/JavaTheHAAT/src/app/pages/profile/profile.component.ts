@@ -34,4 +34,5 @@ export class ProfileComponent implements OnInit {
       this.posts = result;
     });
   }
+
 }
