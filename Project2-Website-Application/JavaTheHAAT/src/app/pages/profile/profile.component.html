@@ -33,12 +33,12 @@
       <th style="font-size:1.2vw;" scope="col">Edit</th>
     </tr>
   </thead>
-  <h2 *ngIf="posts">You don't have any posts</h2>
+  <h2 *ngIf="!posts">You don't have any posts</h2>
   <!-- Post information, ordered by above <thead> -->
   <tbody>
-    <tr *ngFor="let postsAll of posts">
-      <th style="font-size:1.2vw;">{{postsAll.title}}</th>
-      <th style="font-size:1.2vw;">
+    <tr class="postRow" *ngFor="let postsAll of posts" (click)="viewPost(postsAll.pId)">
+      <th class="clickable" style="font-size:1.2vw;">{{postsAll.title}}</th>
+      <th class="clickable"style="font-size:1.2vw;">
         {{postsAll.description}}
       </th>
       <td>

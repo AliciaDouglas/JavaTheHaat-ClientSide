@@ -85,6 +85,7 @@ export class CreatePostComponent implements OnInit {
   // This method will send a post request to the API and invokes the upload() method
   makeAPost() {
     this.upload();
+    console.log(this.post);
     this.userService.createAPost(this.post).subscribe(r => {});
   }
 
@@ -92,7 +93,7 @@ export class CreatePostComponent implements OnInit {
   upload() {
     const file = this.selectedFiles.item(0);
     const fileName: SafeResourceUrl = file.name.split(' ').join('+');
-    this.post.video = 'https://s3.us-east-2.amazonaws.com/java-the-haat/jsa-s3/' + fileName;
+    this.post.video = 'https://s3.us-east-2.amazonaws.com/java-the-haat-1/jsa-s3/' + fileName;
     this.uploadService.uploadfile(file);
   }
 
@@ -100,9 +101,9 @@ export class CreatePostComponent implements OnInit {
   uploadStepPics() {
     const file = this.stepPicFiles.item(0);
     const fileName: SafeResourceUrl = file.name.split(' ').join('+');
-    this.post.steps[this.stepArrayIndexNum].pic = 'https://s3.us-east-2.amazonaws.com/java-the-haat/jsa-s3/' + fileName;
+    this.post.steps[this.stepArrayIndexNum].pic = 'https://s3.us-east-2.amazonaws.com/java-the-haat-1/jsa-s3/' + fileName;
     this.uploadService.uploadfilePic(file);
-    setTimeout(this.changeImage('https://s3.us-east-2.amazonaws.com/java-the-haat/jsa-s3/' + fileName), 10000);
+    setTimeout(this.changeImage('https://s3.us-east-2.amazonaws.com/java-the-haat-1/jsa-s3/' + fileName), 10000);
   }
   // This method will be invoked when a user uploads a file. it sets the file equal to this.selectedFiles global variable
   selectFile(event) {

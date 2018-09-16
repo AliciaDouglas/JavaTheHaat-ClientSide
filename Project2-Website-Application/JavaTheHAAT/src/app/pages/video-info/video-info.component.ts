@@ -48,7 +48,6 @@ export class VideoInfoComponent implements OnInit {
       ],
       comments: []
    };
-
    this.userService.getAllPostsByPid(+this.route.snapshot.paramMap.get('id')).subscribe((post) => {
      console.log(post);
     this.currentPost = post;
@@ -75,6 +74,14 @@ export class VideoInfoComponent implements OnInit {
    this.newComment.commentText = '';
  });
    this.ngOnInit();
+  }
+
+  deleteComment(comment: Comments) {
+    this.userService.deleteComment(comment).subscribe((r) => {});
+  }
+
+  deletepost() {
+    this.userService.deleteMyPost(this.currentPost).subscribe((r) => {});
   }
 
 }
