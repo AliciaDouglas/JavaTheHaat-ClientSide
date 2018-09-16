@@ -9,8 +9,8 @@ export class UploadFileService {
         // Defining & locating the s3 bucket instance
         bucket = new S3(
           {
-            accessKeyId: '+++++',
-            secretAccessKey: '+++++++',
+            accessKeyId: '*******',
+            secretAccessKey: '***********',
             region: 'us-east-1'
           }
         );
@@ -46,7 +46,7 @@ export class UploadFileService {
 
     // setting the headers and body for the post/put request
     const params = {
-      Bucket: 'java-the-haat',
+      Bucket: 'java-the-haat-1',
       Key: this.FOLDER + file.name,
       ContentType: 'image/jpeg',
       Body: file

@@ -1,23 +1,24 @@
 <app-user-nav-bar id="navigate" *ngIf="!isAdmin && !viewer"></app-user-nav-bar>
 <app-admin-nav-bar id="navigate" *ngIf="isAdmin"></app-admin-nav-bar>
 <app-nav-bar *ngIf="viewer"></app-nav-bar>
-<h1 style="font-size:4vw;">Food</h1>
+<h1>Search Query: {{searchFor}}</h1>
 
 <!-- Table containing the User post -->
 <!-- Titles for each row-->
 <table id="table" class="table table-dark">
   <thead>
     <tr>
-      <th style="font-size:2vw;" scope="col">Title</th>
-      <th style="font-size:2vw;" scope="col">Description</th>
-      <th style="font-size:2vw;" scope="col">Video</th>
-  </tr>
+      <th scope="col">Title</th>
+      <th scope="col">Description</th>
+      <th scope="col">Video</th>
+    </tr>
   </thead>
   <!-- Post information, ordered by above <thead> -->
   <tbody>
+    <h2 *ngIf="!posts">Couldn't find any post for: {{searchFor}}</h2>
     <tr class="postRow" *ngFor="let postsAll of posts" (click)="viewPost(postsAll.pId)">
-      <th class="clickable" style="font-size:1.5vw;">{{postsAll.title}}</th>
-      <th class="clickable" style="font-size:1.5vw;">
+      <th class="clickable">{{postsAll.title}}</th>
+      <th class="clickable">
         {{postsAll.description}}
       </th>
       <td>
@@ -30,4 +31,6 @@
   </tbody>
 </table>
 
-<img src="https://static.comicvine.com/uploads/original/11122/111223314/4824418-daredevil-with-luke-cage.jpg" id="food">
+<div>
+    <img src="https://s3-ap-southeast-2.amazonaws.com/patrickbrownart/1001/MarvelVillians_2000px.jpg" id="art">
+</div>

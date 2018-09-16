@@ -1,31 +1,34 @@
+<app-user-nav-bar id="navigate" *ngIf="!isAdmin && !viewer"></app-user-nav-bar>
+<app-admin-nav-bar id="navigate" *ngIf="isAdmin"></app-admin-nav-bar>
+<app-nav-bar *ngIf="viewer"></app-nav-bar>
 <h1 style="font-size:5vw; margin-top: 2%" >Art</h1>
 
 <!-- Table containing the User post -->
 <!-- Titles for each row-->
 <table id="table" class="table table-dark">
-    <thead>
-      <tr>
-          <th style="font-size:2vw;" scope="col">Title</th>
-          <th style="font-size:2vw;" scope="col">Description</th>
-          <th style="font-size:2vw;" scope="col">Video</th>
-      </tr>
-    </thead>
-    <!-- Post information, ordered by above <thead> -->
-    <tbody>
-        <tr *ngFor="let postsAll of posts">
-            <th style="font-size:1.5vw;">{{postsAll.title}}</th>
-            <th style="font-size:1.5vw;">
-              {{postsAll.description}}
-            </th>
-        <td>
-          <div id="video" class="embed-responsive embed-responsive-16by9">
-            <iframe *ngIf="postsAll.video" class="embed-responsive-item" [src]="postsAll.video | safe" allowfullscreen></iframe>
-            <iframe *ngIf="!postsAll.video" class="embed-responsive-item" src="https://www.youtube.com/embed/4KBEb-_B45o" allowfullscreen></iframe>
-          </div>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <thead>
+    <tr>
+      <th style="font-size:2vw;" scope="col">Title</th>
+      <th style="font-size:2vw;" scope="col">Description</th>
+      <th style="font-size:2vw;" scope="col">Video</th>
+    </tr>
+  </thead>
+  <!-- Post information, ordered by above <thead> -->
+  <tbody>
+    <tr *ngFor="let postsAll of posts" (click)="viewPost(postsAll.pId)">
+      <th style="font-size:1.5vw;" class="clickable">{{postsAll.title}}</th>
+      <th style="font-size:1.5vw;" class="clickable">
+        {{postsAll.description}}
+      </th>
+      <td>
+        <div id="video" class="embed-responsive embed-responsive-16by9">
+          <iframe *ngIf="postsAll.video" class="embed-responsive-item" [src]="postsAll.video | safe" allowfullscreen></iframe>
+          <iframe *ngIf="!postsAll.video" class="embed-responsive-item" src="https://www.youtube.com/embed/4KBEb-_B45o" allowfullscreen></iframe>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 <div>
     <img src="https://s3-ap-southeast-2.amazonaws.com/patrickbrownart/1001/MarvelVillians_2000px.jpg" id="art">

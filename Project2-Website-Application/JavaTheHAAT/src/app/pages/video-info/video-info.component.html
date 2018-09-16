@@ -1,20 +1,34 @@
+<app-user-nav-bar id="navigate" *ngIf="!isAdmin && !viewer"></app-user-nav-bar>
+<app-admin-nav-bar id="navigate" *ngIf="isAdmin"></app-admin-nav-bar>
+<app-nav-bar *ngIf="viewer"></app-nav-bar>
 <!-- The details of a single post-->
-<div class="card">
+<div class="card"><h1 *ngIf="isAdmin || currentUser.uId == currentPost.uId " (click)="deletePost()">X</h1>
   <div class="card-body">
-    <h5 "font-size: 3vw" class="card-title">{{currentPost.title}}</h5>
-    <iframe id="video" class="embed-responsive embed-responsive-16by9" class="card-img-top" src="https://www.youtube.com/embed/4KBEb-_B45o"></iframe>
-    <p style="font-size: 1.2vw" class="card-text">Video Description: <br>{{currentPost.description}}</p>
+    <h5 style="font-size: 3vw" class="card-title">{{currentPost.title}}</h5>
+    <iframe id="video" *ngIf="currentPost.video" class="embed-responsive embed-responsive-16by9" class="card-img-top" [src]="currentPost.video | safe" allowfullscreen></iframe>
+    <iframe id="video" *ngIf="!currentPost.video" class="embed-responsive embed-responsive-16by9" class="card-img-top" src="https://www.youtube.com/embed/4KBEb-_B45o"></iframe>
+    <p class="card-text">Video Description: <br>{{currentPost.description}}</p>
   </div>
   <ul class="list-group list-group-flush" *ngFor="let steps of currentPost.steps">
     <li style="font-size: 1.2vw" class="list-group-item">Step {{steps.stepNum}}: {{steps.stepName}}</li>
     <li style="font-size: 1.2vw" class="list-group-item">{{steps.stepText}}</li>
   </ul>
-  <div *ngFor="let comments of currentPost.comments">
-    <li style="font-size: 1vw" class="list-group-item">{{comments.timeSubmission | date:'short'}} <br> {{comments.uId.fname}} {{comments.uId.lname}}:
-      {{comments.commentText}} </li>
+  <div class="commentsBorder">
+      <p class="card-title">Comments</p>
+     <div *ngFor="let comments of currentPost.comments">
+    <li id="noBorder" style="font-size: 1vw" class="list-group-item">{{comments.timeSubmission | date:'short'}} <br> {{comments.uId.fname}} {{comments.uId.lname}}:
+      {{comments.commentText}} 
+      <button id="submit" mat-raised-button color="primary" (click)="deleteComment(comments)" *ngIf="isAdmin" >Delete Comment</button>
+    </li>
+    </div>
   </div>
+  <div *ngIf="!viewer">
   <textarea class="list-group-item" placeholder="Enter Comment" name="commentText" [(ngModel)]="newComment.commentText"></textarea>
   <button style="font-size: .9vw" id="submit" mat-raised-button color="primary" (click)="makeNewComment()">Submit Comment</button>
-
+  </div>
+  <div *ngIf="viewer" class="card-body">
+  <h2>You must <a routerLink="/login">sign in</a> or <a routerLink="/registration">register</a> to make a comment</h2>
+  </div>
+</div>
   <img src="https://img00.deviantart.net/490a/i/2016/272/d/7/much_punches___one_punch_man_wallpaper_by_deto15-dajafem.png"
     id="oneP">

@@ -4,6 +4,7 @@ import { Users } from 'src/app/models/users';
 import { HttpClient } from '@angular/common/http';
 import { UsersService } from 'src/app/services/users.service';
 import { SafePipe } from 'src/app/pipes/safe.pipe';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-food-page',
@@ -12,34 +13,36 @@ import { SafePipe } from 'src/app/pipes/safe.pipe';
 })
 export class FoodPageComponent implements OnInit {
   posts: Posts[];
-  user: Users;
+  bAuthenticated = false;
+  currentUser: Users;
+  isAdmin = true;
+  viewer: boolean;
 
-  constructor(private http: HttpClient, private userService: UsersService, private safePipe: SafePipe) { }
+  constructor(private http: HttpClient, private userService: UsersService, private safePipe: SafePipe, private router: Router) { }
 
   ngOnInit() {
-    this.getAllPosts();
-    this.user = null;
-    this.getUser(2);
+    this.currentUser = this.userService.currentUser;
+    if (this.currentUser.accTypeId !== 2) {
+      this.isAdmin = false;
+    } if (this.currentUser.accTypeId === 0) {
+      this.viewer = true;
+    }
+    this.getAllPostsByCategory();
     for (let i = 0; i < this.posts.length; i++) {
       this.posts[i].video = this.safePipe.transform(this.posts[i].video);
     }
   }
 
   // This method will get all posts... It hould be changed to getAllPostsByUid, so a user can only see their posts
-  getAllPosts() {
-    this.userService.getAllPosts().subscribe(result => {
+  getAllPostsByCategory() {
+    this.userService.getAllPostsByCategory(3).subscribe(result => {
       console.log('This is the JSON title of first:' + result[0].title);
       this.posts = result;
     });
   }
 
-  /* This method will get the currentLogged in user... Should be changed later because cognito will save the user in the userpool
-    So we can get them from there without making another reuqest to the server */
-  getUser(uId: number) {
-    this.userService.getUserById(uId).subscribe(result => {
-      console.log('The user is: ' + result.fname);
-      this.user = result;
-    });
-  }
-
+    // When they click on a post they are redirected to the single-post view
+    viewPost(pId: number) {
+      this.router.navigate(['video-info/' + pId]);
+    }
 }

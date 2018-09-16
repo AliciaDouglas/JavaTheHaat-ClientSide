@@ -18,6 +18,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { CreateNewCategoryComponent } from './adminPages/create-new-category/create-new-category.component';
 import { RegisterAdminComponent } from './adminPages/register-admin/register-admin.component';
 import { AdminViewUserProfileComponent } from './pages/admin-view-user-profile/admin-view-user-profile.component';
+import { SearchPageComponent } from './pages/search-page/search-page.component';
 
 
 
@@ -33,13 +34,14 @@ export const routes: Routes = [
   {path: 'electronics', component: ElectronicsComponent},
   {path: 'art-page', component: ArtPageComponent},
   {path: 'profile', component: ProfileComponent},
-  {path: 'admin-view-profile/:id', component: AdminViewUserProfileComponent},
+  {path: 'admin-view-profile', component: AdminViewUserProfileComponent},
   {path: 'admin-profile', component: AdminProfileComponent},
   {path: 'create-new-category', component: CreateNewCategoryComponent},
   {path: 'register-admin', component: RegisterAdminComponent},
   {path: 'view-all-posts', component: ViewAllPostsComponent},
   {path: 'view-all-users', component: ViewAllUsersComponent},
-  {path: 'video-info/:id', component: VideoInfoComponent}
+  {path: 'video-info/:id', component: VideoInfoComponent},
+  {path: 'search/:string', component: SearchPageComponent}
 ];
 
 

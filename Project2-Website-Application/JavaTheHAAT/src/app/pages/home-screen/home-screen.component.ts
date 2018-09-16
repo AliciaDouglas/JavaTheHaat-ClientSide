@@ -17,13 +17,16 @@ export class HomeScreenComponent implements OnInit {
   bAuthenticated = false;
   currentUser: Users;
   isAdmin = true;
+  viewer: boolean;
 
   constructor(private userService: UsersService, private router: Router) { }
 
   ngOnInit() {
     this.currentUser = this.userService.currentUser;
-    if (this.currentUser.accTypeId === 1) {
+    if (this.currentUser.accTypeId !== 2) {
       this.isAdmin = false;
+    } if (this.currentUser.accTypeId === 0) {
+      this.viewer = true;
     }
 }
 }

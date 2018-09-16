@@ -60,3 +60,17 @@ h1{
     font-size: 500%;
     margin-top: 2%;
 }
+
+.postRow:hover {
+    background-color: rgba(255, 255, 255, 0.966);
+}
+
+.clickable:hover {
+    cursor: default;
+}
+
+#navigate{
+    position: fixed;
+    width: 100%;
+    z-index: 4;
+}

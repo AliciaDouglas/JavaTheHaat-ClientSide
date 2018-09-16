@@ -65,3 +65,13 @@ h1{
 .postRow:hover {
     background-color: rgba(139, 0, 0, 0.966);
 }
+
+.clickable:hover {
+    cursor: default;
+}
+
+#navigate{
+    position: fixed;
+    width: 100%;
+    z-index: 4;
+}
