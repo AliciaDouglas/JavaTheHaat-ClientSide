@@ -33,7 +33,7 @@ export const routes: Routes = [
   {path: 'electronics', component: ElectronicsComponent},
   {path: 'art-page', component: ArtPageComponent},
   {path: 'profile', component: ProfileComponent},
-  {path: 'admin-view-profile/:id', component: AdminViewUserProfileComponent},
+  {path: 'admin-view-profile', component: AdminViewUserProfileComponent},
   {path: 'admin-profile', component: AdminProfileComponent},
   {path: 'create-new-category', component: CreateNewCategoryComponent},
   {path: 'register-admin', component: RegisterAdminComponent},

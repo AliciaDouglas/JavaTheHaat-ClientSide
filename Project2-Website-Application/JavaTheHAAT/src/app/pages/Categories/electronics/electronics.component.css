@@ -61,3 +61,11 @@ h1{
     font-size: 500%;
     margin-top: 2%;
 }
+
+.postRow:hover {
+    background-color: rgba(184, 121, 4, 0.966);
+}
+
+.clickable:hover {
+    cursor: default;
+}

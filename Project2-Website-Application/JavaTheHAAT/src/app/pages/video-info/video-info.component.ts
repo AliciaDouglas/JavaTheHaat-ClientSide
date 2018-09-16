@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { UsersService } from '../../services/users.service';
 import { SafePipe } from '../../pipes/safe.pipe';
 import { Comments } from '../../models/comments';
+import { Users } from '../../models/users';
 
 @Component({
   selector: 'app-video-info',
@@ -13,6 +14,10 @@ import { Comments } from '../../models/comments';
 export class VideoInfoComponent implements OnInit {
 
   currentPost: Posts = null;
+  bAuthenticated = false;
+  currentUser: Users;
+  isAdmin = true;
+  viewer: boolean;
   newComment: Comments = {
       cId: 0,
       commentText: '',
@@ -49,6 +54,12 @@ export class VideoInfoComponent implements OnInit {
     this.currentPost = post;
     this.newComment.pId = post.pId;
   });
+  this.currentUser = this.userService.currentUser;
+  if (this.currentUser.accTypeId !== 2) {
+    this.isAdmin = false;
+  } if (this.currentUser.accTypeId === 0) {
+    this.viewer = true;
+  }
   }
 
   // Essentially this method modifies a post by creating a new comment object inside the post. Then via post request
@@ -57,6 +68,7 @@ export class VideoInfoComponent implements OnInit {
     console.log('sending: ' + this.newComment.commentText);
   this.userService.createComment(this.newComment).subscribe((r) => {});
   this.userService.getAllPostsByPid(+this.route.snapshot.paramMap.get('id')).subscribe((post) => {
+  this.currentPost = null;
     console.log(post);
    this.currentPost = post;
    this.newComment.pId = post.pId;

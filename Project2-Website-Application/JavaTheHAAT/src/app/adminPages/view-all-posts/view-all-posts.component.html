@@ -1,3 +1,4 @@
+<app-admin-nav-bar id="navigate"></app-admin-nav-bar>
 <!-- Table containing the User post -->
 <!-- Titles for each row-->
 <table id="table" class="table table-dark">
@@ -11,9 +12,9 @@
     </thead>
     <!-- Post information, ordered by above <thead> -->
     <tbody>
-      <tr *ngFor="let postsAll of posts">
-        <th>{{postsAll.title}}</th>
-        <th>
+      <tr class="postRow" *ngFor="let postsAll of posts">
+        <th class="clickable" (click)="viewPost(postsAll.pId)">{{postsAll.title}}</th>
+        <th class="clickable" (click)="viewPost(postsAll.pId)">
           {{postsAll.description}}
         </th>
         <td>

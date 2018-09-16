@@ -65,3 +65,7 @@ h1{
 .postRow:hover {
     background-color: rgba(139, 0, 0, 0.966);
 }
+
+.clickable:hover {
+    cursor: default;
+}
