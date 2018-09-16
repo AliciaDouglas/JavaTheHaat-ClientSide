@@ -7,6 +7,12 @@
     margin-top: -15%;
 }
 
+#info{
+   margin-left: auto;
+   margin-right: auto;  
+   margin: auto;
+}
+
 #venom{
     position: fixed;
     margin-left: 86%;
@@ -19,7 +25,7 @@
         transform: translateY(350%)
     }
     100% {
-        transform: translateY(-600%)
+        transform: translateY(-1000%)
     }
 }
 
@@ -154,13 +160,14 @@
 #rP{
     box-shadow: 0px 0px 5px 5px;
     border-radius: 10% 10%;
-    margin-left: 35%
+    margin-left: 35%;
 }
 
 #fontt{
-    font-size:100%;
+    font-size: 100%;
     color: white;
     text-align: left;
+
 }
 
 #pic{
