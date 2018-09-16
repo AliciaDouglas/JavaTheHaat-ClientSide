@@ -1,6 +1,6 @@
+import { Users } from './../../models/users';
 import { UsersService } from './../../services/users.service';
 import { Component, OnInit } from '@angular/core';
-import { Users } from '../../models/users';
 import { Router } from '@angular/router';
 
 @Component({
@@ -38,8 +38,9 @@ export class ViewAllUsersComponent implements OnInit {
   }
 
   // The admin can go to view the specific user's profile
-  viewUser(userId: number) {
-    this.router.navigate(['admin-view-profile/' + userId]);
+  viewUser(user: Users) {
+    this.usersService.userAdminIsViewing = user;
+    this.router.navigate(['admin-view-profile']);
   }
 
 }

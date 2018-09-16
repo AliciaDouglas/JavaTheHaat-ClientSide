@@ -44,4 +44,9 @@ export class ViewAllPostsComponent implements OnInit {
     this.userService.deleteMyPost(postsAll).subscribe(result => {
     });
   }
+
+      // When they click on a post they are redirected to the single-post view
+      viewPost(pId: number) {
+        this.route.navigate(['video-info/' + pId]);
+      }
 }

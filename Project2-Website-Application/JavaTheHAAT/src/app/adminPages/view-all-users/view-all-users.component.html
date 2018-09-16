@@ -1,3 +1,4 @@
+<app-admin-nav-bar id="navigate"></app-admin-nav-bar>
 <table id="table" class="table table-dark">
     <thead>
         <tr>
@@ -12,11 +13,11 @@
     <!-- Post information, ordered by above <thead> -->
     <tbody>
         <tr class="postRow" *ngFor="let user of allUsers">
-            <th class="clickable" (click)="viewUser(user.uId)" >{{user.username}}</th>
-            <th class="clickable" (click)="viewUser(user.uId)" >{{user.email}}</th>
-            <th class="clickable" (click)="viewUser(user.uId)" >{{user.fname}}</th>
-            <th class="clickable" (click)="viewUser(user.uId)" >{{user.lname}}</th>
-            <th class="clickable" (click)="viewUser(user.uId)" >{{user.accStatus.accStatus}}</th>
+            <th class="clickable" (click)="viewUser(user)" >{{user.username}}</th>
+            <th class="clickable" (click)="viewUser(user)" >{{user.email}}</th>
+            <th class="clickable" (click)="viewUser(user)" >{{user.fname}}</th>
+            <th class="clickable" (click)="viewUser(user)" >{{user.lname}}</th>
+            <th class="clickable" (click)="viewUser(user)" >{{user.accStatus.accStatus}}</th>
             <td class="clickable" *ngIf="user.accStatus.accStatus === 'Active'">
                 <button mat-raised-button color="warn" id="delete" (click)="makeInactive(user)">Deactivate Account</button>
             </td>

@@ -1,3 +1,6 @@
+<app-user-nav-bar id="navigate" *ngIf="!isAdmin && !viewer"></app-user-nav-bar>
+<app-admin-nav-bar id="navigate" *ngIf="isAdmin"></app-admin-nav-bar>
+<app-nav-bar *ngIf="viewer"></app-nav-bar>
 <h1>Craft</h1>
 
 <!-- Table containing the User post -->
@@ -13,8 +16,8 @@
     <!-- Post information, ordered by above <thead> -->
     <tbody>
       <tr class="postRow" *ngFor="let postsAll of posts" (click)="viewPost(postsAll.pId)">
-        <th>{{postsAll.title}}</th>
-        <th>
+        <th class="clickable">{{postsAll.title}}</th>
+        <th class="clickable">
           {{postsAll.description}}
         </th>
         <td>

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { Users } from '../models/users';
 import { Posts } from '../models/posts';
@@ -10,22 +10,24 @@ import { Comments } from '../models/comments';
 })
 export class UsersService {
 
+userAdminIsViewing: Users;
+
 currentUser: Users = {
-   uId: 102,
-   fname: 'Oliver',
-   lname: 'Queen',
-   email: 'greenarrow@gmail.com',
-   username: 'greenarrow',
-   password: '111111',
+   uId: 0,
+   fname: '',
+   lname: '',
+   email: '',
+   username: '',
+   password: '',
    profilePic: null,
-   accTypeId: 2,
+   accTypeId: 0,
    accType: {
-     accTypeId: 2,
-     accType: 'Admin'
+     accTypeId: 0,
+     accType: ''
     },
-   accStatusId: 1,
+   accStatusId: 0,
    accStatus: {
-     accStatusId: 1,
+     accStatusId: 0,
      accStatus: 'Active'
     }
 };
@@ -87,7 +89,7 @@ createAPost(post: Posts): Observable<Posts> {
 
 // This method will allow a user to delete one of their posts
 deleteMyPost(post: Posts): Observable<Posts> {
-  return this.http.request<Posts>( 'delete', 'http://ec2-18-223-33-87.us-east-2.compute.amazonaws.com:8080/posts', { body: {post}} );
+  return this.http.delete<Posts>('http://ec2-18-223-33-87.us-east-2.compute.amazonaws.com:8080/posts');
 }
 
 // This method will create a new comment for a post
