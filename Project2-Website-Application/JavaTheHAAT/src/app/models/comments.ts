@@ -4,7 +4,8 @@ import { Users } from './users';
 export class Comments {
     cId?: number;
     pId?: number;
-    user: Users;
+    uId?: number;
+    user?: Users;
     commentText?: string;
     timeSubmission?: string;
 }

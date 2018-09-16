@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { Posts } from 'src/app/models/posts';
 import { HttpClient } from '@angular/common/http';
@@ -14,11 +15,15 @@ export class HomeScreenComponent implements OnInit {
   posts: Posts[];
 
   bAuthenticated = false;
+  currentUser: Users;
+  isAdmin = true;
 
-  constructor(private userService: UsersService) { }
+  constructor(private userService: UsersService, private router: Router) { }
 
   ngOnInit() {
-    console.log(this.userService.currentUser.fname);
-
+    this.currentUser = this.userService.currentUser;
+    if (this.currentUser.accTypeId === 1) {
+      this.isAdmin = false;
+    }
 }
 }

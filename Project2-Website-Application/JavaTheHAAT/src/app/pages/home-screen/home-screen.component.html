@@ -1,4 +1,5 @@
-<app-user-nav-bar ></app-user-nav-bar>
+<app-user-nav-bar id="navigate" *ngIf="!isAdmin"></app-user-nav-bar>
+<app-admin-nav-bar id="navigate" *ngIf="isAdmin"></app-admin-nav-bar>
 <h1 style="font-size:2.5vw;">Super Jumbo D.I.Y Paradise</h1>
 
 <div id="slide">

@@ -74,6 +74,7 @@ get f() { return this.loginForm.controls; }
           if (result) {
             // If there was an error
             if (result['message']) {
+              alert(['Invalid Username and Password']);
               this.errorMessage = 'Invalid credentials';
               return;
             }
@@ -89,8 +90,9 @@ get f() { return this.loginForm.controls; }
                   sessionStorage.setItem('user', JSON.stringify(currentUser));
                   this.userService.user.next(currentUser);
                   this.userService.currentUser = currentUser;
+                  if (currentUser.accStatusId === 1) {
                   this.router.navigate(['home-screen']);
-
+                  } else {alert('Account is inactive! Please contact your system administrator, the Joker'); }
               });
           }
         });

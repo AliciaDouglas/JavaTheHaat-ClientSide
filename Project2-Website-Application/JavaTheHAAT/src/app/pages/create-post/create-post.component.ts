@@ -15,7 +15,7 @@ import { UploadFileService } from '../../services/upload-file.service';
 export class CreatePostComponent implements OnInit {
 
   // Declare variables
-  user: Users;
+  currentUser: Users;
   stepsAmount: number[] = [0];
   stepNumber = 0;
   stepArrayIndexNum = 0;
@@ -34,7 +34,7 @@ export class CreatePostComponent implements OnInit {
 
   // Initalize Object. I will send this post object to the api after the user completes all the fields required for it
   post: Posts = {
-     uId: 194,
+     uId: 0,
      title : '',
      description: '',
      video : '',
@@ -54,6 +54,8 @@ export class CreatePostComponent implements OnInit {
 
   ngOnInit() {
     this.stepsAmount.length = 0;
+    this.currentUser = this.userService.currentUser;
+    this.post.uId = this.currentUser.uId;
   }
 
   // Method adds a new step in the post.steps []. Invoked when user clicks the + button

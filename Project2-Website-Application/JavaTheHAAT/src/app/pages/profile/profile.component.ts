@@ -13,16 +13,15 @@ import { Users } from '../../models/users';
 export class ProfileComponent implements OnInit {
 
   posts: Posts[];
-  user: Users;
+  currentUser: Users;
 
   constructor(private http: HttpClient, private userService: UsersService, private safePipe: SafePipe) { }
 
   // This will initiate when the page loads
   // Using safePipe - This will sanitize the dynamtic src url for <iframe> tag (Needed in order to perform interpolation element attribute
   ngOnInit() {
-    this.user = null;
-    this.getUser(21);
-    this.getAllPostsByUserId(21);
+    this.currentUser = this.userService.currentUser;
+    this.getAllPostsByUserId(this.currentUser.uId);
     for (let i = 0; i < this.posts.length; i++) {
       this.posts[i].video = this.safePipe.transform(this.posts[i].video);
     }
@@ -35,14 +34,4 @@ export class ProfileComponent implements OnInit {
       this.posts = result;
     });
   }
-
-  /* This method will get the currentLogged in user... Should be changed later because cognito will save the user in the userpool
-    So we can get them from there without making another reuqest to the server */
-  getUser(uId: number) {
-    this.userService.getUserById(uId).subscribe(result => {
-      console.log('The user is: ' + result.fname);
-      this.user = result;
-    });
-  }
-
 }

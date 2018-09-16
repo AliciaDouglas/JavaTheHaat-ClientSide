@@ -2,15 +2,22 @@
 <mat-card id="prof" class="example-card">
   <mat-card-header>
     <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-subtitle style="font-size:1vw;" id="fontt">{{currentUser.username}}</mat-card-subtitle>
-    <mat-card-subtitle style="font-size:1vw;" id="fontt">{{currentUser.fname}} </mat-card-subtitle>
-    <mat-card-subtitle style="font-size:1vw;" id="fontt">{{currentUser.lname}}</mat-card-subtitle>
-    <mat-card-subtitle style="font-size:1vw;" id="fontt">{{currentUser.email}}</mat-card-subtitle>
+    <mat-card-subtitle id="fontt">{{userProfile.username}}</mat-card-subtitle>
+    <mat-card-subtitle id="fontt">{{userProfile.fname}} </mat-card-subtitle>
+    <mat-card-subtitle id="fontt">{{userProfile.lname}}</mat-card-subtitle>
+    <mat-card-subtitle id="fontt">{{userProfile.email}}</mat-card-subtitle>
   </mat-card-header>
   <img id="pic" mat-card-image src="https://t3.ftcdn.net/jpg/00/64/67/80/240_F_64678017_zUpiZFjj04cnLri7oADnyMH0XBYyQghG.jpg">
+  <mat-card-content>
+    <div style="font-size:1vw;">
+      About me
+      <br>
+      <textarea cols="67" rows="5"></textarea>
+    </div>
+  </mat-card-content>
   <mat-card-actions>
-    <button style="font-size:1vw;" id="edit" mat-raised-button color="primary">Edit Profile</button>
-    <button style="font-size:1vw;" id="rP" mat-raised-button color="warn">Reset Password</button>
+    <button id="edit" mat-raised-button color="primary">Edit Profile</button>
+    <button id="rP" mat-raised-button color="warn">Reset Password</button>
   </mat-card-actions>
 </mat-card>
 
@@ -26,12 +33,11 @@
       <th style="font-size:1.2vw;" scope="col">Edit</th>
     </tr>
   </thead>
-  
   <!-- Post information, ordered by above <thead> -->
   <tbody>
     <tr *ngFor="let postsAll of posts">
-      <th style="font-size:1.2vw;">{{postsAll.title}}</th>
-      <th style="font-size:1.2vw;">
+      <th style="font-size:1.2vw;" (click)="viewPost(postsAll.pId)">{{postsAll.title}}</th>
+      <th style="font-size:1.2vw;" (click)="viewPost(postsAll.pId)">
         {{postsAll.description}}
       </th>
       <td>
@@ -41,8 +47,7 @@
         </div>
       </td>
       <td id="buttons">
-        <button style="font-size:1vw;" mat-raised-button color="primary" id="update">Update</button>
-        <button style="font-size:1vw;" mat-raised-button color="warn" id="delete">Delete</button>
+        <button style="font-size:1vw;" mat-raised-button color="warn" id="delete" (click)="deletePost(postsAll)">Delete</button>
       </td>
     </tr>
   </tbody>

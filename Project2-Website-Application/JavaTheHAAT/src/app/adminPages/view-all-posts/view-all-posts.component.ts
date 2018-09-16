@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Posts } from '../../models/posts';
 import { Users } from '../../models/users';
 import { UsersService } from './../../services/users.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-view-all-posts',
@@ -13,8 +14,10 @@ export class ViewAllPostsComponent implements OnInit {
 
   posts: Posts[];
   user: Users;
+  currentUser: Users;
+  userProfile: Users;
 
-  constructor(private http: HttpClient, private userService: UsersService) { }
+  constructor(private http: HttpClient, private userService: UsersService, private route: Router) { }
 
   ngOnInit() {
 
@@ -36,5 +39,9 @@ export class ViewAllPostsComponent implements OnInit {
       this.user = result;
     });
   }
-
+  deletePost(postsAll: Posts) {
+    console.log(postsAll);
+    this.userService.deleteMyPost(postsAll).subscribe(result => {
+    });
+  }
 }
