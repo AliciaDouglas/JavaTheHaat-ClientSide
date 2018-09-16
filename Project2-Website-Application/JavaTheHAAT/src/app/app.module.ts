@@ -32,6 +32,7 @@ import { VideoInfoComponent } from './pages/video-info/video-info.component';
 import { CognitoService } from './services/cognito.service';
 import { UsersService } from './services/users.service';
 import { AdminViewUserProfileComponent } from './pages/admin-view-user-profile/admin-view-user-profile.component';
+import { SearchPageComponent } from './pages/search-page/search-page.component';
 
 
 @NgModule({
@@ -58,7 +59,8 @@ import { AdminViewUserProfileComponent } from './pages/admin-view-user-profile/a
     ViewAllUsersComponent,
     AdminProfileComponent,
     VideoInfoComponent,
-    AdminViewUserProfileComponent
+    AdminViewUserProfileComponent,
+    SearchPageComponent
   ],
   imports: [
     BrowserModule,
@@ -72,7 +74,7 @@ import { AdminViewUserProfileComponent } from './pages/admin-view-user-profile/a
     ReactiveFormsModule
 
   ],
-  providers: [UploadFileService, SafePipe, CognitoService, UsersService],
+  providers: [UploadFileService, SafePipe, CognitoService, UsersService, SearchPageComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
