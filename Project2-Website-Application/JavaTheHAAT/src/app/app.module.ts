@@ -74,7 +74,7 @@ import { SearchPageComponent } from './pages/search-page/search-page.component';
     ReactiveFormsModule
 
   ],
-  providers: [UploadFileService, SafePipe, CognitoService, UsersService],
+  providers: [UploadFileService, SafePipe, CognitoService, UsersService, SearchPageComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

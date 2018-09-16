@@ -1,3 +1,4 @@
+import { Comments } from './../../models/comments';
 import { Component, OnInit } from '@angular/core';
 import { Posts } from '../../models/posts';
 import { Users } from '../../models/users';
@@ -12,16 +13,7 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./search-page.component.css']
 })
 export class SearchPageComponent implements OnInit {
-  posts: Posts[] = [
-      {
-      pId: 0,
-      uId: 21,
-      user: {},
-      steps: [],
-      comments: []
-     }
-    ];
-
+  posts: Posts[];
   bAuthenticated = false;
   currentUser: Users;
   isAdmin = true;
@@ -31,6 +23,15 @@ export class SearchPageComponent implements OnInit {
   constructor(private route: ActivatedRoute, private userService: UsersService, private safePipe: SafePipe, private router: Router) { }
 
   ngOnInit() {
+    this.posts = [
+      {
+      pId: -200,
+      uId: 21,
+      user: {},
+      steps: [],
+      comments: []
+     }
+    ];
     this.currentUser = this.userService.currentUser;
     if (this.currentUser.accTypeId !== 2) {
       this.isAdmin = false;
@@ -52,17 +53,55 @@ export class SearchPageComponent implements OnInit {
 
     searchForPosts(searchQuery: string) {
       this.userService.getAllPosts().subscribe((posts) => {
-      for (let i = 0; i < posts.length; i++) {
-        const description = posts[i].description;
-        const title = posts[i].title;
-        if (description.search(searchQuery) > -1 || title.search(searchQuery) > -1) {
-          let postIndex = 0;
-          console.log(posts[i].description);
-          console.log(posts[i].title);
-          this.posts[postIndex] = posts[i];
-          postIndex++;
-        }
-      }
+        for (let i = 0; i < posts.length; i++) {
+          const description = posts[i].description;
+          const title = posts[i].title;
+          if (description.search(searchQuery) > -1 || title.search(searchQuery) > -1) {
+            let postIndex = 0;
+            console.log(posts[i].description);
+            console.log(posts[i].title);
+            this.posts[postIndex] = posts[i];
+            postIndex++;
+          }
+              for (let j = 0; j < posts[i].steps.length; j++) {
+                const stepText =  posts[i].steps[j].stepText;
+                const stepName =  posts[i].steps[j].stepName;
+                if (stepText.search(searchQuery) > -1 || stepName.search(searchQuery) > -1) {
+                  if (this.posts[0].pId !== -200) {
+                    this.posts.push(posts[i]);
+                  } else {
+                  let postIndex = 0;
+                  this.posts[postIndex] = posts[i];
+                  postIndex++;
+                }
+                }
+              }
+                    for (let k = 0; k < posts[i].comments.length; k++) {
+                      const commentText =  posts[i].comments[k].commentText;
+                      if (commentText.search(searchQuery) > -1) {
+                        if (this.posts[0].pId !== -200) {
+                          this.posts.push(posts[i]);
+                        } else {
+                        let postIndex = 0;
+                        this.posts[postIndex] = posts[i];
+                        postIndex++;
+                      }
+                      }
+                    }
+                          const userFname =  posts[i].user.fname;
+                          const userLname =  posts[i].user.lname;
+                          const userUsername =  posts[i].user.username;
+                          if (userFname.search(searchQuery) > -1 || userLname.search(searchQuery) > -1
+                          ||  userUsername.search(searchQuery) > -1) {
+                             if (this.posts[0].pId !== -200) {
+                                  this.posts.push(posts[i]);
+                                } else {
+                                let postIndex = 0;
+                                this.posts[postIndex] = posts[i];
+                                postIndex++;
+                              }
+                              }
+      } if (this.posts[0].pId === -200) {this.posts = null; }
 
       });
     }
