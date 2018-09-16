@@ -32,9 +32,12 @@ h1{
     position: absolute;
     color: white;
     font-weight: bolder;
-    font-size: 800%;
     margin-top: 5%;
     margin-left: 6%;
+}
+
+#input{
+    width: 70%;
 }
 
 #hWall{

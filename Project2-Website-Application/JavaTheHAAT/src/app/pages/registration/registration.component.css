@@ -1,6 +1,6 @@
 #regi{
     z-index: 3;
-    position: fixed;
+    position: absolute;
     margin-top: 15%;
     margin-left: 2.5%;
     color: white;
@@ -11,15 +11,15 @@
 
 h1{
     z-index: 3;
-    position: fixed;
+    position: absolute;
     color: white;
     font-weight: bolder;
-    font-size: 700%;
-    margin-top: 3.5%;
-    margin-left: .5%;
+    margin-top: 6%;
+    margin-left: 2.8%;
 }
 
 #hWall{
     position: fixed;
     width: 120%;
+    height: auto;
 }
