@@ -35,6 +35,7 @@ export class SearchPageComponent implements OnInit {
       comments: []
      }
     ];
+    // Gets the current logged in user
     this.currentUser = this.userService.currentUser;
     if (this.currentUser.accTypeId !== 2) {
       this.isAdmin = false;
@@ -55,6 +56,7 @@ export class SearchPageComponent implements OnInit {
     }
 
     // Search Algorithm
+    // Explain Step by step later
     searchForPosts(searchQuery: string) {
       this.userService.getAllPosts().subscribe((posts) => {
         for (let i = 0; i < posts.length; i++) {

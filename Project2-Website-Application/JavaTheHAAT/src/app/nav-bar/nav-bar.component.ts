@@ -16,6 +16,7 @@ search: string;
   ngOnInit() {
   }
 
+  // redirects the searchQuery to the search component html parameter of the URL
 searchString() {
   this.router.navigate(['search/' + this.search]);
   this.childComponent.searchFor = this.search;

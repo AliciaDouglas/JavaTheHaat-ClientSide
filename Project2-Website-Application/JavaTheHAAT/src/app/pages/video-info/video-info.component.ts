@@ -76,10 +76,12 @@ export class VideoInfoComponent implements OnInit {
    this.ngOnInit();
   }
 
+  // An admin can delete comments
   deleteComment(comment: Comments) {
     this.userService.deleteComment(comment).subscribe((r) => {});
   }
 
+  // An an admin or the user who created the post can delete it
   deletepost() {
     this.userService.deleteMyPost(this.currentPost).subscribe((r) => {});
   }
