@@ -4,19 +4,27 @@
 <table id="table" class="table table-dark">
     <thead>
       <tr>
-        <th scope="col">Title</th>
-        <th scope="col">Description</th>
-        <th scope="col">Video</th>
-        <th scope="col">Edit</th>
+          <th style="font-size:2vw;" scope="col">Title</th>
+          <th style="font-size:2vw;" scope="col">Description</th>
+          <th style="font-size:2vw;" scope="col">Video</th>
+        <th style="font-size:2vw;" scope="col">Edit</th>
       </tr>
     </thead>
     <!-- Post information, ordered by above <thead> -->
     <tbody>
+<<<<<<< HEAD
       <tr class="postRow" *ngFor="let postsAll of posts">
         <th class="clickable" (click)="viewPost(postsAll.pId)">{{postsAll.title}}</th>
         <th class="clickable" (click)="viewPost(postsAll.pId)">
           {{postsAll.description}}
         </th>
+=======
+        <tr *ngFor="let postsAll of posts">
+            <th style="font-size:1.5vw;">{{postsAll.title}}</th>
+            <th style="font-size:1.5vw;">
+              {{postsAll.description}}
+            </th>
+>>>>>>> 5c9d64378b9c9b176fd4b85d1890dfa6a69bb0fd
         <td>
           <div id="video" class="embed-responsive embed-responsive-16by9">
             <iframe *ngIf="postsAll.video" class="embed-responsive-item" [src]="postsAll.video | safe" allowfullscreen></iframe>
@@ -29,5 +37,7 @@
       </tr>
     </tbody>
   </table>
+
+  <img id="venom" src="https://i.pinimg.com/originals/d3/68/73/d3687342e8cd7b0464216b91e75b6075.gif">
 
 <img id="background" src="https://images8.alphacoders.com/567/567772.jpg">

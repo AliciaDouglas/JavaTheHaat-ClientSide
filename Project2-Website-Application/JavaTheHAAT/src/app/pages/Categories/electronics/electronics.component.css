@@ -3,8 +3,6 @@
     z-index: -1;
     width: auto;
     height: auto;
-    -webkit-transform: scaleX(-1);
-    transform: scaleX(-1);
 }
 
 #table{
@@ -59,7 +57,7 @@ h1{
     opacity: .8;
     font-weight: bolder;
     font-size: 500%;
-    margin-top: 2%;
+    margin-top: 2.5%;
 }
 
 .postRow:hover {

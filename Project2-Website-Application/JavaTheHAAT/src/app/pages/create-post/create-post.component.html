@@ -1,5 +1,5 @@
 <app-user-nav-bar id="navigate" *ngIf="!isAdmin"></app-user-nav-bar>
-<h1>Post</h1>
+<h1 style="font-size:6vw;">Post</h1>
 
 <!-- User creating a new post form -->
 <form id="regF">
@@ -32,7 +32,7 @@
 
 <!-- Building step[] object inside the post object -->
   <div class="form-group" *ngFor="let step of post.steps">
-    <label for="exampleFormControlSelect2">Step {{step.stepNum}}: <input type="text" name="stepName" [(ngModel)]="step.stepName"></label>
+    <label for="exampleFormControlSelect2">Step {{step.stepNum}}: <input id="input" type="text" name="stepName" [(ngModel)]="step.stepName"></label>
     <br>
     <img class="pImg" src="https://cdn.dribbble.com/users/791870/screenshots/2192118/cape_animation.gif" style="cursor: pointer" (click)="stepPicUpload(step)">
     <input type="file" id="FileUpload1" style="display: none" accept="image/jpeg" class="form-control-file" (change)="readFileUpload($event)"/>

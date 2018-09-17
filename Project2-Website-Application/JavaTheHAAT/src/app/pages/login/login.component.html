@@ -1,5 +1,5 @@
 <app-nav-bar></app-nav-bar>
-              <h2>Super Jumbo Login</h2>
+<h1 style="font-size:6vw;">Login</h1>
               <form id="log" class="container-fluid" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
                   <div class="form-group">
                       <label>Email</label>
@@ -19,7 +19,7 @@
                       </div>
                   </div>
                   <div class="form-group">
-                      <button [disabled]="loading" class="btn btn-primary">Login</button>
+                        <button style="width: 5vm;" mat-raised-button color="primary" [disabled]="loading" class="btn btn-primary">Login</button>
                   </div>
               </form>
        

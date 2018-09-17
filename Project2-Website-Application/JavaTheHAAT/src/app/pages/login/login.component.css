@@ -13,14 +13,14 @@ h1{
     position: fixed;
     color: white;
     font-weight: bolder;
-    font-size: 800%;
     margin-top: 5%;
-    margin-left: 3.5%;
+    margin-left: 4.5%;
 }
 
 #hWall{
     position: fixed;
     width: 120%;
+    height: auto;
 }
 
 
