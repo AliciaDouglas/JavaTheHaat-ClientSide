@@ -15,6 +15,8 @@ export class RegistrationComponent implements OnInit {
   registerForm: FormGroup;
   submitted = false;
   user: Users;
+  registration = false;
+  registerMessage = 'Registration Successful';
 
 // Cognito Service takes user credentials and verifies with cognito user pool, user credentials then passed to UsersService
   constructor(
@@ -52,7 +54,7 @@ export class RegistrationComponent implements OnInit {
 
   onSubmit() {
       this.submitted = true;
-
+      this.registration = true;
       const email = this.registerForm.get('email').value;
       const password = this.registerForm.get('password').value;
       const firstName = this.registerForm.get('firstName').value;

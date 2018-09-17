@@ -9,8 +9,8 @@ export class UploadFileService {
         // Defining & locating the s3 bucket instance
         bucket = new S3(
           {
-            accessKeyId: '*******',
-            secretAccessKey: '***********',
+            accessKeyId: '*********',
+            secretAccessKey: '***************',
             region: 'us-east-1'
           }
         );

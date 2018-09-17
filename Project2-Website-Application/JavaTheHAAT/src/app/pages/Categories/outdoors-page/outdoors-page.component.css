@@ -71,5 +71,5 @@ h1{
 #navigate{
     position: fixed;
     width: 100%;
-    z-index: 4;
+    z-index: 6;
 }

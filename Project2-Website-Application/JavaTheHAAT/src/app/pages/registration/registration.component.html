@@ -48,7 +48,7 @@
         </div>
         <div class="form-group">
             <label> Confirm Password</label>
-            <input type="confirmPassword" formControlName="confirmPassword" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }"
+            <input type="password" formControlName="confirmPassword" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }"
             />
             <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
                 <div *ngIf="f.confirmPassword.errors.required">Passwords Must Match!</div>
@@ -57,6 +57,7 @@
         </div>
         <div class="form-group">
             <button mat-raised-button color="primary" [disabled]="loading" class="btn btn-primary">Register</button>
+            <div *ngIf="registration">{{registerMessage}}</div>
         </div>
     </form>
 </div>

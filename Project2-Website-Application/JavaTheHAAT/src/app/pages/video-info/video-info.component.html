@@ -1,17 +1,26 @@
 <app-user-nav-bar id="navigate" *ngIf="!isAdmin && !viewer"></app-user-nav-bar>
 <app-admin-nav-bar id="navigate" *ngIf="isAdmin"></app-admin-nav-bar>
-<app-nav-bar *ngIf="viewer"></app-nav-bar>
+<app-nav-bar *ngIf="viewer" id="navigate"></app-nav-bar>
 <!-- The details of a single post-->
 <div class="card"><h1 *ngIf="isAdmin || currentUser.uId == currentPost.uId " (click)="deletePost()">X</h1>
   <div class="card-body">
     <h5 style="font-size: 3vw" class="card-title">{{currentPost.title}}</h5>
+    <div *ngIf="editPost">
+    Enter new Title: <input style="font-size: 1.2vw" class="list-group-item" type="text" placeholder="currentPost.title" [(ngModel)]="currentPost.title">
+    </div>
     <iframe id="video" *ngIf="currentPost.video" class="embed-responsive embed-responsive-16by9" class="card-img-top" [src]="currentPost.video | safe" allowfullscreen></iframe>
     <iframe id="video" *ngIf="!currentPost.video" class="embed-responsive embed-responsive-16by9" class="card-img-top" src="https://www.youtube.com/embed/4KBEb-_B45o"></iframe>
     <p class="card-text">Video Description: <br>{{currentPost.description}}</p>
+    <div *ngIf="editPost">
+    Enter Description: <input style="font-size: 1.2vw" class="list-group-item" type="text" placeholder="currentPost.description" [(ngModel)]="currentPost.description">
+    </div>
   </div>
   <ul class="list-group list-group-flush" *ngFor="let steps of currentPost.steps">
-    <li style="font-size: 1.2vw" class="list-group-item">Step {{steps.stepNum}}: {{steps.stepName}}</li>
+    <li style="font-size: 1.2vw" class="list-group-item">Step {{steps.stepNum}}: {{steps.stepName}} <input *ngIf="editPost" type="text" placeholder="steps.stepName" [(ngModel)]="steps.stepName"></li>
     <li style="font-size: 1.2vw" class="list-group-item">{{steps.stepText}}</li>
+    <div *ngIf="editPost">
+      Enter step text: <input style="font-size: 1.2vw" class="list-group-item" type="text" placeholder="steps.text" [(ngModel)]="steps.stepText">
+    </div>
   </ul>
   <div class="commentsBorder">
       <p class="card-title">Comments</p>
@@ -25,6 +34,10 @@
   <div *ngIf="!viewer">
   <textarea class="list-group-item" placeholder="Enter Comment" name="commentText" [(ngModel)]="newComment.commentText"></textarea>
   <button style="font-size: .9vw" id="submit" mat-raised-button color="primary" (click)="makeNewComment()">Submit Comment</button>
+  <button style="font-size: .9vw" id="submit" mat-raised-button color="primary" (click)="changePost()" *ngIf="isAdmin || currentUser.uId == currentPost.uId ">Edit Post</button>
+  <button style="font-size: .9vw" id="submit" mat-raised-button color="primary" (click)="updatePost()" *ngIf="isAdmin || currentUser.uId == currentPost.uId ">Update Post</button>
+  <button style="font-size: .9vw" id="submit" mat-raised-button color="primary" *ngIf="editPost" (click)="addStep()">+</button>
+  <button style="font-size: .9vw" id="submit" mat-raised-button color="primary" *ngIf="editPost" (click)="deleteStep()">-</button>
   </div>
   <div *ngIf="viewer" class="card-body">
   <h2>You must <a routerLink="/login">sign in</a> or <a routerLink="/registration">register</a> to make a comment</h2>

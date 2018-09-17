@@ -181,3 +181,9 @@ textarea{
     border-radius: 5% 5%;
     width: 100%;
 }
+
+#navigate{
+    position: fixed;
+    width: 100%;
+    z-index: 6;
+}
