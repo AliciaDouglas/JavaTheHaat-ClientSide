@@ -13,11 +13,11 @@
     <!-- Post information, ordered by above <thead> -->
     <tbody>
         <tr class="postRow" *ngFor="let user of allUsers">
-            <th style="font-size:1.5vw;" class="clickable" (click)="viewUser(user.uId)" >{{user.username}}</th>
-            <th style="font-size:1.5vw;" class="clickable" (click)="viewUser(user.uId)" >{{user.email}}</th>
-            <th style="font-size:1.5vw;" class="clickable" (click)="viewUser(user.uId)" >{{user.fname}}</th>
-            <th style="font-size:1.5vw;" class="clickable" (click)="viewUser(user.uId)" >{{user.lname}}</th>
-            <th style="font-size:1.5vw;" class="clickable" (click)="viewUser(user.uId)" >{{user.accStatus.accStatus}}</th>
+            <th style="font-size:1.5vw;" class="clickable" (click)="viewUser(user)" >{{user.username}}</th>
+            <th style="font-size:1.5vw;" class="clickable" (click)="viewUser(user)" >{{user.email}}</th>
+            <th style="font-size:1.5vw;" class="clickable" (click)="viewUser(user)" >{{user.fname}}</th>
+            <th style="font-size:1.5vw;" class="clickable" (click)="viewUser(user)" >{{user.lname}}</th>
+            <th style="font-size:1.5vw;" class="clickable" (click)="viewUser(user)" >{{user.accStatus.accStatus}}</th>
             <td style="font-size:1.5vw;" class="clickable" *ngIf="user.accStatus.accStatus === 'Active'">
                 <button style="font-size:.8vw;" mat-raised-button color="warn" id="delete" (click)="makeInactive(user)">Deactivate Account</button>
             </td>

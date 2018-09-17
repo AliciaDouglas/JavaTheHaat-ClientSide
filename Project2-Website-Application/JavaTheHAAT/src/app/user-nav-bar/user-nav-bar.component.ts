@@ -22,12 +22,12 @@ export class UserNavBarComponent implements OnInit {
     this.router.navigate(['/login']);
   }
 
-    // redirects the searchQuery to the search component html parameter of the URL
-searchString() {
-  this.router.navigate(['search/' + this.search]);
-  this.childComponent.searchFor = this.search;
-  this.childComponent.ngOnInit();
-  this.childComponent.searchFor = this.search;
-}
+  // redirects the searchQuery to the search component html parameter of the URL
+  searchString() {
+    this.router.navigate(['search/' + this.search]);
+    this.childComponent.searchFor = this.search;
+    this.childComponent.ngOnInit();
+    this.childComponent.searchFor = this.search;
+  }
 
 }

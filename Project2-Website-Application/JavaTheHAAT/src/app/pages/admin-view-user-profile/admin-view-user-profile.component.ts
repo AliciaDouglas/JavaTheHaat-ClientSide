@@ -71,7 +71,21 @@ export class AdminViewUserProfileComponent implements OnInit {
   }
  viewPost(pId: number) {
   this.router.navigate(['video-info/' + pId]);
-
-
  }
+
+   // This click event will change a user's status from active to inactive
+   makeInactive() {
+    this.userProfile.accStatusId = 2;
+    this.userProfile.accStatus.accStatus = 'Inactive';
+    this.userProfile.accStatus.accStatusId = 2;
+    this.userService.updateUserInfo(this.userProfile).subscribe((r) => {});
+  }
+
+  // This click event will change a user's status from inactive to active
+  makeActive() {
+    this.userProfile.accStatusId = 1;
+    this.userProfile.accStatus.accStatus = 'Active';
+    this.userProfile.accStatus.accStatusId = 1;
+    this.userService.updateUserInfo(this.userProfile).subscribe((r) => {});
+  }
 }

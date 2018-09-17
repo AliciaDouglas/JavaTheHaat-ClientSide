@@ -16,11 +16,8 @@
     </div>
   </div>
   <ul class="list-group list-group-flush" *ngFor="let steps of currentPost.steps">
-    <li style="font-size: 1.2vw" class="list-group-item">Step {{steps.stepNum}}: {{steps.stepName}} <input *ngIf="editPost" type="text" placeholder="steps.stepName" [(ngModel)]="steps.stepName"></li>
-    <li style="font-size: 1.2vw" class="list-group-item">{{steps.stepText}}</li>
-    <div *ngIf="editPost">
-      Enter step text: <input style="font-size: 1.2vw" class="list-group-item" type="text" placeholder="steps.text" [(ngModel)]="steps.stepText">
-    </div>
+    <li style="font-size: 1.2vw" class="list-group-item">Step {{steps.stepNum}}: {{steps.stepName}} <input *ngIf="editPost" type="text" placeholder="" [(ngModel)]="steps.stepName"></li>
+    <li style="font-size: 1.2vw" class="list-group-item">{{steps.stepText}}  <input *ngIf="editPost" style="font-size: 1.2vw" class="list-group-item" type="text" placeholder="steps.stepText" [(ngModel)]="steps.stepText"></li>
   </ul>
   <div class="commentsBorder">
       <p class="card-title">Comments</p>
@@ -34,10 +31,8 @@
   <div *ngIf="!viewer">
   <textarea class="list-group-item" placeholder="Enter Comment" name="commentText" [(ngModel)]="newComment.commentText"></textarea>
   <button id="submit" style="font-size: .9vw" id="submit" mat-raised-button color="primary" (click)="makeNewComment()">Submit Comment</button>
-  <button id="submit" style="font-size: .9vw" id="submit" mat-raised-button color="primary" (click)="changePost()" *ngIf="isAdmin || currentUser.uId == currentPost.uId ">Edit Post</button>
-  <button id="submit" style="font-size: .9vw" id="submit" mat-raised-button color="primary" (click)="updatePost()" *ngIf="isAdmin || currentUser.uId == currentPost.uId ">Update Post</button>
-  <button id="submit" style="font-size: .9vw" id="submit" mat-raised-button color="primary" *ngIf="editPost" (click)="addStep()">+</button>
-  <button id="submit" style="font-size: .9vw" id="submit" mat-raised-button color="primary" *ngIf="editPost" (click)="deleteStep()">-</button>
+  <button id="submit" style="font-size: .9vw" id="submit" mat-raised-button color="primary" (click)="changePost()" *ngIf="currentUser.uId == currentPost.uId && askEdit">Edit Post</button>
+  <button id="submit" style="font-size: .9vw" id="submit" mat-raised-button color="primary" (click)="updatePost()" *ngIf="currentUser.uId == currentPost.uId && saveUpdate">Update Post</button>
   </div>
   <div *ngIf="viewer" class="card-body">
   <h2>You must <a routerLink="/login">sign in</a> or <a routerLink="/registration">register</a> to make a comment</h2>
