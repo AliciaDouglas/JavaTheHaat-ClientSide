@@ -15,5 +15,5 @@ phases:
 artifacts:
    files:
        - '**/*\
-   base-directory: 'JavaTheHAAT*'
+   base-directory: 'SuperJumbo*'
    discard-paths: yes
