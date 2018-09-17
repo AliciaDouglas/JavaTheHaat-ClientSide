@@ -1,17 +1,76 @@
 #elec{
     position: fixed;
-    z-index: 1;
+    z-index: -1;
     width: auto;
     height: auto;
+}
+
+#table{
+    position: absolute;
+    margin-top: 6.3%;
+    margin-left: 10%;
+    width: 80%;
+    border-style: solid;
+    border-width: 5px;
+    border-color: rgb(73, 64, 46);
+    background-color: rgba(184, 121, 4, 0.39);
+    opacity: .7;
+}
+
+#table:hover{
+    opacity: .9;
+}
+
+th{
+    font-size: 150%;
+    text-align: center;
+    width: 4%;
+}
+
+#update{
+    padding: 5%;
+    margin-left:20%;
+    margin-top: 13%;
+    font-size: 100%;
+}
+#update:hover{
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0px 0px 1px 1px;
+}
+
+#delete{
+    padding: 5%;
+    margin-left:20%;
+    font-size: 100%;
+}
+#delete:hover{
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0px 0px 1px 1px;
 }
 
 h1{
     z-index: 3;
     position: fixed;
     color: white;
-    font-weight: bolder;
     opacity: .8;
+    font-weight: bolder;
     font-size: 500%;
-    margin-left: 2%;
-    margin-top: 4%;
+    margin-top: 2%;
+}
+
+.postRow:hover {
+    background-color: rgba(184, 121, 4, 0.966);
+}
+
+.clickable:hover {
+    cursor: default;
+    margin-top: 2.5%;
+}
+
+#navigate{
+    position: fixed;
+    width: 100%;
+    z-index: 6;
 }

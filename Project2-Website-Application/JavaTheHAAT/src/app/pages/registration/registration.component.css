@@ -1,47 +1,31 @@
 #regi{
-    z-index: 4;
-    position: fixed;
-    margin-top: 10%;
-    margin-left: -18%;
+    z-index: 3;
+    position: absolute;
+    margin-top: 15%;
+    margin-left: 2.5%;
     color: white;
     font-weight: bold;
     width: 20%;
+    opacity: .8;
 } 
 
-
 h1{
-    z-index: 4;
-    position: fixed;
+    z-index: 3;
+    position: absolute;
     color: white;
     font-weight: bolder;
-    font-size: 120px;
-    margin-left: -20%;
+    margin-top: 6%;
+    margin-left: 2.8%;
 }
 
-#icons{
+#hWall{
     position: fixed;
-    margin-top: 10%;
-    margin-left: 11%;
-    z-index: -1.5;
-    opacity: .6;
+    width: 120%;
+    height: auto;
 }
 
-#indicators{
-    margin-bottom: 60%;
-}
-
-#carouselExampleIndicators{
+#navigate{
     position: fixed;
     width: 100%;
-    margin-left: -21%;
-}
-
-#slider{
-    width: 50%;
-    height: 50%;
-    
-}
-
-#item{
-    height: 20%;
+    z-index: 6;
 }

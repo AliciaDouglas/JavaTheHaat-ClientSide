@@ -1,3 +1,34 @@
-<h1>Craft</h1>
+<app-user-nav-bar id="navigate" *ngIf="!isAdmin && !viewer"></app-user-nav-bar>
+<app-admin-nav-bar id="navigate" *ngIf="isAdmin"></app-admin-nav-bar>
+<app-nav-bar *ngIf="viewer"></app-nav-bar>
+<h1 style="font-size:4vw;">Craft</h1>
 
-<img src="https://wallpaper-house.com/data/out/12/wallpaper2you_538015.jpg" id="craft">
+<!-- Table containing the User post -->
+<!-- Titles for each row-->
+<table id="table" class="table table-dark">
+    <thead>
+      <tr>
+          <th style="font-size:2vw;" scope="col">Title</th>
+          <th style="font-size:2vw;" scope="col">Description</th>
+          <th style="font-size:2vw;" scope="col">Video</th>
+      </tr>
+    </thead>
+    <!-- Post information, ordered by above <thead> -->
+    <tbody>
+      <tr class="postRow" *ngFor="let postsAll of posts" (click)="viewPost(postsAll.pId)">
+        <th class="clickable" style="font-size:1.5vw;">{{postsAll.title}}</th>
+        <th class="clickable" style="font-size:1.5vw;">
+          {{postsAll.description}}
+        </th>
+        <td>
+          <div id="video" class="embed-responsive embed-responsive-16by9">
+            <iframe *ngIf="postsAll.video" class="embed-responsive-item" [src]="postsAll.video | safe" allowfullscreen></iframe>
+            <iframe *ngIf="!postsAll.video" class="embed-responsive-item" src="https://www.youtube.com/embed/4KBEb-_B45o" allowfullscreen></iframe>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+<img src="https://steamcdn-a.akamaihd.net/steam/apps/720750/ss_5f9424f371d158550d9adccf7dc92dc1428b430b.1920x1080.jpg?t=1533226012"
+    id="craft">

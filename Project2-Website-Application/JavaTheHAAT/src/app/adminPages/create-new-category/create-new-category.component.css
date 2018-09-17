@@ -1,0 +1,12 @@
+#background{
+    position: absolute;
+    z-index: -1;
+    width: auto;
+    height: 100%;
+}
+
+#navigate{
+    position: fixed;
+    width: 100%;
+    z-index: 6;
+}

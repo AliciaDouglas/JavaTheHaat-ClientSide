@@ -1,61 +1,78 @@
-#homeBackground {
+.hWall{
+    position: absolute;
+    width: 120%;
+    height: auto;
+}
+
+.carousel-control-prev{
+    margin-left: -5%;
+    margin-top: 35%;
+    background-color: black;
+    height: 15%;
+    width: 5%;
+    border-style: solid;
+    border-width: 4px;
+    border-color: rgb(110, 0, 0);
+    border-radius: 10px 10px;
+}
+.carousel-control-next{
+    margin-right: -5%;
+    margin-top: 35%;
+    background-color: black;
+    height: 15%;
+    width: 5%;
+    border-style: solid;
+    border-width: 4px;
+    border-color: rgb(110, 0, 0);
+    border-radius: 10px 10px;
+}
+
+#slide{
     position: fixed;
     z-index: 1;
-    width: 100%;
+    margin-left: 30%;
+    width: 40%;
+    height: 60%;
+    margin-top: 7%;
+}
+
+#slide2{
+    border-style: solid;
+    border-color: rgb(110, 0, 0);
+    border-width: 6px;
+    background-color: rgba(139, 16, 0, 0.746);
+    border-radius: 10px 10px;
+}
+
+#label2{ 
+    font-size: 200%;
+    color: white;
+    margin-left: 40%;
 }
 
 h1{
     position: fixed;
-    color: white;
+    color: rgb(230, 15, 15);
+    -webkit-text-stroke: 1px rgb(255, 255, 255);
     font-weight: bolder;
-    font-size: 700%;
-    margin-left: 32%;
-    margin-top: 15%;
+    margin-left: 36%;
+    margin-top: 3.5%;
     z-index: 1;
-    text-shadow: 4px 4px 1px rgba(187, 30, 2, 0.664);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    opacity: .7;
-    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    animation: h1 1s ease-in-out infinite alternate;
 }
 
+@keyframes h1 {
+    from {
+      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #e6001f, 0 0 25px #e6001f, 0 0 30px #e6001f, 0 0 35px  #e6001f, 0 0 40px  #e6001f;
+    }
+    to {
+      text-shadow: 0 0 20px #fff, 0 0 30px  #e6001f, 0 0 40px  #e6001f, 0 0 50px  #e6001f, 0 0 60px  #e6001f, 0 0 70px  #e6001f, 0 0 80px  #e6001f;
+    }
+  }
 
-h3{
-    position: fixed;
-    z-index: 3;
-    font-size: 400%;
-    color: white;
-    margin-top: -90%;
-    margin-left: 3%;
-    opacity: .8;
-    font-weight: bold;
-}
-
-
-
-#icons{
-    position: fixed;
-    margin-top: 10%;
-    margin-left: 11%;
-    z-index: -1.5;
-    opacity: .6;
-}
-
-#indicators{
-    margin-bottom: 60%;
-}
-
-#carouselExampleIndicators{
+  #navigate{
     position: fixed;
     width: 100%;
+    z-index: 6;
 }
-
-#slider{
-    width: 50%;
-    height: 50%;
-    
-}
-
-#item{
-    height: 20%;
-}
-

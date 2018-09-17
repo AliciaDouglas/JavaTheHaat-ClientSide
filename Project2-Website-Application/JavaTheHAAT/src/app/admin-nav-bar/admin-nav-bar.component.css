@@ -1,0 +1,98 @@
+#naviBar{
+    color: white;
+}
+
+.nav-link:hover{
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0px 0px 1px 1px;
+}
+
+.navbar-toggler{
+    background-color: rgba(141, 37, 37, 0.678);
+}
+
+.btn{
+    background-color: green;
+    color: limegreen;
+}
+.btn:hover{
+    box-shadow: 0px 0px 1px 1px;
+}
+
+#logout{
+    margin-left: 610%;
+}
+#logout:hover{
+    box-shadow: 0px 0px 1px 1px;
+}
+
+#navbarDropdownMenuLink{
+    color: white;
+}
+
+#navigation{
+    background-image: url('http://getwallpapers.com/wallpaper/full/8/7/d/591761.jpg');
+    background-repeat: no-repeat;
+    background-size: 175%;
+    background-position-y: 35%;
+    background-position-x: 15%;
+    opacity: 1;
+    border-style: solid;
+    border-color: rgb(0, 53, 102);
+    border-width: 4px;
+}
+
+.dropdown-menu{
+    border-style: solid;
+    border-width: 5px;
+    border-color: darkred;
+    background-color: rgba(155, 1, 1, 0.589);
+}
+
+#hQ{
+    color: white;
+    font-weight: bold;
+}
+#hQ:hover{
+    color: white;
+    font-size: 25px;
+    z-index: -1;
+    background-image: url('https://s3.amazonaws.com/s3.kywam.radio.com/styles/nts_image_cover_tall_775x425/s3/Batwoman.jpg?itok=UiHVshzk&c=2bcb2b35c2933901ac4ec23260cd8c04');
+    background-repeat: repeat-x;
+    background-size: 250px;
+    opacity: 1;
+    background-position-y: -12px;
+}
+
+#team{
+    color: white;
+    font-weight: bold;
+}
+#team:hover{
+    color: white;
+    font-size: 25px;
+    z-index: -1;
+    background-image: url('https://i2.wp.com/comicbooksgalaxy.com/wp-content/uploads/2017/11/Dick-Grayson-as-Nightwing.jpg?resize=1000%2C600');
+    background-repeat: repeat-x;
+    background-size: 200px;
+    opacity: 1;
+    background-position-y: -25px;
+}
+
+#prof{
+    color: white;
+    font-weight: bold;
+} 
+#prof:hover{
+    color: white;
+    font-size: 25px;
+    z-index: -1;
+    background-image: url('http://media.hollywood.com/images/638x425/3980857.jpg');
+    background-repeat: repeat-x;
+    background-size: 200px;
+    opacity: 1;
+    background-position-y: -25px;
+}
+
+

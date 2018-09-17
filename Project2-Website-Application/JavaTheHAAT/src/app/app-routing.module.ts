@@ -1,3 +1,4 @@
+import { VideoInfoComponent } from './pages/video-info/video-info.component';
 import { ViewAllUsersComponent } from './adminPages/view-all-users/view-all-users.component';
 import { ViewAllPostsComponent } from './adminPages/view-all-posts/view-all-posts.component';
 import { AdminProfileComponent } from './adminPages/admin-profile/admin-profile.component';
@@ -16,6 +17,8 @@ import { ArtPageComponent } from 'src/app/pages/Categories/art-page/art-page.com
 import { ProfileComponent } from './pages/profile/profile.component';
 import { CreateNewCategoryComponent } from './adminPages/create-new-category/create-new-category.component';
 import { RegisterAdminComponent } from './adminPages/register-admin/register-admin.component';
+import { AdminViewUserProfileComponent } from './pages/admin-view-user-profile/admin-view-user-profile.component';
+import { SearchPageComponent } from './pages/search-page/search-page.component';
 
 
 
@@ -31,11 +34,14 @@ export const routes: Routes = [
   {path: 'electronics', component: ElectronicsComponent},
   {path: 'art-page', component: ArtPageComponent},
   {path: 'profile', component: ProfileComponent},
+  {path: 'admin-view-profile', component: AdminViewUserProfileComponent},
   {path: 'admin-profile', component: AdminProfileComponent},
   {path: 'create-new-category', component: CreateNewCategoryComponent},
   {path: 'register-admin', component: RegisterAdminComponent},
   {path: 'view-all-posts', component: ViewAllPostsComponent},
-  {path: 'view-all-users', component: ViewAllUsersComponent}
+  {path: 'view-all-users', component: ViewAllUsersComponent},
+  {path: 'video-info/:id', component: VideoInfoComponent},
+  {path: 'search/:string', component: SearchPageComponent}
 ];
 
 

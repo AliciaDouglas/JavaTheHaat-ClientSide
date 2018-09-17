@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-dark">
-  <a mat-raised-button color="warn" routerLink="/home-screen">HomeScreen</a>
+<nav style="width: 8vm;" id="navigation" class="navbar navbar-expand-lg navbar-light bg-dark">
+  <a class="nav-link" mat-raised-button color="warn" routerLink="/home-screen">HomeScreen</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02"
     aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -8,7 +8,7 @@
   <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item">
-        <a id="naviBar" mat-raised-button color="primary" class="nav-link " routerLink="/create-post">Post</a>
+        <a style="width: 4vw;" id="naviBar" mat-raised-button color="primary" class="nav-link " routerLink="/create-post">Post</a>
       </li>
       <li class="nav-item">
         <a id="naviBar" mat-raised-button color="primary" class="nav-link" routerLink="/profile">Profile</a>
@@ -20,13 +20,14 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a id="craft" class="dropdown-item" routerLink="/craft-page">Craft</a>
-          <a id="hI" class="dropdown-item" routerLink="/home-improvement">Home Improvement</a>
+          <a id="hI" class="dropdown-item" routerLink="/home-improvement">Home</a>
           <a id="food" class="dropdown-item" routerLink="/food-page">Food</a>
           <a id="art" class="dropdown-item" routerLink="/art-page">Art</a>
-          <a id="oG" class="dropdown-item" routerLink="/outdoors-page">Outdoors/Garden</a>
+          <a id="oG" class="dropdown-item" routerLink="/outdoors-page">Garden</a>
           <a id="elec" class="dropdown-item" routerLink="/electronics">Electronics</a>
         </div>
       </li>
+      <button id="logout" mat-raised-button color="accent" type="submit" (click)="logout()">Logout</button>
 
     </ul>
     <form class="form-inline my-2 my-lg-0">

@@ -1,0 +1,81 @@
+.card{
+    position: absolute;
+    z-index: 1;
+    margin-left: 31%;
+    margin-top: 4.5%;
+    width: 40%;
+    text-align: center;
+    font-weight: bold;
+    background-color: rgba(139, 0, 0, 0.822);
+    border-style:double;
+    border-width: 8px;
+}
+
+#submit{
+    width: 50%;
+    margin-left: 25%;
+    background-color: rgba(116, 116, 2, 0.774);
+}
+#submit:hover{
+    background-color: rgba(173, 173, 3, 0.774);
+}
+
+.card-title{
+    font-size: 200%;
+    color:white;
+}
+
+.card-text{
+    color:white;
+    font-size: 125%;
+    border-style:solid;
+    border-width: 4px;
+    border: solid rgba(255, 255, 0, 0.63);
+}
+
+.list-group-item{
+    color:white; 
+    background-color: rgba(139, 0, 0, 0.849);
+    border: solid rgba(255, 255, 0, 0.63);
+    border-width: 4px;
+    font-size: 125%;
+    width: 95%;
+    margin-left: 2.5%;
+    text-align: center;
+}
+
+#video{
+    width: 100%;
+    height: 60%;
+    opacity: 1;
+    border-color: rgba(255, 255, 0, 0.63);
+    border-width: 4px; 
+    border-style: solid;
+}
+
+#oneP{
+    z-index: -1;
+    width: 100%;
+    margin-top: 3%;
+    height: 100%;
+    position: fixed;
+}
+
+#noBorder {
+    border: none;
+}
+
+.commentsBorder {
+    width: 100%;
+    height: 60%;
+    opacity: 1;
+    border-color: rgba(255, 255, 0, 0.63);
+    border-width: 4px; 
+    border-style: solid;
+}
+
+#navigate{
+    position: fixed;
+    width: 100%;
+    z-index: 6;
+}

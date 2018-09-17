@@ -1,7 +1,6 @@
 #prof{
     z-index: 1;
     position: fixed;
-    width: 28%;
     margin-left: 2%;
     margin-top: 5%;
     background-color: rgba(53, 49, 49, 0.774);
@@ -13,20 +12,37 @@
     width: 25%;
 }
 
+#hWall{
+    position: fixed;
+    width: 120%;
+}
+
 #prof:hover{
     background-color: rgba(53, 49, 49, 0.952); 
 }
 
-#rP{
-    box-shadow: 0px 0px 5px 5px;
+#edit{
+    width: 40%;
+    margin-left: 5%;
     border-radius: 10% 10%;
-    margin-left: 35%
+}
+#edit:hover{
+    box-shadow: 0px 0px 2px 2px;
+}
+
+#rP{
+    width: 40%;
+    margin-left: 5%;
+    border-radius: 10% 10%;
+}
+#rP:hover{
+    box-shadow: 0px 0px 2px 2px;
 }
 
 #fontt{
-    font-size:100%;
     color: white;
     text-align: left;
+    margin-left: .5%;
 }
 
 #pic{
@@ -41,41 +57,19 @@ textarea{
     width: 100%;
 }
 
-#icons{
+#design{
+    width: 100%;
     position: fixed;
-    margin-top: 10%;
-    margin-left: 11%;
-    z-index: -1.5;
-    opacity: .6;
-}
-
-.carousel slide{
-    width: auto;
-    height: auto;
-}
-
-.carousel-item{
-    width: auto;
-    height: auto;
-}
-
-#slider{
-    width: 50%;
-    height: 50%;
-    
-}
-
-#item{
-    height: 20%;
 }
 
 #table{
+    z-index: 1;
     position: absolute;
     margin-left: 30%;
     margin-top: 5%;
     width: 68%;
     border-style: solid;
-    border-width: 5px;
+    border-width: 10%;
     border-color: white;
     opacity: .7;
 
@@ -85,10 +79,45 @@ textarea{
     opacity: .9;
 }
 
-td{
-    width: 10%;
+th{
+    font-size: 150%;
+    text-align: center;
+    width: 4%;
 }
 
-th{
-    width: 5%;
+#update{
+    padding: 5%;
+    margin-top: 13%;
+    font-size: 100%;
+    width: 100%;
+}
+#update:hover{
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0px 0px 1px 1px;
+}
+
+#delete{
+    padding: 5%;
+    margin-top: 13%;
+    width: 100%;
+}
+#delete:hover{
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0px 0px 1px 1px;
+}
+
+.postRow:hover {
+    background-color:  rgba(53, 49, 49, 0.996);
+}
+
+.clickable:hover {
+    cursor: default;
+}
+
+#navigate{
+    position: fixed;
+    width: 100%;
+    z-index: 6;
 }

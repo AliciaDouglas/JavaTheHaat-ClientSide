@@ -1,32 +1,173 @@
+#background{
+    position: fixed;
+    z-index: -1;
+    width: auto;
+    height: auto;
+    margin-left: -10%;
+    margin-top: -15%;
+}
+
+#info{
+   margin-left: auto;
+   margin-right: auto;  
+   margin: auto;
+}
+
+#venom{
+    position: fixed;
+    margin-left: 86%;
+    width: 15%;
+    animation: venom 16s linear infinite;
+}
+
+@keyframes venom {
+    0% {
+        transform: translateY(350%)
+    }
+    100% {
+        transform: translateY(-1000%)
+    }
+}
+
+#spider{
+    opacity: 0;
+    margin-left: 13%;
+    margin-top: 35%;
+}
+#spider:hover{
+    margin-left: 12%;
+    margin-top: 35%;
+    opacity: .9;
+    width: 8%;
+}
+
+#hulk{
+    opacity: 0;
+    margin-top: 1%;
+}
+#hulk:hover{
+    opacity:.9;
+    width: 5%;
+    margin-top: 1%;
+}
+
+#iMan{
+    width: 6%;
+    margin-left: 20%;
+    margin-top: 13%;
+    opacity: 0;
+}
+#iMan:hover{
+    width: 6%;
+    margin-left: 20%;
+    margin-top: 9%;
+    opacity: .9;
+}
+
+#wolv{
+    opacity: 0;
+    width: 5%;
+    margin-left: -21%;
+    margin-top: 21%;
+}
+#wolv:hover{
+    opacity: .9;
+    width: 5%;
+    margin-left: -21%;
+    margin-top: 21%;
+}
+
+#sup{
+    position: fixed;
+    opacity: 0;
+    width: 5%;
+    margin-left: 25%;
+    margin-top: 30%;
+}
+#sup:hover{
+    opacity: .9;
+    width: 5%;
+    margin-left: 25%;
+    margin-top: 30%;
+}
+
+#cap{
+    opacity: 0;
+    width: 3%;
+    margin-left: 7%;
+    margin-top: -16%;
+}
+#cap:hover{
+    opacity: .9;
+    width: 3%;
+    margin-left: 7%;
+    margin-top: -16%;
+}
+
+#bat{
+    opacity: 0;
+    width: 4%;
+    margin-left: 27%;
+    margin-top: 0%;
+}
+#bat:hover{
+    opacity: .9;
+    width: 4%;
+    margin-left: 27%;
+    margin-top: 0%;
+}
+
+#green{
+    opacity: 0;
+    width: 12%;
+    margin-left: 12.5%;
+    margin-top: 29.5%;
+}
+#green:hover{
+    opacity: .9;
+    width: 12%;
+    margin-left: 12.5%;
+    margin-top: 29.5%;
+}
+
+#arrow{
+    opacity: 0;
+    width: 4%;
+    margin-left: -13%;
+    margin-top: 1%;
+}
+#arrow:hover{
+    opacity: .9;
+    width: 4%;
+    margin-left: -13%;
+    margin-top: 1%;
+}
+
 #prof{
     z-index: 1;
     position: fixed;
-    width: 28%;
-    margin-left: 40%;
-    margin-top: 5%;
-    background-color: rgba(53, 49, 49, 0.774);
+    margin-left: 1%;
+    margin-top: 3.8%;
+    background-color: rgba(0, 0, 0, 0.486);
     color: white;
     font-weight: bold;
     font-size: 120%;
     border-radius: 5% 5%;
     box-shadow: 0px 0px 5px 5px;
-    width: 25%;
-}
-
-#prof:hover{
-    background-color: rgba(53, 49, 49, 0.952); 
+    width: 15%;
 }
 
 #rP{
     box-shadow: 0px 0px 5px 5px;
     border-radius: 10% 10%;
-    margin-left: 35%
+    margin-left: 35%;
 }
 
 #fontt{
-    font-size:100%;
+    font-size: 100%;
     color: white;
     text-align: left;
+
 }
 
 #pic{
@@ -39,4 +180,10 @@
 textarea{
     border-radius: 5% 5%;
     width: 100%;
+}
+
+#navigate{
+    position: fixed;
+    width: 100%;
+    z-index: 6;
 }

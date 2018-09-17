@@ -1,0 +1,57 @@
+<app-admin-nav-bar id="navigate"></app-admin-nav-bar>
+<mat-card id="prof" class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-subtitle id="fontt">{{userProfile.username}}</mat-card-subtitle>
+    <mat-card-subtitle id="fontt">{{userProfile.fname}} </mat-card-subtitle>
+    <mat-card-subtitle id="fontt">{{userProfile.lname}}</mat-card-subtitle>
+    <mat-card-subtitle id="fontt">{{userProfile.email}}</mat-card-subtitle>
+  </mat-card-header>
+  <img id="pic" mat-card-image src="https://t3.ftcdn.net/jpg/00/64/67/80/240_F_64678017_zUpiZFjj04cnLri7oADnyMH0XBYyQghG.jpg">
+  <mat-card-content>
+    <div style="font-size:1vw;">
+      About me
+      <br>
+      <textarea cols="67" rows="5"></textarea>
+    </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <button id="edit" mat-raised-button color="primary">Edit Profile</button>
+    <button id="rP" mat-raised-button color="warn">Reset Password</button>
+  </mat-card-actions>
+</mat-card>
+
+
+<!-- Table containing the User post -->
+<!-- Titles for each row-->
+<table id="table" class="table table-dark">
+  <thead>
+    <tr>
+      <th style="font-size:1.2vw;" scope="col">Title</th>
+      <th style="font-size:1.2vw;" scope="col">Description</th>
+      <th style="font-size:1.2vw;" scope="col">Video</th>
+      <th style="font-size:1.2vw;" scope="col">Edit</th>
+    </tr>
+  </thead>
+  <h2 *ngIf="posts[0]==undefined">{{userProfile.fname}} {{userProfile.lname}} has no posts</h2>
+  <!-- Post information, ordered by above <thead> -->
+  <tbody>
+    <tr class="postRow" *ngFor="let postsAll of posts">
+      <th class="clickable" style="font-size:1.2vw;" (click)="viewPost(postsAll.pId)">{{postsAll.title}}</th>
+      <th class="clickable" style="font-size:1.2vw;" (click)="viewPost(postsAll.pId)">
+        {{postsAll.description}}
+      </th>
+      <td>
+        <div id="video" class="embed-responsive embed-responsive-16by9">
+          <iframe *ngIf="postsAll.video" class="embed-responsive-item" [src]="postsAll.video | safe" allowfullscreen></iframe>
+          <iframe *ngIf="!postsAll.video" class="embed-responsive-item" src="https://www.youtube.com/embed/4KBEb-_B45o" allowfullscreen></iframe>
+        </div>
+      </td>
+      <td id="buttons">
+        <button style="font-size:1vw;" mat-raised-button color="warn" id="delete" (click)="deletePost(postsAll)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<img id="hWall" src="https://mfiles.alphacoders.com/639/639393.jpg" alt="First slide">

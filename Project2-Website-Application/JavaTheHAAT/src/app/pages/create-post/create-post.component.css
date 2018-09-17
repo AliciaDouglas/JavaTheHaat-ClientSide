@@ -8,7 +8,7 @@
     width: 20%;
 }
 
-#pImg{
+.pImg{
     width: 100%;
 }
 
@@ -32,25 +32,22 @@ h1{
     position: absolute;
     color: white;
     font-weight: bolder;
-    font-size: 800%;
     margin-top: 5%;
     margin-left: 6%;
 }
 
-#icons{
+#input{
+    width: 70%;
+}
+
+#hWall{
     position: fixed;
-    margin-top: 10%;
-    margin-left: 11%;
-    z-index: -1.5;
-    opacity: .6;
+    width: 120%;
 }
 
-#slider{
-    width: 50%;
-    height: 50%;
-    
+#navigate{
+    position: fixed;
+    width: 100%;
+    z-index: 6;
 }
 
-#item{
-    height: 20%;
-}
