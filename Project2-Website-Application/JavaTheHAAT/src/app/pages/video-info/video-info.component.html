@@ -34,8 +34,8 @@
   <div *ngIf="!viewer">
   <textarea class="list-group-item" placeholder="Enter Comment" name="commentText" [(ngModel)]="newComment.commentText"></textarea>
   <button id="submit" style="font-size: .9vw" id="submit" mat-raised-button color="primary" (click)="makeNewComment()">Submit Comment</button>
-  <button id="submit" style="font-size: .9vw" id="submit" mat-raised-button color="primary" (click)="changePost()" *ngIf="isAdmin || currentUser.uId == currentPost.uId ">Edit Post</button>
-  <button id="submit" style="font-size: .9vw" id="submit" mat-raised-button color="primary" (click)="updatePost()" *ngIf="isAdmin || currentUser.uId == currentPost.uId ">Update Post</button>
+  <button id="submit" style="font-size: .9vw" id="submit" mat-raised-button color="primary" (click)="changePost()" *ngIf="currentUser.uId == currentPost.uId ">Edit Post</button>
+  <button id="submit" style="font-size: .9vw" id="submit" mat-raised-button color="primary" (click)="updatePost()" *ngIf="currentUser.uId == currentPost.uId ">Update Post</button>
   <button id="submit" style="font-size: .9vw" id="submit" mat-raised-button color="primary" *ngIf="editPost" (click)="addStep()">+</button>
   <button id="submit" style="font-size: .9vw" id="submit" mat-raised-button color="primary" *ngIf="editPost" (click)="deleteStep()">-</button>
   </div>
