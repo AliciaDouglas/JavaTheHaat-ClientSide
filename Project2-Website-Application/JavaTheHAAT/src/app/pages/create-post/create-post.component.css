@@ -44,3 +44,10 @@ h1{
     position: fixed;
     width: 120%;
 }
+
+#navigate{
+    position: fixed;
+    width: 100%;
+    z-index: 6;
+}
+

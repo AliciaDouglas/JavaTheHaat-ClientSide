@@ -29,9 +29,9 @@
   <h2 *ngIf="!posts">You don't have any posts</h2>
   <!-- Post information, ordered by above <thead> -->
   <tbody>
-    <tr class="postRow" *ngFor="let postsAll of posts" (click)="viewPost(postsAll.pId)">
-      <th class="clickable" style="font-size:1.2vw;">{{postsAll.title}}</th>
-      <th class="clickable"style="font-size:1.2vw;">
+    <tr class="postRow" *ngFor="let postsAll of posts">
+      <th (click)="viewPost(postsAll.pId)" class="clickable" style="font-size:1.2vw;">{{postsAll.title}}</th>
+      <th (click)="viewPost(postsAll.pId)" class="clickable"style="font-size:1.2vw;">
         {{postsAll.description}}
       </th>
       <td>
@@ -41,8 +41,8 @@
         </div>
       </td>
       <td id="buttons">
-        <button style="font-size:1vw;" mat-raised-button color="primary" id="update">Update</button>
-        <button style="font-size:1vw;" mat-raised-button color="warn" id="delete">Delete</button>
+        <button style="font-size:1vw;" mat-raised-button color="primary" id="update" (click)= "updateMyInfo(postsAll.pId)">Update</button>
+        <button style="font-size:1vw;" mat-raised-button color="warn" id="delete" (click)= "deletePost(postsAll)">Delete</button>
       </td>
     </tr>
   </tbody>

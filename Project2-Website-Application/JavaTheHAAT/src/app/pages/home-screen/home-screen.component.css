@@ -70,3 +70,9 @@ h1{
       text-shadow: 0 0 20px #fff, 0 0 30px  #e6001f, 0 0 40px  #e6001f, 0 0 50px  #e6001f, 0 0 60px  #e6001f, 0 0 70px  #e6001f, 0 0 80px  #e6001f;
     }
   }
+
+  #navigate{
+    position: fixed;
+    width: 100%;
+    z-index: 6;
+}

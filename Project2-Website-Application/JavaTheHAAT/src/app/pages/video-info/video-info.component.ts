@@ -5,6 +5,7 @@ import { UsersService } from '../../services/users.service';
 import { SafePipe } from '../../pipes/safe.pipe';
 import { Comments } from '../../models/comments';
 import { Users } from '../../models/users';
+import { Steps } from '../../models/steps';
 
 @Component({
   selector: 'app-video-info',
@@ -13,11 +14,19 @@ import { Users } from '../../models/users';
 })
 export class VideoInfoComponent implements OnInit {
 
+  stepper: Steps = {
+    stepNum: 1,
+    stepName: '',
+    stepText: '',
+    pic: ''
+  };
+
   currentPost: Posts = null;
   bAuthenticated = false;
   currentUser: Users;
   isAdmin = true;
   viewer: boolean;
+  editPost = false;
   newComment: Comments = {
       cId: 0,
       commentText: '',
@@ -83,4 +92,20 @@ export class VideoInfoComponent implements OnInit {
     this.userService.deleteMyPost(this.currentPost).subscribe((r) => {});
   }
 
+  changePost() {
+    this.editPost = true;
+  }
+  addStep() {
+    this.currentPost.steps.push(this.stepper);
+  }
+
+  deleteStep() {
+    this.currentPost.steps.pop();
+  }
+
+  updatePost() {
+    this.currentPost.user = null;
+    console.log(this.currentPost);
+    this.userService.updatePost(this.currentPost).subscribe((r) => {});
+  }
 }

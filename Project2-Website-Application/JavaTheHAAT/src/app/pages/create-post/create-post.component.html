@@ -5,7 +5,7 @@
 <form id="regF">
   <div class="form-group">
     <label for="exampleFormControlInput1">Title</label>
-    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Title" name="title" [(ngModel)]="post.title">
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Title" name="title" [(ngModel)]="post.title" required>
   </div>
 
   <div class="form-group">
@@ -45,6 +45,7 @@
   <button id="add" mat-mini-fab="warn" (click)="addStep()">+</button>
   <button *ngIf="post.steps.length > 1" id="minus" mat-mini-fab="warn" (click)="removeStep()">-</button>
   <button id="submit" mat-raised-button color="primary" (click)="makeAPost()">Submit</button>
+  <div *ngIf="postVariable">{{postMessage}}</div>
 </form>
 
 <img src="https://pbs.twimg.com/media/DMDIKcyWsAEsKDj.jpg:large" id="reg">

@@ -16,6 +16,17 @@ export class ProfileComponent implements OnInit {
   posts: Posts[];
   currentUser: Users;
 
+  sendPost: Posts = {
+    pId: 0,
+    title: '',
+    description: '',
+    video: '',
+    timeSubmission: '',
+    categoryId: 0,
+    steps: [],
+    comments: [],
+  };
+
   constructor(private http: HttpClient, private userService: UsersService, private safePipe: SafePipe, private router: Router) { }
 
   // This will initiate when the page loads
@@ -40,4 +51,26 @@ export class ProfileComponent implements OnInit {
       this.router.navigate(['video-info/' + pId]);
     }
 
+    updateMyInfo(pId: number) {
+      this.router.navigate(['video-info/' + pId]);
+    }
+
+    deletePost(post: Posts) {
+      this.sendPost.pId = post.pId;
+      this.sendPost.uId = post.uId;
+      this.sendPost.title = post.title;
+      this.sendPost.description = post.description;
+      this.sendPost.video = post.video;
+      this.sendPost.timeSubmission = post.timeSubmission;
+      this.sendPost.categoryId = post.categoryId;
+      this.sendPost.steps = post.steps;
+      this.sendPost.comments = post.comments;
+
+      post.user = null;
+      for (let i; i < post.comments.length; i++) {
+      post.comments[i].uId = null;
+      }
+      console.log(post);
+      this.userService.deleteMyPost(post).subscribe((r) => {});
+    }
 }
