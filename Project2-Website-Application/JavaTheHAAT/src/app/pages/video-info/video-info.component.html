@@ -2,7 +2,7 @@
 <app-admin-nav-bar id="navigate" *ngIf="isAdmin"></app-admin-nav-bar>
 <app-nav-bar *ngIf="viewer" id="navigate"></app-nav-bar>
 <!-- The details of a single post-->
-<div class="card"><h1 *ngIf="isAdmin || currentUser.uId == currentPost.uId " (click)="deletePost()">X</h1>
+<div class="card"><button id="x" *ngIf="isAdmin || currentUser.uId == currentPost.uId " (click)="deletePost()">X</button>
   <div class="card-body">
     <h5 style="font-size: 3vw" class="card-title">{{currentPost.title}}</h5>
     <div *ngIf="editPost">
@@ -33,11 +33,11 @@
   </div>
   <div *ngIf="!viewer">
   <textarea class="list-group-item" placeholder="Enter Comment" name="commentText" [(ngModel)]="newComment.commentText"></textarea>
-  <button style="font-size: .9vw" id="submit" mat-raised-button color="primary" (click)="makeNewComment()">Submit Comment</button>
-  <button style="font-size: .9vw" id="submit" mat-raised-button color="primary" (click)="changePost()" *ngIf="isAdmin || currentUser.uId == currentPost.uId ">Edit Post</button>
-  <button style="font-size: .9vw" id="submit" mat-raised-button color="primary" (click)="updatePost()" *ngIf="isAdmin || currentUser.uId == currentPost.uId ">Update Post</button>
-  <button style="font-size: .9vw" id="submit" mat-raised-button color="primary" *ngIf="editPost" (click)="addStep()">+</button>
-  <button style="font-size: .9vw" id="submit" mat-raised-button color="primary" *ngIf="editPost" (click)="deleteStep()">-</button>
+  <button id="submit" style="font-size: .9vw" id="submit" mat-raised-button color="primary" (click)="makeNewComment()">Submit Comment</button>
+  <button id="submit" style="font-size: .9vw" id="submit" mat-raised-button color="primary" (click)="changePost()" *ngIf="isAdmin || currentUser.uId == currentPost.uId ">Edit Post</button>
+  <button id="submit" style="font-size: .9vw" id="submit" mat-raised-button color="primary" (click)="updatePost()" *ngIf="isAdmin || currentUser.uId == currentPost.uId ">Update Post</button>
+  <button id="submit" style="font-size: .9vw" id="submit" mat-raised-button color="primary" *ngIf="editPost" (click)="addStep()">+</button>
+  <button id="submit" style="font-size: .9vw" id="submit" mat-raised-button color="primary" *ngIf="editPost" (click)="deleteStep()">-</button>
   </div>
   <div *ngIf="viewer" class="card-body">
   <h2>You must <a routerLink="/login">sign in</a> or <a routerLink="/registration">register</a> to make a comment</h2>

@@ -15,6 +15,7 @@
   </thead>
   <!-- Post information, ordered by above <thead> -->
   <tbody>
+    <tr class="postRow" *ngFor="let postsAll of posts" (click)="viewPost(postsAll.pId)">
     <tr *ngFor="let postsAll of posts" (click)="viewPost(postsAll.pId)">
       <th style="font-size:1.5vw;" class="clickable">{{postsAll.title}}</th>
       <th style="font-size:1.5vw;" class="clickable">

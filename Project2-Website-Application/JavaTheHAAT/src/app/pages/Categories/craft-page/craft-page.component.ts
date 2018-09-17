@@ -3,6 +3,7 @@ import { Posts } from 'src/app/models/posts';
 import { UsersService } from 'src/app/services/users.service';
 import { SafePipe } from 'src/app/pipes/safe.pipe';
 import { Router } from '@angular/router';
+import { Users } from '../../../models/users';
 
 @Component({
   selector: 'app-craft-page',
@@ -11,10 +12,20 @@ import { Router } from '@angular/router';
 })
 export class CraftPageComponent implements OnInit {
   posts: Posts[];
+  bAuthenticated = false;
+  currentUser: Users;
+  isAdmin = true;
+  viewer: boolean;
 
   constructor(private router: Router, private userService: UsersService, private safePipe: SafePipe) { }
 
   ngOnInit() {
+    this.currentUser = this.userService.currentUser;
+    if (this.currentUser.accTypeId !== 2) {
+      this.isAdmin = false;
+    } if (this.currentUser.accTypeId === 0) {
+      this.viewer = true;
+    }
     this.getAllPostsByCategory();
     for (let i = 0; i < this.posts.length; i++) {
       this.posts[i].video = this.safePipe.transform(this.posts[i].video);
