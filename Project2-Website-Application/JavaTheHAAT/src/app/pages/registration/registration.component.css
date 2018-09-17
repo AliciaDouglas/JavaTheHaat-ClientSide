@@ -22,4 +22,13 @@ h1{
     position: fixed;
     width: 120%;
     height: auto;
+<<<<<<< HEAD
+=======
+}
+
+#navigate{
+    position: fixed;
+    width: 100%;
+    z-index: 6;
+>>>>>>> ae4f6c89bc4a4e89f9e58310c108b379a06be6c5
 }

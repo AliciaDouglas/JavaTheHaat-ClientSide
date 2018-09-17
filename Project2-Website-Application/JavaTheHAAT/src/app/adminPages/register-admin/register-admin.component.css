@@ -37,3 +37,9 @@ h1{
 #registerAd:hover{
     opacity: 2;
 }
+
+#navigate{
+    position: fixed;
+    width: 100%;
+    z-index: 6;
+}

@@ -19,6 +19,8 @@ export class CreatePostComponent implements OnInit {
   stepsAmount: number[] = [0];
   stepNumber = 0;
   stepArrayIndexNum = 0;
+  postVariable = false;
+  postMessage = 'Post Successful';
 
   // Declaring variable of type FileList, this will store the files uploaded by the user
   selectedFiles: FileList;
@@ -84,6 +86,7 @@ export class CreatePostComponent implements OnInit {
 
   // This method will send a post request to the API and invokes the upload() method
   makeAPost() {
+    this.postVariable = true;
     this.upload();
     console.log(this.post);
     this.userService.createAPost(this.post).subscribe(r => {});
@@ -91,10 +94,12 @@ export class CreatePostComponent implements OnInit {
 
   // This method will send the uploaded file to AWS S3 bucket. Also, it sets the link for the post.video = to the S3 bucket location
   upload() {
+    if (this.selectedFiles !== undefined) {
     const file = this.selectedFiles.item(0);
     const fileName: SafeResourceUrl = file.name.split(' ').join('+');
     this.post.video = 'https://s3.us-east-2.amazonaws.com/java-the-haat-1/jsa-s3/' + fileName;
     this.uploadService.uploadfile(file);
+    }
   }
 
   // This method will send the uploaded file to AWS S3 bucket. Also, it sets the link for the post.video = to the S3 bucket location

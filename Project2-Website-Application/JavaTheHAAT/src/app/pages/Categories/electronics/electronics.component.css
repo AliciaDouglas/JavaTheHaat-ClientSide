@@ -66,4 +66,11 @@ h1{
 
 .clickable:hover {
     cursor: default;
+    margin-top: 2.5%;
+}
+
+#navigate{
+    position: fixed;
+    width: 100%;
+    z-index: 6;
 }
