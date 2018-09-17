@@ -12,19 +12,11 @@
     </thead>
     <!-- Post information, ordered by above <thead> -->
     <tbody>
-<<<<<<< HEAD
       <tr class="postRow" *ngFor="let postsAll of posts">
         <th style="font-size:1.5vw;" class="clickable" (click)="viewPost(postsAll.pId)">{{postsAll.title}}</th>
         <th style="font-size:1.5vw;" class="clickable" (click)="viewPost(postsAll.pId)">
           {{postsAll.description}}
         </th>
-=======
-        <tr *ngFor="let postsAll of posts">
-            <th style="font-size:1.5vw;">{{postsAll.title}}</th>
-            <th style="font-size:1.5vw;">
-              {{postsAll.description}}
-            </th>
->>>>>>> 5c9d64378b9c9b176fd4b85d1890dfa6a69bb0fd
         <td>
           <div id="video" class="embed-responsive embed-responsive-16by9">
             <iframe *ngIf="postsAll.video" class="embed-responsive-item" [src]="postsAll.video | safe" allowfullscreen></iframe>

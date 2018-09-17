@@ -1,6 +1,6 @@
 <app-user-nav-bar id="navigate" *ngIf="!isAdmin && !viewer"></app-user-nav-bar>
 <app-admin-nav-bar id="navigate" *ngIf="isAdmin"></app-admin-nav-bar>
-<app-nav-bar *ngIf="viewer"></app-nav-bar>
+<app-nav-bar id="navigate"*ngIf="viewer"></app-nav-bar>
 <h1 style="font-size:4vw;">Home</h1>
 
 <!-- Table containing the User post -->

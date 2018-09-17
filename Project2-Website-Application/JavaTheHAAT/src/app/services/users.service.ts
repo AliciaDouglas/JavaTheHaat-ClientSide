@@ -20,9 +20,9 @@ currentUser: Users = {
    username: '',
    password: '',
    profilePic: null,
-   accTypeId: 0,
+   accTypeId: 2,
    accType: {
-     accTypeId: 0,
+     accTypeId: 2,
      accType: ''
     },
    accStatusId: 0,

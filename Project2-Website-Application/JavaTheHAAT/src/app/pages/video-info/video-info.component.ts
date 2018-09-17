@@ -21,6 +21,14 @@ export class VideoInfoComponent implements OnInit {
     pic: ''
   };
 
+  comment: Comments = {
+    cId: 0,
+    commentText: 'string',
+    pId: 0,
+    timeSubmission: '2018-09-17T03:24:49.290Z',
+    uId: 0
+  };
+
   currentPost: Posts = null;
   bAuthenticated = false;
   currentUser: Users;
@@ -87,6 +95,7 @@ export class VideoInfoComponent implements OnInit {
 
   // An admin can delete comments
   deleteComment(comment: Comments) {
+    console.log(comment);
     this.userService.deleteComment(comment).subscribe((r) => {});
   }
 

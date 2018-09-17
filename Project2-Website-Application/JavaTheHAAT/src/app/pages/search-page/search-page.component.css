@@ -1,5 +1,37 @@
-#navigate{
+#table{
+    position: absolute;
+    margin-top: 7%;
+    margin-left: 10%;
+    width: 80%;
+    border-style: solid;
+    border-width: 5px;
+    border-color: rgb(161, 5, 5);
+    background-color: rgba(139, 0, 0, 0.746);
+    opacity: .7;
+ }
+ #table:hover{
+    opacity: .9;
+ }
+ 
+ #art{
+    position: fixed;
+    z-index: -1;
+    width: auto;
+    height: auto;
+ }
+ 
+ h1{
+    position: absolute;
+    z-index: 3;
+    color: white;
+    opacity: .8;
+    font-weight: bolder;
+    font-size: 400%;
+    margin-top: 2.5%;
+ }
+ 
+ #navigate{
     position: fixed;
     width: 100%;
-    z-index: 6;
-}
+    z-index: 4;
+ }
