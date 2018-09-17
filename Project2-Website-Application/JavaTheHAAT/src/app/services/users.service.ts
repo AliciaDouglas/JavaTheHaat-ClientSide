@@ -105,6 +105,6 @@ deleteComment(comment: Comments): Observable<Comments> {
 
 // This method will update a post
 updatePost(post: Posts): Observable<Users> {
-  return this.http.put<Users>('http://ec2-18-223-33-87.us-east-2.compute.amazonaws.com:8080/users', post);
+  return this.http.put<Users>('http://ec2-18-223-33-87.us-east-2.compute.amazonaws.com:8080/posts', post);
 }
 }

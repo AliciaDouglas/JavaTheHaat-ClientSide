@@ -1,3 +1,4 @@
+import { Steps } from './../../models/steps';
 import { Comments } from './../../models/comments';
 import { Component, OnInit } from '@angular/core';
 import { Posts } from '../../models/posts';
@@ -5,7 +6,6 @@ import { ActivatedRoute } from '@angular/router';
 import { UsersService } from '../../services/users.service';
 import { SafePipe } from '../../pipes/safe.pipe';
 import { Users } from '../../models/users';
-import { Steps } from '../../models/steps';
 
 @Component({
   selector: 'app-video-info',
@@ -14,6 +14,9 @@ import { Steps } from '../../models/steps';
 })
 export class VideoInfoComponent implements OnInit {
 
+
+  askEdit = true;
+  saveUpdate;
 
   postObj: Posts = {
       categoryId: 2,
@@ -31,11 +34,11 @@ export class VideoInfoComponent implements OnInit {
       ],
       timeSubmission: '',
       uId: 0,
-      user: {},
       video : '',
    };
 
   stepper: Steps = {
+    pId: 0,
     stepNum: 1,
     stepName: '',
     stepText: '',
@@ -157,16 +160,29 @@ export class VideoInfoComponent implements OnInit {
     this.postObj.timeSubmission = this.currentPost.timeSubmission;
     this.postObj.title = this.currentPost.title;
     this.postObj.uId = this.currentPost.uId;
-    this.postObj.user = this.currentPost.user;
     this.postObj.video = this.currentPost.video;
+    console.log(this.currentPost.uId);
     console.log(this.postObj);
-    this.userService.deleteMyPost(this.postObj).subscribe((r) => {});
+    this.userService.deleteMyPost(this.postObj).subscribe((r) => {
+    });
   }
 
   changePost() {
     this.editPost = true;
+    this.askEdit = false;
+    this.saveUpdate = true;
   }
   addStep() {
+    const stepper: Steps = {
+      pId: 0,
+      stepNum: 1,
+      stepName: '',
+      stepText: '',
+      pic: ''
+    };
+    stepper.pId = this.currentPost.pId;
+    stepper.stepNum = this.currentPost.steps.length + 1;
+    console.log(this.stepper);
     this.currentPost.steps.push(this.stepper);
   }
 
@@ -175,8 +191,19 @@ export class VideoInfoComponent implements OnInit {
   }
 
   updatePost() {
+    this.editPost = false;
+    this.askEdit = true;
+    this.saveUpdate = false;
     this.currentPost.user = null;
     console.log(this.currentPost);
-    this.userService.updatePost(this.currentPost).subscribe((r) => {});
+    this.userService.updatePost(this.currentPost).subscribe((r) => {
+      this.userService.getAllPostsByPid(+this.route.snapshot.paramMap.get('id')).subscribe((post) => {
+        this.currentPost = null;
+          console.log(post);
+         this.currentPost = post;
+         this.newComment.pId = post.pId;
+         this.newComment.commentText = '';
+       });
+    });
   }
 }
