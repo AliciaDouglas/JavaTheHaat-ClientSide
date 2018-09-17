@@ -21,6 +21,14 @@ export class VideoInfoComponent implements OnInit {
     pic: ''
   };
 
+  comment: Comments = {
+    cId: 0,
+    commentText: 'string',
+    pId: 0,
+    timeSubmission: '2018-09-17T03:24:49.290Z',
+    uId: 0
+  };
+
   currentPost: Posts = null;
   bAuthenticated = false;
   currentUser: Users;
@@ -82,12 +90,16 @@ export class VideoInfoComponent implements OnInit {
    this.newComment.pId = post.pId;
    this.newComment.commentText = '';
  });
+   this.ngOnInit();
   }
 
+  // An admin can delete comments
   deleteComment(comment: Comments) {
+    console.log(comment);
     this.userService.deleteComment(comment).subscribe((r) => {});
   }
 
+  // An an admin or the user who created the post can delete it
   deletepost() {
     this.userService.deleteMyPost(this.currentPost).subscribe((r) => {});
   }

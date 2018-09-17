@@ -11,9 +11,18 @@ phases:
            - ng build --prod
    post_build:
         commands:
-           - aws s3 sync --delete dist/SuperJumbo s3://java-the-haat-2
+            - echo Installing source NPM dependencies...
+            - npm install
+            - npm install -g @angular/cli
+    build:
+        commands:
+            - echo Build started on `date`
+            - ng build --prod
+    post_build:
+         commands:
+            - aws s3 sync --delete dist/java-the-haat-3 s3://java-the-haat-3
 artifacts:
-   files:
-       - '**/*\
-   base-directory: 'JavaTheHAAT*'
-   discard-paths: yes
+    files:
+        - '**/*\
+    base-directory: 'JavaTheHAAT*'
+    discard-paths: yes

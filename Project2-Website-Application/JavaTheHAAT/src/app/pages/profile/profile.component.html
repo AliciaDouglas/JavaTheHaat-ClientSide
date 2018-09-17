@@ -9,8 +9,11 @@
   </mat-card-header>
   <img id="pic" mat-card-image src="https://t3.ftcdn.net/jpg/00/64/67/80/240_F_64678017_zUpiZFjj04cnLri7oADnyMH0XBYyQghG.jpg">
   <mat-card-actions>
-    <button style="font-size:1vw;" id="edit" mat-raised-button color="primary">Edit Profile</button>
-    <button style="font-size:1vw;" id="rP" mat-raised-button color="warn">Reset Password</button>
+      <input *ngIf="editable" type="text" name="username" [(ngModel)]="currentUser.username"> 
+      <input *ngIf="editable" type="text" name="fname" [(ngModel)]="currentUser.fname"> 
+      <input *ngIf="editable" type="text" name="lname" [(ngModel)]="currentUser.lname"> 
+    <button style="font-size:1vw;" id="edit" mat-raised-button color="primary" *ngIf="!hideUpdate" (click)="editInfo()">Edit Profile</button>
+    <button style="font-size:1vw;" id="edit" mat-raised-button color="primary" *ngIf="hideUpdate" (click)="SaveUpdate()">Save</button>
   </mat-card-actions>
 </mat-card>
 

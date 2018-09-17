@@ -19,10 +19,13 @@ export class SearchPageComponent implements OnInit {
   isAdmin = true;
   viewer: boolean;
   searchFor: string;
+  pushedPostIds: number[] = [-1];
 
   constructor(private route: ActivatedRoute, private userService: UsersService, private safePipe: SafePipe, private router: Router) { }
 
   ngOnInit() {
+    this.pushedPostIds = [-1];
+    this.posts = null;
     this.posts = [
       {
       pId: -200,
@@ -32,6 +35,7 @@ export class SearchPageComponent implements OnInit {
       comments: []
      }
     ];
+    // Gets the current logged in user
     this.currentUser = this.userService.currentUser;
     if (this.currentUser.accTypeId !== 2) {
       this.isAdmin = false;
@@ -51,6 +55,8 @@ export class SearchPageComponent implements OnInit {
       this.router.navigate(['video-info/' + pId]);
     }
 
+    // Search Algorithm
+    // Explain Step by step later
     searchForPosts(searchQuery: string) {
       this.userService.getAllPosts().subscribe((posts) => {
         for (let i = 0; i < posts.length; i++) {
@@ -61,29 +67,34 @@ export class SearchPageComponent implements OnInit {
             console.log(posts[i].description);
             console.log(posts[i].title);
             this.posts[postIndex] = posts[i];
+            this.pushedPostIds.push(posts[i].pId);
             postIndex++;
           }
               for (let j = 0; j < posts[i].steps.length; j++) {
                 const stepText =  posts[i].steps[j].stepText;
                 const stepName =  posts[i].steps[j].stepName;
-                if (stepText.search(searchQuery) > -1 || stepName.search(searchQuery) > -1) {
+            if (stepText.search(searchQuery) > -1 || stepName.search(searchQuery) > -1 && (!(this.pushedPostIds.includes(posts[i].pId)))) {
                   if (this.posts[0].pId !== -200) {
                     this.posts.push(posts[i]);
-                  } else {
+                    this.pushedPostIds.push(posts[i].pId);
+                  } else if ((!(this.pushedPostIds.includes(posts[i].pId)))) {
                   let postIndex = 0;
                   this.posts[postIndex] = posts[i];
+                  this.pushedPostIds.push(posts[i].pId);
                   postIndex++;
                 }
                 }
               }
                     for (let k = 0; k < posts[i].comments.length; k++) {
                       const commentText =  posts[i].comments[k].commentText;
-                      if (commentText.search(searchQuery) > -1) {
+                      if (commentText.search(searchQuery) > -1 && (!(this.pushedPostIds.includes(posts[i].pId)))) {
                         if (this.posts[0].pId !== -200) {
                           this.posts.push(posts[i]);
-                        } else {
+                          this.pushedPostIds.push(posts[i].pId);
+                        } else if ((!(this.pushedPostIds.includes(posts[i].pId)))) {
                         let postIndex = 0;
                         this.posts[postIndex] = posts[i];
+                        this.pushedPostIds.push(posts[i].pId);
                         postIndex++;
                       }
                       }
@@ -92,12 +103,14 @@ export class SearchPageComponent implements OnInit {
                           const userLname =  posts[i].user.lname;
                           const userUsername =  posts[i].user.username;
                           if (userFname.search(searchQuery) > -1 || userLname.search(searchQuery) > -1
-                          ||  userUsername.search(searchQuery) > -1) {
+                          ||  userUsername.search(searchQuery) > -1 && !(this.pushedPostIds.includes(posts[i].pId))) {
                              if (this.posts[0].pId !== -200) {
                                   this.posts.push(posts[i]);
-                                } else {
+                                  this.pushedPostIds.push(posts[i].pId);
+                                } else if (!(this.pushedPostIds.includes(posts[i].pId))) {
                                 let postIndex = 0;
                                 this.posts[postIndex] = posts[i];
+                                this.pushedPostIds.push(posts[i].pId);
                                 postIndex++;
                               }
                               }

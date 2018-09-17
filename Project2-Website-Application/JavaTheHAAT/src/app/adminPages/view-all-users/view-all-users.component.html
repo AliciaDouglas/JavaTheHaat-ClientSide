@@ -19,10 +19,10 @@
             <th style="font-size:1.5vw;" class="clickable" (click)="viewUser(user.uId)" >{{user.lname}}</th>
             <th style="font-size:1.5vw;" class="clickable" (click)="viewUser(user.uId)" >{{user.accStatus.accStatus}}</th>
             <td style="font-size:1.5vw;" class="clickable" *ngIf="user.accStatus.accStatus === 'Active'">
-                <button mat-raised-button color="warn" id="delete" (click)="makeInactive(user)">Deactivate Account</button>
+                <button style="font-size:.8vw;" mat-raised-button color="warn" id="delete" (click)="makeInactive(user)">Deactivate Account</button>
             </td>
             <td *ngIf="user.accStatus.accStatus === 'Inactive'">
-                <button mat-raised-button color="warn" id="delete" (click)="makeActive(user)">Activate Account</button>
+                <button mat-raised-button color="primary" id="delete" (click)="makeActive(user)">Activate Account</button>
             </td>
         </tr>
     </tbody>

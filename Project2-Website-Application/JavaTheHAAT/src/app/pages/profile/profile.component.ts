@@ -15,6 +15,8 @@ export class ProfileComponent implements OnInit {
 
   posts: Posts[];
   currentUser: Users;
+  editable = false;
+  hideUpdate = false;
 
   sendPost: Posts = {
     pId: 0,
@@ -72,5 +74,16 @@ export class ProfileComponent implements OnInit {
       }
       console.log(post);
       this.userService.deleteMyPost(post).subscribe((r) => {});
+    }
+
+    editInfo() {
+      this.editable = true;
+      this.hideUpdate = true;
+    }
+
+    SaveUpdate() {
+      this.editable = false;
+      this.hideUpdate = false;
+      this.userService.updateUserInfo(this.currentUser).subscribe((r) => {});
     }
 }
