@@ -73,8 +73,8 @@ export class SearchPageComponent implements OnInit {
               for (let j = 0; j < posts[i].steps.length; j++) {
                 const stepText =  posts[i].steps[j].stepText;
                 const stepName =  posts[i].steps[j].stepName;
-            if (stepText.search(searchQuery) > -1 || stepName.search(searchQuery) > -1 && (!(this.pushedPostIds.includes(posts[i].pId)))) {
-                  if (this.posts[0].pId !== -200) {
+            if (stepText.search(searchQuery) > -1 || stepName.search(searchQuery) > -1) {
+                  if (this.posts[0].pId !== -200 && (!(this.pushedPostIds.includes(posts[i].pId)))) {
                     this.posts.push(posts[i]);
                     this.pushedPostIds.push(posts[i].pId);
                   } else if ((!(this.pushedPostIds.includes(posts[i].pId)))) {
@@ -87,8 +87,8 @@ export class SearchPageComponent implements OnInit {
               }
                     for (let k = 0; k < posts[i].comments.length; k++) {
                       const commentText =  posts[i].comments[k].commentText;
-                      if (commentText.search(searchQuery) > -1 && (!(this.pushedPostIds.includes(posts[i].pId)))) {
-                        if (this.posts[0].pId !== -200) {
+                      if (commentText.search(searchQuery) > -1 ) {
+                        if (this.posts[0].pId !== -200 && (!(this.pushedPostIds.includes(posts[i].pId)))) {
                           this.posts.push(posts[i]);
                           this.pushedPostIds.push(posts[i].pId);
                         } else if ((!(this.pushedPostIds.includes(posts[i].pId)))) {
@@ -103,8 +103,8 @@ export class SearchPageComponent implements OnInit {
                           const userLname =  posts[i].user.lname;
                           const userUsername =  posts[i].user.username;
                           if (userFname.search(searchQuery) > -1 || userLname.search(searchQuery) > -1
-                          ||  userUsername.search(searchQuery) > -1 && !(this.pushedPostIds.includes(posts[i].pId))) {
-                             if (this.posts[0].pId !== -200) {
+                          ||  userUsername.search(searchQuery) > -1) {
+                             if (this.posts[0].pId !== -200 && (!(this.pushedPostIds.includes(posts[i].pId)))) {
                                   this.posts.push(posts[i]);
                                   this.pushedPostIds.push(posts[i].pId);
                                 } else if (!(this.pushedPostIds.includes(posts[i].pId))) {

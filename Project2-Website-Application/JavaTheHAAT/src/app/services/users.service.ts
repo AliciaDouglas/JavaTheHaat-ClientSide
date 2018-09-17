@@ -20,9 +20,9 @@ currentUser: Users = {
    username: '',
    password: '',
    profilePic: null,
-   accTypeId: 2,
+   accTypeId: 0,
    accType: {
-     accTypeId: 2,
+     accTypeId: 0,
      accType: ''
     },
    accStatusId: 0,
@@ -100,7 +100,7 @@ createComment(comment: Comments): Observable<Comments> {
 
 // This method will be used by the admin to delete a comment
 deleteComment(comment: Comments): Observable<Comments> {
-  return this.http.delete<Posts>('http://ec2-18-223-33-87.us-east-2.compute.amazonaws.com:8080/comments');
+  return this.http.put<Posts>('http://ec2-18-223-33-87.us-east-2.compute.amazonaws.com:8080/comments/delete', comment);
 }
 
 // This method will update a post

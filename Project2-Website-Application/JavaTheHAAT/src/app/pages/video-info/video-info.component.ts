@@ -1,9 +1,9 @@
+import { Comments } from './../../models/comments';
 import { Component, OnInit } from '@angular/core';
 import { Posts } from '../../models/posts';
 import { ActivatedRoute } from '@angular/router';
 import { UsersService } from '../../services/users.service';
 import { SafePipe } from '../../pipes/safe.pipe';
-import { Comments } from '../../models/comments';
 import { Users } from '../../models/users';
 import { Steps } from '../../models/steps';
 
@@ -14,6 +14,27 @@ import { Steps } from '../../models/steps';
 })
 export class VideoInfoComponent implements OnInit {
 
+
+  postObj: Posts = {
+      categoryId: 2,
+      comments: [],
+      title : '',
+      description: '',
+      pId: 0,
+      steps: [
+        {
+        stepNum: 1,
+        stepName: '',
+        stepText: '',
+        pic: ''
+        }
+      ],
+      timeSubmission: '',
+      uId: 0,
+      user: {},
+      video : '',
+   };
+
   stepper: Steps = {
     stepNum: 1,
     stepName: '',
@@ -21,7 +42,7 @@ export class VideoInfoComponent implements OnInit {
     pic: ''
   };
 
-  comment: Comments = {
+  deleteCommentObj: Comments = {
     cId: 0,
     commentText: 'string',
     pId: 0,
@@ -29,12 +50,13 @@ export class VideoInfoComponent implements OnInit {
     uId: 0
   };
 
-  currentPost: Posts = null;
+  currentPost = null;
   bAuthenticated = false;
   currentUser: Users;
   isAdmin = true;
   viewer: boolean;
   editPost = false;
+
   newComment: Comments = {
       cId: 0,
       commentText: '',
@@ -82,26 +104,63 @@ export class VideoInfoComponent implements OnInit {
   // Sending that comment object to the server. We then make another request to the database to get the most recent post.
   makeNewComment() {
     console.log('sending: ' + this.newComment.commentText);
-  this.userService.createComment(this.newComment).subscribe((r) => {});
-  this.userService.getAllPostsByPid(+this.route.snapshot.paramMap.get('id')).subscribe((post) => {
-  this.currentPost = null;
-    console.log(post);
-   this.currentPost = post;
-   this.newComment.pId = post.pId;
-   this.newComment.commentText = '';
- });
+  this.userService.createComment(this.newComment).subscribe((r) => {
+    this.userService.getAllPostsByPid(+this.route.snapshot.paramMap.get('id')).subscribe((post) => {
+      this.currentPost = null;
+        console.log(post);
+       this.currentPost = post;
+       this.newComment.pId = post.pId;
+       this.newComment.commentText = '';
+     });
+  });
    this.ngOnInit();
   }
 
   // An admin can delete comments
-  deleteComment(comment: Comments) {
-    console.log(comment);
-    this.userService.deleteComment(comment).subscribe((r) => {});
+  deleteComment(comment) {
+    this.deleteCommentObj.cId = comment.cId;
+    this.deleteCommentObj.commentText = comment.commentText;
+    this.deleteCommentObj.pId = comment.pId;
+    this.deleteCommentObj.timeSubmission = comment.timeSubmission;
+    this.deleteCommentObj.uId = comment.uId.uId;
+    console.log(this.deleteCommentObj);
+    this.userService.deleteComment(this.deleteCommentObj).subscribe((r) => {
+      this.userService.getAllPostsByPid(+this.route.snapshot.paramMap.get('id')).subscribe((post) => {
+        console.log(post);
+       this.currentPost = post;
+       this.newComment.pId = post.pId;
+     });
+    });
   }
 
   // An an admin or the user who created the post can delete it
-  deletepost() {
-    this.userService.deleteMyPost(this.currentPost).subscribe((r) => {});
+  deletePost() {
+    this.postObj.categoryId = this.currentPost.categoryId;
+    for (let i = 0; i < this.currentPost.comments.length; i++) {
+      const shapeCommentObj = {
+        cId: 0,
+        commentText: '',
+        pId: 0,
+        timeSubmission: '',
+        uId: 0
+      };
+      this.postObj.comments[i] = shapeCommentObj;
+      this.postObj.comments[i].uId = this.currentPost.comments[i].uId.uId;
+      this.postObj.comments[i].cId = this.currentPost.comments[i].cId;
+      this.postObj.comments[i].commentText = this.currentPost.comments[i].commentText;
+      this.postObj.comments[i].pId = this.currentPost.comments[i].pId;
+      this.postObj.comments[i].timeSubmission = this.currentPost.comments[i].timeSubmission;
+    }
+    this.postObj.description = this.currentPost.description;
+    this.postObj.pId = this.currentPost.pId;
+    this.postObj.steps = this.currentPost.steps;
+    this.postObj.timeSubmission = this.currentPost.timeSubmission;
+    this.postObj.title = this.currentPost.title;
+    this.postObj.uId = this.currentPost.uId;
+    this.postObj.user = this.currentPost.user;
+    this.postObj.video = this.currentPost.video;
+    console.log(this.postObj);
+    this.userService.deleteMyPost(this.postObj).subscribe((r) => {});
   }
 
   changePost() {
